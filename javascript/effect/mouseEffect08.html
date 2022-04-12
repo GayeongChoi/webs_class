@@ -10,47 +10,49 @@
     <link rel="stylesheet" href="css/dracula.min.css">
     <link rel="stylesheet" href="css/custom.css">
     <style>
+        * {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 500;
+            color: white;
+        }
         body::before {
-            background: rgb(70, 70, 70, 0.33);
+            background: rgb(0, 0, 0,0.5);
+        }
+        body {
+            display: grid;
+            place-items: center;
+            /* height: 100vh; */
+            overflow-x: hidden;
+            /* font-weight: 400; */
+            background-color: white;
         }
         .mouse__wrap {
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
-            color: #fff;
             width: 100%;
             height: 100vh;
             overflow: hidden;
             /* cursor: none; */
         }
-        @font-face {
-            src: url("https://assets.codepen.io/2479807/GrandSlang-Roman.otf");
-            font-family: "Grand Slang";
-        }
-        body {
-            display: grid;
-            place-items: center;
-            height: 100vh;
-            overflow-x: hidden;
-            font-family: "Grand Slang";
-            font-weight: 400;
-            font-size: normal;
-            background-color: white;
-        }
-
-        h1 {
-            font-weight: 400;
-            font-size: 40px;
-        }
-
-        .title__img {
+        .mouse__title {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 3;
             color: #000;
+            
+        }
+        .mouse__title p {
+            font-size: 50px;
+            white-space: nowrap;
+            margin-bottom: 10px;
+        }
+        .txt {
+            font-size: 60px;
+            text-align: center;
         }
 
         .image-grid {
@@ -129,8 +131,6 @@
             transform: translate(-50%, -50%);
             animation: blow 4s linear infinite;
         }
-
-
         @keyframes blow {
         0% {
             transform: translate(-50%, -50%);
@@ -152,7 +152,10 @@
             <div class="cursor"></div>
             <div class="mouse__wrap">
                 <div class="image-grid">
-                    <div class="title__img"><h1>Images</h1></div>
+                    <div class="mouse__title">
+                        <p>All progress takes place outside the comfort zone.</p>
+                        <h1 class="txt">모든 성과는 요령을 피우지 않을 때 생긴다.</h1>
+                    </div>
                     <div class="image-grid__item pos-1">
                         <img src="https://assets.codepen.io/2479807/img-1.jpg" alt="">
                     </div>
@@ -160,13 +163,13 @@
                         <img src="https://assets.codepen.io/2479807/img-2.jpg" alt="">
                     </div>
                         <div class="image-grid__item pos-3">
-                        <img src="https://assets.codepen.io/2479807/img-3.jpg" alt="">
+                        <img src="https://assets.codepen.io/2479807/img-5.jpg" alt="">
                     </div>
                         <div class="image-grid__item pos-4">
-                        <img src="https://assets.codepen.io/2479807/img-4.jpg" alt="">
+                        <img src="https://assets.codepen.io/2479807/img-8.jpg" alt="">
                     </div>
                         <div class="image-grid__item pos-5">
-                        <img src="https://assets.codepen.io/2479807/img-5.jpg" alt="">
+                        <img src="https://assets.codepen.io/2479807/img-3.jpg" alt="">
                     </div>
                         <div class="image-grid__item pos-6">
                         <img src="https://assets.codepen.io/2479807/img-6.jpg" alt="">
@@ -175,7 +178,7 @@
                         <img src="https://assets.codepen.io/2479807/img-7.jpg" alt="">
                     </div>
                         <div class="image-grid__item pos-8">
-                        <img src="https://assets.codepen.io/2479807/img-8.jpg" alt="">
+                        <img src="https://assets.codepen.io/2479807/img-4.jpg" alt="">
                     </div>
                         <div class="image-grid__item pos-9">
                         <img src="https://assets.codepen.io/2479807/img-9.jpg" alt="">
@@ -194,7 +197,7 @@
     <div class="info">
         <div class="title">
             <h1><a href="mouseEffect.html">JavaScript Mouse Effect08</a></h1>
-            <p>마우스 이펙트 - 따라오는 이미지 효과 및 마우스 >
+            <p>마우스 이펙트 - 따라서 움직이는 이미지 효과 및 마우스 버블 효과>
         </div>
         <div class="number">
             <ul>
