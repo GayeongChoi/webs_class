@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/custom.css">
     <style>
         body::before {
-            background: rgba(5, 36, 70, 0.87)
+            background: rgb(0, 0, 0,0.5);
         }
         .mouse__wrap {
             display: flex;
@@ -67,7 +67,7 @@
         .cursor {
             position: absolute;
             left: 0; top: 0;
-            width: 50px; height: 50px;
+            width: 30px; height: 30px;
             background: #fff;
             border-radius: 50%;
             z-index: 1000;
@@ -89,8 +89,8 @@
                         <img src="img/img_slide05.jpg" alt="이미지">
                     </figure>
                     <figcaption>
-                        <p>작은 일에 거창한 말을 사용하는 습관을 피해라.</p>
                         <p>Do not accustom yourself to use big words for little matters.</p>
+                        <p>작은 일에 거창한 말을 사용하는 습관을 피해라.</p>
                     </figcaption>
                 </div>
          </div>
@@ -180,93 +180,92 @@
         // modal();
         // tabMenu();
 
-        const circle = document.querySelector(".cursor").getBoundingClientRect(); 
+        // const circle = document.querySelector(".cursor").getBoundingClientRect(); //커서의 길이 속성을 가져온다.
 
-        function mouseMove(e /*이벤트 값 불러오기*/) {
+        // function mouseMove(e /*이벤트 값 불러오기*/) {
            
-            //마우스 좌표 값 (불러오기)
-            let mousePageX = e.pageX;
-            let mousePageY = e.pageY;
-
-            //마우스 좌표 기준점을 가운데로 변경
-            let centerpageX = window.innerWidth/2 - mousePageX;
-            let centerpageY = window.innerHeight/2 - mousePageY;
-
-            //쵯소값은 -50 쵯대값은 50 설정 //50이하까지는 들어가고, 50이상은 50으로 만들어준다 *수학메서드 사용
-            let maxPageX = Math.max(-100, Math.min(800,centerpageX));
-            let maxPageY = Math.max(-100, Math.min(300,centerpageY));
-
-            //각도 줄이는 설정
-            let anlexpageX = maxPageX * 0.12;
-            let anlexpageY = maxPageY * 0.12;
-
-            //부드럽게 설정 10--->30
-            let softPageX = 0, softPageY = 0; //변수 설정
-            softPageX += (anlexpageX - softPageX) * 0.4;
-            softPageY += (anlexpageY - softPageY) * 0.4;
-            //+= 한번에 값이 바뀌지 않고 서서히 넣어줌
-
-            //이미지 움직이기
-            //"transform: rotateX( centerpageX deg) rotateY (centerpageY deg);
-            const imgMove = document.querySelector(".mouse__img");
-            imgMove.style.transform = "perspective(600px) rotateX("+ softPageY +"deg) rotateY("+ -softPageX +"deg)";
-
-            //원 크기
-            let circleWidth = mousePageX - circle.width/2       //소문자로 쓰기
-            let circleHeight = mousePageY - circle.height/2
-
-            //커서
-            // gsap.to(".cursor",{duration: .3, left: mousePageX, top: mousePageY})
-            // gsap.to(".cursor",{duration: .3, left: mousePageX-circle.Width/2, top: mousePageY-circle.height/2})
-            gsap.to(".cursor",{duration: .3, left: circleWidth, top: circleHeight})
-
-            //출력
-            document.querySelector(".pageX").textContent = mousePageX;
-            document.querySelector(".pageY").textContent = mousePageY;
-            document.querySelector(".centerpageX").textContent = centerpageX;
-            document.querySelector(".centerpageY").textContent = centerpageY;
-            document.querySelector(".maxPageX").textContent = maxPageX;
-            document.querySelector(".maxPageY").textContent = maxPageY;
-
-        }
-        document.addEventListener("mousemove", mouseMove)
-
-        //마우스 이펙트04
-        // const circle = document.querySelector(".cursor").getBoundingClientRect(); 
-
-        // document.querySelector(".mouse__img").addEventListener("mousemove", (e) => { 
-        //     //커서 - 이미지 안에서만 움직임(.mouse__img | 전체는 window로 설정)
-        //     gsap.to(".cursor", {duration: .2, left: e.pageX - circle.width/2, top: e.pageY - circle.height/2 });
-
-        //     //마우스 좌표
+        //     //마우스 좌표 값 (불러오기)
         //     let mousePageX = e.pageX;
         //     let mousePageY = e.pageY;
 
-        //     //마우스 좌표 값을 가운데 초기화
-        //     //전체 가로 값
-        //     //window.innerWidth; //1920 //브라우저 크기
-        //     //window.outerWidth; //1920 //브라우저 크기
-        //     //window.screen.width; //1920 //화면크기
-        //     //window.screen.height //1080 
-
-        //     //마우스 좌표 값을 가운데 초기화 <마우스 작업의 기본>
-        //     //전체 길이/2 - 마우스 X좌표값 == 0 
+        //     //마우스 좌표 기준점을 가운데로 변경
         //     let centerpageX = window.innerWidth/2 - mousePageX;
         //     let centerpageY = window.innerHeight/2 - mousePageY;
 
+        //     //쵯소값은 -50 쵯대값은 50 설정 //50이하까지는 들어가고, 50이상은 50으로 만들어준다 *수학메서드 사용
+        //     let maxPageX = Math.max(-100, Math.min(800,centerpageX));
+        //     let maxPageY = Math.max(-100, Math.min(300,centerpageY));
+
+        //     //각도 줄이는 설정
+        //     let anlexpageX = maxPageX * 0.12;
+        //     let anlexpageY = maxPageY * 0.12;
+
+        //     //부드럽게 설정 10--->30
+        //     let softPageX = 0, softPageY = 0; //변수 설정
+        //     softPageX += (anlexpageX - softPageX) * 0.4;
+        //     softPageY += (anlexpageY - softPageY) * 0.4;
+        //     //+= 한번에 값이 바뀌지 않고 서서히 넣어줌
+
         //     //이미지 움직이기
-        //     // const imgMove = document.querySelector(".mouse__img figure img");
-        //     // imgMove.style.transform = "translate{" + centerpageX/20 + "px, " + centerpageY/20 +"px)";
-        //         //gsap으로 표현
-        //     gsap.to(".mouse__img figure img", {duration: 0.3, x: centerpageX/20,  y:centerpageY/20});
+        //     //"transform: rotateX( centerpageX deg) rotateY (centerpageY deg);
+        //     const imgMove = document.querySelector(".mouse__img");
+        //     imgMove.style.transform = "perspective(600px) rotateX("+ softPageY +"deg) rotateY("+ -softPageX +"deg)";
 
+        //     //원 크기
+        //     let circleWidth = mousePageX - circle.width/2       //소문자로 쓰기
+        //     let circleHeight = mousePageY - circle.height/2
 
-        //     //출력(마우스 좌표값)
+        //     //커서
+        //     // gsap.to(".cursor",{duration: .3, left: mousePageX, top: mousePageY})
+        //     // gsap.to(".cursor",{duration: .3, left: mousePageX-circle.Width/2, top: mousePageY-circle.height/2})
+        //     gsap.to(".cursor",{duration: .3, left: circleWidth, top: circleHeight})
+
+        //     //출력
         //     document.querySelector(".pageX").textContent = mousePageX;
         //     document.querySelector(".pageY").textContent = mousePageY;
-        //     document.querySelector(".centerpageX").textContent = centerpageY;
+        //     document.querySelector(".centerpageX").textContent = centerpageX;
         //     document.querySelector(".centerpageY").textContent = centerpageY;
-        // })
+        //     document.querySelector(".maxPageX").textContent = maxPageX;
+        //     document.querySelector(".maxPageY").textContent = maxPageY;
+
+        // }
+        // document.addEventListener("mousemove", mouseMove)
+
+        //마우스 이펙트04
+        const circle = document.querySelector(".cursor").getBoundingClientRect(); 
+
+        document.querySelector(".mouse__img").addEventListener("mousemove", (e) => { 
+            //커서 - 이미지 안에서만 움직임(.mouse__img | 전체는 window로 설정)
+            gsap.to(".cursor", {duration: .2, left:e.pageX-circle.width/2, top:e.pageY-circle.height/2});
+
+            //마우스 좌표
+            let mousePageX = e.pageX;
+            let mousePageY = e.pageY;
+
+            //마우스 좌표 값을 가운데 초기화
+            //전체 가로 값
+            // window.innerWidth; //1920 //브라우저 크기
+            // window.outerWidth; //1920 //브라우저 크기
+            // window.screen.width; //1920 //화면크기
+            // window.screen.height //1080 
+
+            //마우스 좌표 값을 가운데 초기화 <마우스 작업의 기본>
+            //전체 길이/2 - 마우스 X좌표값 == 0 
+            let centerpageX = window.innerWidth/2 - mousePageX;
+            let centerpageY = window.innerHeight/2 - mousePageY;
+
+            //이미지 움직이기
+            // const imgMove = document.querySelector(".mouse__img figure img");
+            // imgMove.style.transform = "translate{" + centerpageX/20 + "px, " + centerpageY/20 +"px)";
+            //gsap으로 표현
+            gsap.to(".mouse__img figure img", {duration: 0.3, x: centerpageX/20,  y:centerpageY/20});
+
+            //출력(마우스 좌표값)
+            document.querySelector(".pageX").textContent = mousePageX;
+            document.querySelector(".pageY").textContent = mousePageY;
+            document.querySelector(".centerpageX").textContent = centerpageY;
+            document.querySelector(".centerpageY").textContent = centerpageY;
+        })
  
 
     </script>

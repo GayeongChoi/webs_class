@@ -290,7 +290,7 @@
                 <figure class="content__item__imgWrap">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc">높은 목표를 세우고, 스스로 채찍질 한다.</p>
+                <p class="content__item__desc">그대가 원한다면, 이 가슴을 화살로 꿰뚫어서</p>
             </section>
             <!-- //section1 -->
          
@@ -300,7 +300,7 @@
                 <figure class="content__item__imgWrap">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc">나 자신에 대한 자신감을 잃으면 온 세상이 나의 적이 된다.</p>
+                <p class="content__item__desc">나약한 나도 언젠가 당당해질 수 있었다면</p>
             </section>
             <!-- //section2 -->
 
@@ -310,7 +310,7 @@
                 <figure class="content__item__imgWrap">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc">자신감 있는 표정을 지으면 자신감이 생긴다</p>
+                <p class="content__item__desc">이유도 없이 눈물이 흘러넘칠 듯한 밤을</p>
             </section>
             <!-- //section3 -->
 
@@ -320,7 +320,7 @@
                 <figure class="content__item__imgWrap">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc">행복은 습관이다,그것을 몸에 지니라.</p>
+                <p class="content__item__desc">매울 수 있는 빛나는 꿈이 되어라.</p>
             </section>
             <!-- //section4 -->
 
@@ -330,7 +330,7 @@
                 <figure class="content__item__imgWrap">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc">높은 목표를 세우고, 스스로 채찍질 한다.</p>
+                <p class="content__item__desc">새하얀 숨결은 너무도 희미해서 겨울 추위에 녹아 사라져버렸어</p>
             </section>
             <!-- //section5 -->
             
@@ -340,7 +340,7 @@
                 <figure class="content__item__imgWrap">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc">높은 목표를 세우고, 스스로 채찍질 한다.</p>
+                <p class="content__item__desc">그 날 마주잡은 손과 손의 온기로는  내 마음까지 따뜻해지지 않아서 </p>
             </section>
             <!-- //section6 -->
 
@@ -350,7 +350,7 @@
                 <figure class="content__item__imgWrap">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc">높은 목표를 세우고, 스스로 채찍질 한다.</p>
+                <p class="content__item__desc">봄은 언제나 당연한 것처럼, 나를 맞이하러 와줄거라고 생각했던 그 시절</p>
             </section>
             <!-- //section7 -->
 
@@ -360,7 +360,7 @@
                 <figure class="content__item__imgWrap">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc">높은 목표를 세우고, 스스로 채찍질 한다.</p>
+                <p class="content__item__desc">조용히 눈을 감으면, 꿈은 언제나 정몽이 된거라고 믿어었던 그 시절</p>
             </section>
             <!-- //section8 -->
 
@@ -370,7 +370,7 @@
                 <figure class="content__item__imgWrap">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc">높은 목표를 세우고, 스스로 채찍질 한다.</p>
+                <p class="content__item__desc">그대가 원한다면, 끝없이 날아갈 수 있어</p>
             </section>
             <!-- //section9 -->
         </div>
@@ -378,11 +378,11 @@
     </main>
     <!-- //main -->
 
-    <!-- info -->
+  
     <div class="scrollTop">
         scrollTop: <span>0</span>px
     </div>
-    <div class="scrollInfo">
+    <!-- <div class="scrollInfo">
         <ul>
             <li>#section1 offset() : <spen class="offset1">0</spen></li>
             <li>#section2 offset() : <spen class="offset2">0</spen></li>
@@ -394,12 +394,12 @@
             <li>#section8 offset() : <spen class="offset8">0</spen></li>
             <li>#section9 offset() : <spen class="offset9">0</spen></li>
         </ul>
-    </div>
+    </div> -->
     <!-- //info -->
 
     <!-- script  -->
     <script>
-        // window.addEventListener("scroll", () => {
+         // window.addEventListener("scroll", () => {
         //     let scrollTop = window.pageYOffset || document.documentElement.scrollTop  ||  window.scrollY; 
 
         //     //스크롤 값이 0보다 크면 SHOW 클래스 추가
@@ -411,6 +411,30 @@
             
         //     document.querySelector(".scrollTop span").innerText = Math.round(scrollTop);
         // });
+
+          document.querySelectorAll("#parallax__nav a").forEach(el => {
+            el.addEventListener("click", e => {
+                e.preventDefault();
+
+                document.querySelector(el.getAttribute("href")).scrollIntoView({behavior:"smooth"})
+            })
+        })
+
+        window.addEventListener("scroll", () => {
+            let scrollTop = window.screenY || window.pageYOffset || document.documentElement.scrollTop;
+
+            document.querySelector(".scrollTop span").innerText = Math.round(scrollTop);
+
+            document.querySelectorAll(".content__item").forEach((e, i) => {
+                if(scrollTop >= e.offsetTop-2){
+                    document.querySelectorAll("#parallax__nav li").forEach(li => {
+                        li.classList.remove("active");
+                    })
+                    document.querySelector("#parallax__nav li:nth-child("+(i+1)+")").classList.add("active");
+                }
+            })
+        })
+       
 
         let nowScroll = true;
         let lastScroll = 0;
@@ -427,6 +451,7 @@
 
             // console.log(nowScroll);
         }
+        
         function hasScroll(){
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop  ||  window.scrollY; 
 

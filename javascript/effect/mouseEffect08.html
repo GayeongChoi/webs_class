@@ -46,13 +46,15 @@
             
         }
         .mouse__title p {
-            font-size: 50px;
+            font-size: 2.5vw;
             white-space: nowrap;
+            text-align: center;
             margin-bottom: 10px;
         }
         .txt {
-            font-size: 60px;
+            font-size: 3vw;
             text-align: center;
+            white-space: nowrap;
         }
 
         .image-grid {
@@ -121,6 +123,7 @@
             grid-area: 37/39/48/47;
         }
 
+        /* 마우스 */
         span {
             height: 50px;
             width: 50px;
@@ -153,8 +156,8 @@
             <div class="mouse__wrap">
                 <div class="image-grid">
                     <div class="mouse__title">
-                        <p>All progress takes place outside the comfort zone.</p>
-                        <h1 class="txt">모든 성과는 요령을 피우지 않을 때 생긴다.</h1>
+                        <p>Everything’s got a moral if only you can find it.</p>
+                        <h1 class="txt">노력만 하면 어떤 일에서든지 배운 점을 찾을 수 있다.</h1>
                     </div>
                     <div class="image-grid__item pos-1">
                         <img src="https://assets.codepen.io/2479807/img-1.jpg" alt="">
@@ -320,6 +323,7 @@
             render();
         });
 
+        //마우스 효과
         document.addEventListener('mousemove', function(e) {
             let body = document.querySelector('body');
             let circle = document.createElement('span');

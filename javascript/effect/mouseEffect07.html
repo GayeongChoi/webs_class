@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/custom.css">
     <style>
         body::before {
-            background: rgb(70, 70, 70, 0.33);
+            background: rgb(0, 0, 0,0.5);
         }
         .mouse__wrap {
             display: flex;
@@ -45,7 +45,7 @@
             left: 50%;
             top: 0;
             transform: translateX(-50%);
-            width: 400px;
+            width: 300px;
             opacity: 0;
         }
         .mouse__img .txt {
@@ -189,7 +189,7 @@
 
             const onMouseEnter = () => {
                 gsap.set(imgageWrap, {xPercent: 50, yPercent:50, rotation: -15, scale:0.3,  opacity:0});
-                gsap.to(imgageWrap, {xPercent: 50, yPercent:-30, rotation: 0, scale:1, opacity:1});
+                gsap.to(imgageWrap, {xPercent: -50, yPercent: -50, rotation: 0, scale:1, opacity:1});
 
             }
 
@@ -201,7 +201,7 @@
                 gsap.to(imgageWrap, {
                     duraion: 1.25,
                     x: Math.abs(x-itemBounds.left),
-                    y: Math.abs(y-itemBounds.top),
+                    y: Math.abs(y-itemBounds.top)
                 });
             }
 

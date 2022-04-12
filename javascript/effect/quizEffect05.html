@@ -123,6 +123,7 @@
         .quiz {
             max-width: 500px;
             width: 100%;
+            min-height: 750px;
             background: #fff;
             border: 8px ridge #CACACA;
             margin: 10px;
@@ -226,9 +227,11 @@
             100% {transform: translateZ(0)}
         }
         .quiz__answer {
-            background: #F5F5F5;
+            /* background: #F5F5F5; */
             border-top: 6px ridge #CACACA;
             padding: 10px;
+            box-sizing: border-box;
+            height: 100%;
         }
 
         .quiz__confirm {
@@ -858,6 +861,9 @@
             height: 250%;
             border-radius: 20px 20px 35px 35px;
         }
+        .show {
+            display: block;
+        }
         
     </style>
 </head>
@@ -877,15 +883,12 @@
                 <li><a href="quizEffect07.html">7</a></li>
             </ul>
         </nav>
-
     </header>
 
     <main>
         <div class="quiz__wrap">
             <!-- javascipt : quiz -->
-            </div>
-       
-</div>        
+        </div>
         <div class="quiz__source"></div>
     </main>
 
@@ -894,146 +897,150 @@
     </footer>
 
     <script>
-    const quizWrap = document.querySelector(".quiz__wrap");
+        const quizWrap = document.querySelector(".quiz__wrap");                         //퀴즈
 
-    //문제 정보
-    const quizInfo = [
-        {
-            answerType : "javascript",
-            answerNum : 1,
-            answerAsk : "객체 기반의 스크립트 프로그래밍 언어는 무엇입니까?",
-            answerChoice : {
-                1: "html",
-                2: "css",
-                3: "javascript",
-                4: "react"
+        //문제정보
+        const quizInfo = [
+            {
+                answerType : "HTML", 
+                answerNum : 1, 
+                answerAsk : "JavaScript (JS)는 가벼운, 인터프리터 혹은 just-in-time 컴파일 프로그래밍 언어로, 일급 함수를 지원합니다. 웹 페이지를 위한 스크립트 언어로 잘 알려져 있지만, Node.js, Apache CouchDB, Adobe Acrobat처럼 많은 비 브라우저 환경에서도 사용하고 있습니다. JavaScript는 프로토타입 기반, 다중 패러다임, 단일 스레드, 동적 언어로, 객체지향형, 명령형, 선언형(함수형 프로그래밍 등) 스타일을 지원합니다. 자세한 내용은 JavaScript에 대하여를 참고하세요.",
+                answerChoice : {
+                    1: "html",
+                    2: "css",
+                    3: "javasript",
+                    4: "react"
+                },
+                answerResult : "1",
+                answerEx : "정답은 HTML 입니다."
             },
-            answerResult : "3",
-            answerEx : "객체 기반의 스크립트 프로그래밍 언어는 자바스크립트입니다."
-        },
-        {
-            answerType : "html",
-            answerNum : 2,
-            answerAsk : "웹 페이지를 다른 페이지로 연결하는 링크는 무엇입니까?",
-            answerChoice : {
-                1: "html",
-                2: "css",
-                3: "javascript",
-                4: "Hypertext"
+        
+            {
+                answerType : "CSS",
+                answerNum : 2,
+                answerAsk : "작성된 문서의 표시 방법을 기술하기 위한 스타일 시트 언어",
+                answerChoice : {
+                    1: "html",
+                    2: "css",
+                    3: "javasript",
+                    4: "react"
+                },
+                answerResult : "2",
+                answerEx : "정답은 CSS 입니다."
             },
-            answerResult : "4",
-            answerEx : "웹 페이지를 다른 페이지로 연결하는 링크는 Hypertext입니다."
-        },
-        {
-            answerType : "css",
-            answerNum : 3,
-            answerAsk : "모든 형태의 모든 요소를 선택하는 선택자는?",
-            answerChoice : {
-                1: ">",
-                2: "*",
-                3: "all",
-                4: "~"
-            },
-            answerResult : "2",
-            answerEx : "모든 형태의 모든 요소를 선택하는 선택자는 *입니다."
-        }
-    ];
+            {
+                answerType : "javasript",
+                answerNum : 3,
+                answerAsk : "웹 페이지를 위한 스크립트 언어로 알려져있다",
+                answerChoice : {
+                    1: "html",
+                    2: "css",
+                    3: "javasript",
+                    4: "react"
+                },
+                answerResult : "3",
+                answerEx : "정답은 javasript 입니다."
+            }
+        ];
 
-    //문제 출력
-    function updataQuiz(){
-        const html = [];
+        //문제 출력
+        function updataQuiz(){
+            const html = [];
 
-        quizInfo.forEach((question, number) => {
-                html.push(`<div class="quiz">
-                <h2 class="quiz__type">${question.answerType}</h2>
-                <h3 class="quiz__question">
-                    <span class="quiz__number">${question.answerNum}</span>
-                    <span class="quiz__ask">${question.answerAsk}</span>
-                </h3>
-                <div class="quiz__view">
-                    <div class="true">정답입니다!</div>
-                    <div class="false">틀렸습니다!</div>
-                    <div class="dog">
-                        <div class="head">
-                            <div class="ears"></div>
-                            <div class="face"></div>
-                            <div class="eyes">
-                                <div class="teardrop"></div>
+            quizInfo.forEach((question, number) => {
+                html.push(`
+                    <div class="quiz">
+                        <h2 class="quiz__type">${question.answerType}</h2>
+                        <h3 class="quiz__question">
+                            <span class="quiz__number">${question.answerNum}</span>
+                            <span class="quiz__ask">${question.answerAsk}</span>
+                        </h3>
+                        <div class="quiz__view">
+                            <div class="true">정답입니다!</div>
+                            <div class="false">오답입니다!</div>
+                            <div class="dog">
+                                <div class="head">
+                                    <div class="ears"></div>
+                                    <div class="face"></div>
+                                    <div class="eyes">
+                                        <div class="teardrop"></div>
+                                    </div>
+                                    <div class="nose"></div>
+                                    <div class="mouth">
+                                        <div class="tongue"></div>
+                                    </div>
+                                    <div class="chin"></div>
+                                </div>
+                                <div class="body">
+                                    <div class="tail"></div>
+                                    <div class="legs"></div>
+                                </div> 
                             </div>
-                            <div class="nose"></div>
-                            <div class="mouth">
-                                <div class="tongue"></div>
-                            </div>
-                            <div class="chin"></div>
                         </div>
-                        <div class="body">
-                            <div class="tail"></div>
-                            <div class="legs"></div>
+                        <div class="quiz__answer">
+                            <div class="quiz__selects">
+                                <label for="select1${number}">
+                                    <input class="select" type="radio" id="select1${number}" name="select${number}" value="1">
+                                    <span class="choice">${question.answerChoice[1]}</span>
+                                </label>
+                                <label for="select2${number}">
+                                    <input class="select" type="radio" id="select2${number}" name="select${number}" value="2">
+                                    <span class="choice">${question.answerChoice[2]}</span>
+                                </label>
+                                <label for="select3${number}">
+                                    <input class="select" type="radio" id="select3${number}" name="select${number}" value="3">
+                                    <span class="choice">${question.answerChoice[3]}</span>
+                                </label>
+                                <label for="select4${number}">
+                                    <input class="select" type="radio" id="select4${number}" name="select${number}" value="4">
+                                    <span class="choice">${question.answerChoice[4]}</span>
+                                </label>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="quiz__answer">
-                    <div class="quiz__selects">
-                        <label for="select1${number}">
-                            <input class="select" type="radio" id="select1${number}" name="select${number}" value="1">
-                            <span class="choice">${question.answerChoice[1]}</span>
-                        </label>
-                        <label for="select2${number}">
-                            <input class="select" type="radio" id="select2${number}" name="select${number}" value="2">
-                            <span class="choice">${question.answerChoice[2]}</span>
-                        </label>
-                        <label for="select3${number}">
-                            <input class="select" type="radio" id="select3${number}" name="select${number}" value="3">
-                            <span class="choice">${question.answerChoice[3]}</span>
-                        </label>
-                        <label for="select4${number}">
-                            <input class="select" type="radio" id="select4${number}" name="select${number}" value="4">
-                            <span class="choice">${question.answerChoice[4]}</span>
-                        </label>
-                    </div>
-                </div>
-            </div>`)
-            });
-
+                `)
+            })
+            
             html.push(`
-                <div class ="quiz_btn">
+                <div class="quiz__btn">
                     <button class="quiz__confirm">정답 확인하기</button>
-                    <div class="quiz__result"></div>
+                    <div class="quiz__result" style="display: none;"></div>
                 </div>
             `);
+
+            // console.log(html);
             
             quizWrap.innerHTML = html.join('');
         }
-        updataQuiz(); 
+        updataQuiz();
 
-        function answerQuiz() {
-            const quizSelects = document.querySelectorAll(".quiz_selects") //보기 선택 박스
-            const quizView = document.querySelectorAll(".quiz_view") //보기 선택 박스
-            const quizResult =  document.querySelector(".quiz_result")
-        
+        function answerQuiz(){
+            const quizSelects = document.querySelectorAll(".quiz__selects");   //보기 선택 박스
+            const quizView = document.querySelectorAll(".quiz__view");   //보기 선택 박스
+            const quizResult = document.querySelector(".quiz__result");   //보기 선택 박스
+            
             let scoreCurrent = 0;
 
-            quizInfo.forEach((question, nuber) =>  {
-                const quizSelectWrap = quizSelects[number];                     //전체 보기 박스
-                const userSelector = 'input[name=select${number}]:checked'; //사용자가 클릭한 것
-                const userAnswer =  (quizSelectWrap.querySelector(userSelector) || {}).vlaue //클릭한 값의 속성을 가져올 수 있다
-    
-                if(userAnswer == question.answerResult) {
-                    // console.log("정답입니다")
+            quizInfo.forEach((question, number) => {
+                const quizSelectsWrap = quizSelects[number];                                  //전체 보기 박스 
+                const userSelector = `input[name=select${number}]:checked`;                   //사용자가 클릭한것
+                const userAnswer = (quizSelectsWrap.querySelector(userSelector) || {}).value  //클릭한 값의 속성 값을 가져옮
+
+                if(userAnswer == question.answerResult){
+                    //console.log("정답입니다.")
                     quizView[number].classList.add("like");
                     scoreCurrent++;
-                }else {
-                    // console.log("오답입니다")
+                } else {
+                    //console.log("오답입니다.")
                     quizView[number].classList.add("dislike");
                     const div = document.createElement("div");
-                    quizSelectWrap.app
+                    quizSelectsWrap.appendChild(div).innerHTML = `<p class="quiz__result quiz__ex">${question.answerEx}</p>`;
                 }
             });
-            quizResult.innerHTML = `${quizInfo.length} 문제 중에 ${scoreCurrent} 문제를 맞추었습니다`
+            quizResult.innerHTML = `${quizInfo.length} 문제 중에 ${scoreCurrent} 문제를 맞추었습니다.`;
         }
 
-        document.querySelector(".quiz_confirm").addEventListener("click",answerQuiz);
-
+        document.querySelector(".quiz__confirm").addEventListener("click", answerQuiz);
     </script>
 </body>
 
