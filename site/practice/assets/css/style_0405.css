@@ -1,0 +1,319 @@
+/* 여백 초기화 */
+body,
+div,
+ul,
+li,
+dl,
+dt,
+ol,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+fieldset,
+legend,
+p,
+select,
+table,
+th,
+td,
+tr,
+textarea,
+button,
+form,
+img {
+    margin: 0;
+    padding: 0;
+}
+
+/* a 링크 초기화 */
+a {
+    color: #222;
+    text-decoration: none;
+}
+
+/* 폰트 스타일 초기화 */
+em,
+address {
+    font-style: normal;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+/* 클리어 픽스 */
+.clearfix {
+    zoom: 1;
+}
+
+.clearfix::before,
+.clearfix::after {
+    content: '';
+    display: block;
+}
+
+.clearfix::after {
+    clear: both;
+}
+
+/* 컨테이너 */
+.cotanier {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+
+/* header */
+#header {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+#header img {
+    height: 50px;
+}
+
+#header nav {
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    z-index: 100;
+}
+
+#header .menu {
+    display: flex;
+    font-weight: bold;
+}
+
+#header .menu>li {
+    padding: 10px 20px;
+    font-size: 25px;
+    position: relative;
+}
+
+#header .menu .submenu {
+    font-size: 16px;
+    background: #ccc;
+    position: absolute;
+    top: 10;
+    left: 10;
+    white-space: nowrap;
+    display: none;
+    z-index: 1;
+}
+
+
+/* slider */
+#slider_wrap {
+    width: 1000px;
+    overflow: hidden;
+}
+.slideList {
+    position: relative;
+    width: 3000px;
+    z-index: 50;
+}
+.slideList .slideImg {
+    position: relative;
+    width: 1000px;
+    float: left;
+}
+.slideList .slideImg h2 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.4);
+    padding: 10px 30px;
+    border-radius: 20px;
+}
+.slideList .slideImg img {
+    width: 100%;
+    height: 388px;
+    margin-bottom: 20px;
+}
+
+/* benner */
+#contents {}
+#contents .cotanier {
+    display: flex;
+    justify-content: space-between;
+}
+
+#contents .cont {
+    display: flex;
+    background: #f2f2f2;
+    width: 43%;
+
+    padding: 20px 30px;
+}
+
+#contents .cont .cont__left {
+    font-weight: bold;
+    padding-right: 30px;
+}
+
+#contents .cont .cont__left h3 {
+    padding-bottom: 10px;
+    font-size: 20px;
+    white-space: nowrap;
+}
+
+#contents .cont .cont__left p {
+    padding-bottom: 20px;
+    font-size: 13px;
+}
+
+#contents .cont .cont__left a {}
+
+#contents .cont .cont__left a span {
+    font-size: 18px;
+}
+
+#contents .cont .cont__left a span em {
+    font-size: 13px;
+    color: #aaa;
+}
+
+#contents .cont .cont__left a {}
+
+.cont .cont__right {
+    width: 30%;
+}
+
+.cont .cont__right img {
+    width: 100px;
+    height: 90px;
+    padding: 20px;
+}
+
+/* 탭메뉴 */
+#tebmenu {
+    margin-top: 20px;
+    float: left;
+}
+
+#tebmenu ul {
+    position: relative;
+}
+#tebmenu>ul>li {
+    
+}
+#tebmenu>ul>li>a {
+    color: #aaa;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#tebmenu>ul>li.active>a {
+    color: #000;
+}
+
+#tebmenu ul li a.teb {
+    position: absolute;
+    top: 0;
+    left: 150px;
+}
+
+#tebmenu ul li ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+#tebmenu ul li ul li {
+    width: 30%;
+}
+
+#tebmenu ul li ul li img {
+    width: 100%;
+}
+
+
+#footer {
+    margin-top: 500px;
+    background: #202020;
+}
+
+#footer .cotanier {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 10px 40px;
+}
+
+#footer .footer__left {
+    width: 40%;
+}
+
+#footer .footer__left img {
+    width: 200px;
+}
+
+#footer .footer__right {
+    /* width: 50%; */
+
+}
+
+#footer .footer__right .link {}
+
+#footer .footer__right .link ul {
+    display: flex;
+}
+
+#footer .footer__right .link ul li {
+    padding: 0 40px 30px 0;
+}
+
+#footer .footer__right .link ul li a {
+    color: #fff;
+    font-weight: bold;
+}
+
+#footer .footer__right address {
+    color: #aaa;
+    font-size: 13px;
+}
+
+#footer .footer__right address p {
+    padding-bottom: 10px;
+}
+
+/* 레이어팝업 */
+.layer_bg {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 900;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.layer {
+    display: none;
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    z-index: 1000;
+    width: 500px;
+    height: 500px;
+    border: 3px solid #000;
+    background: #fff;
+}
+
+.layer h2 {
+    padding: 20px;
+    color: #000;
+}
+
+.layer .close {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>windowMini</title>
+
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+
+    <style>
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #FF9AE0;
+}
+
+/* windowMini 윈도우 바디 */
+#windowMini {
+  /* min-height: 650px; */
+  width: 800px;
+  height: 80vh;
+  background-color: #FECFFD;
+  border-left: 5px solid #BDB4FF;
+  border-top: 4px solid #FECFFD;
+  border-right: 5px solid #AE83C6;
+  border-bottom: 5px solid #AE83C6;
+}
+
+/*windowMini 상단바 */
+#windowMini > .title-bar {
+  background-color: #BE95F3;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+/*windowMini 아이콘 */
+#windowMini > .title-bar > .icons {
+  display: flex;
+  padding-right: 10px;
+}
+#windowMini > .title-bar > .icons > .minimize, 
+.icons > .maximize, 
+.icons > .close {
+  width: 26px;
+  height: 22px;
+  background-color: #FECFFD;
+  margin-left: 4px;
+  border-left: 3px solid #FCFCFC;
+  border-top: 3px solid #FCFCFC;
+  border-right: 3px solid #DD5ECC;
+  border-bottom: 3px solid #DD5ECC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+#windowMini > .title-bar > .icons >  .minimize:hover, 
+.title-bar >.icons >  .maximize:hover, 
+.title-bar >.icons >  .close:hover {
+  background-color: #fd9dfb;
+  border-left: 3px solid #DD5ECC;
+  border-top: 3px solid #DD5ECC;
+  border-right: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+}
+/*windowMini 최소화 버튼 */
+#windowMini > .title-bar > .icons > .minimize {
+  align-items: flex-end;
+}
+#windowMini > .title-bar > .icons > .minimize > .symbol {
+  width: 60%;
+  height: 3px;
+  background-color: #DD5ECC;
+  margin-bottom: 2px;
+}
+/*windowMini 최대화 버튼 */
+#windowMini > .title-bar > .icons > .maximize > .symbol {
+  width: 50%;
+  height: 50%;
+  border: 2px solid #DD5ECC;
+  border-top-width: 4px;
+}
+/*windowMini 닫기 버튼 */
+#windowMini > .title-bar > .icons > .close > .symbol {
+  width: 70%;
+  height: 3px;
+  background-color: #DD5ECC;
+  transform: rotate(45deg);
+}
+#windowMini > .title-bar > .icons > .close > .symbol::after {
+  content: "";
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #DD5ECC;
+  transform: rotate(90deg);
+}
+/*windowMini 컨텐츠 */
+#windowMini > .content {
+  display: block;
+  width:100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+
+
+
+
+
+    </style>
+
+</head>
+<body>
+
+    <div id="windowMini">
+      <div class="title-bar">
+        <div class="icons">
+          <div class="minimize">
+            <div class="symbol"></div>
+          </div>
+          <div class="maximize">
+            <div class="symbol"></div>
+          </div>
+          <div class="close">
+            <div class="symbol"></div>
+          </div>
+        </div>
+        <!-- //icons -->
+      </div>
+      <!-- //title-bar  -->
+
+      <div class="content">
+        
+
+
+
+
+      </div>
+      <!-- //content -->
+    </div>
+    <!-- //windowMini -->
+
+</body>
+</html>

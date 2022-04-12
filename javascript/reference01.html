@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기초문법:자바스크립트</title>
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/javascript.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/javascript.png">
+    <link rel="icon" href="../assets/face/javascript.png" sizes="128x128">
+    <!-- style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+</head>
+<body>
+    <header id="header">
+        <h1><a href="index.html">Javascript</a></h1>
+        <nav>
+            <ul>
+                <li class="active"><a href="reference01.html">기초 문법</a></li>
+                <li><a href="reference02.html">변수</a></li>
+                <li><a href="reference03.html">자료형</a></li>
+                <li><a href="reference04.html">for문</a></li>
+                <li><a href="reference05.html">연산자</a></li>
+                <li><a href="reference06.html">조건문</a></li>
+                <li><a href="reference07.html">반복문</a></li>
+                <li><a href="reference08.html">함수</a></li>
+                
+            </ul>
+        </nav>
+        
+    </header>
+    <main id="main">
+        <div class="doc">
+
+            <p><a href="https://opentutorials.org/module/3989/26049">참고</a></p>
+            <h2>자바스크립트 선언문</h2>
+                <p> 선언문이란 '자바스크립트 코드를 작성'할 영역을 선언하는 것 <br>
+                    스크립트 영역 : &lt;script&gt;라는 태크로 선언문이 시작된 곳부터 &lt;/script&gt;라는 태그로 종료된 곳까지
+                </p>
+            <div class="code">
+                <pre><code>{
+    &lt;script&gt;
+      자바스크립트 코드;
+    &lt;/script&gt;
+}</pre></code>
+            </div>
+        
+            <h2>자바스크립트 주석처리</h2>
+                <p>
+                자바스크립트 선언문 안에서 코드가 아닌 설명글을 넣고 싶을 떄 주석 처리한다.(단축키 : ctrl + /)<br> 
+                한 줄 주석일 경우 : //(한줄 설명글)로 작성 <br>
+                여러 줄 주석일 경우 : /*(여러줄 설명글)*/로 작성 
+                </p>
+                <div class="code">
+                    <pre><code>{
+    //한 줄 설명글인 경우
+    /*
+    설명글이 여러 줄인 경우
+    이렇게 처리합니다
+    */
+}</pre></code>
+</div>
+
+            <h2>코드 입력시 주의사항</h2>
+                <p>
+                    자바스크립트를 작성할 때 몇 주의 사항
+                </p>
+            <ul>
+                <li>자바스크립트 대소문자를 구분하여 작성합니다.</li>
+                <div class="code">
+                    <pre><code>날짜 객체 생성 : New date(); : (x)
+날짜 객체 생성 : New Date(); : (O)
+</pre></code>
+</div>
+                <li>코드 한 줄 작성 후에는 세미콜론(;)을 쓴다. 쓰지 않으면 한 줄에 2개의 코드를 작성할 경우 오류 발생</li>
+                <div class="code">
+                    <pre><code>document.write("hi") document.write("bye") : (x)
+document.write("hi"); document.write("bye"); : (O)
+</pre></code>
+</div>
+                <li>코드를 작성할 때는 한 줄에 한 문장만 작성하는 것이 가독성을 위해 좋다.</li>
+                <div class="code">
+                    <pre><code>BAD : document.write("hi"); document.write("bye"); 
+GOOD :            
+ document.write("hi"); 
+ document.write("bye");
+</pre></code>
+</div>
+                <li>문자형 데이터를 작성할 때: 큰따옴표("")와 작은따옴표('')의 겹침 오류 주의</li>
+                <div class="code">
+                    <pre><code>큰 따옴표 겹침 오류
+document.write("겹침 "오류를 주의해야" 합니다");    
+잘된 예
+document.write('겹침 "오류를 주의해야" 합니다');
+document.write("겹침 /"오류를 주의해야/" 합니다"); 
+</pre></code>
+</div>
+                <li>코드를 작성할 때 중괄호{} or 소괄호()의 짝이 맞아야 합니다.</li>
+                <div class="code">
+                    <pre><code>document.write("hi";  : (x)
+document.write("hi"); : (O)
+</pre></code>
+</div>
+
+            </ul>
+        </div>
+    </main>
+</body>
+</html>

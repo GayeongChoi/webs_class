@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문:자바스크립트</title>
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/javascript.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/javascript.png">
+    <link rel="icon" href="../assets/face/javascript.png" sizes="128x128">
+    <!-- style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+</head>
+<body>
+    <header id="header">
+        <h1><a href="index.html">Javascript</a></h1>
+        <nav>
+            <ul>
+                <li><a href="reference01.html">기초 문법</a></li>
+                <li><a href="reference02.html">변수</a></li>
+                <li><a href="reference03.html">자료형</a></li>
+                <li><a href="reference04.html">for문</a></li>
+                <li><a href="reference05.html">연산자</a></li>
+                <li class="active"><a href="reference06.html">조건문</a></li>
+                <li><a href="reference07.html">반복문</a></li>
+                <li><a href="reference08.html">함수</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+    <main id="main">
+        <div class="doc">
+            <h2>조건문</h2>
+            <p>
+                조건문은 조건식의 값이 참(true)인지, 거짓(false)인지에 따라 자바스크립트 코드를 제어합니다. <br>
+                예를 들어 질의응답 창을 이용해 방문자가 좋아하눈 숫자를 입력받았습니다.
+                이때 입력된 값을 2로 나누어 나머지 값이 0이면 "딩신이 좋아하는 숫자는 짝수입니다."라고 출력하게 하고,
+                아닐 경우에는 "딩신이 좋아하는 숫자는 짝수입니다."라고 출력하게 한다고 합시다.
+                이렇게 수를 나눈 나머지 값에 따라 다른 결과를 출력하게 하려면 조건문을 사용해야 합니다. <br>
+                조건문의 종류에는 if문, else문, 그리고 else if문 등이 있습니다.
+            </p>
+
+            <h2>if문</h2>
+            <p>
+                if문은 조건식을 만족(true)할 경우에만 코드를 실행합니다. <br>
+                Boolean() 내장 메서드와 마찬가지로 어떤 데이터를 입력하든 true or false로 반환합니다.
+            </p>
+            <div>
+            <h4>if문 기본형</h4>
+<div class="code">
+<pre><code>{
+    if(조건식) {
+        자바스크립트 코드; 
+    }
+}</code></pre>
+</div>
+            <h4>if문 예시(1)</h4>
+<div class="code">
+<pre><code>{
+    var num=10
+    if(num&lt;100) {   //true로 반환
+        document.write("hello");  
+    }
+}  //hello라고 출력됨. </code></pre>
+</div>
+            <h4>if문 예시(2) - Boolean()메서드에 0입력했을 때와 같음</h4>
+<div class="code">
+<pre><code>{
+    if(0) {   //false로 반환
+        document.write("hello");  
+    }
+}  //실행되지 않음. </code></pre>
+</div>
+               <h4>조건식에 논리형 데이터가 아닌 다른 형이 오는 경우</h4>
+                <p>
+                    조건식에 논리형 데이터(true, face)가 아닌 다른 형의 데이터가 입력되어도 true 또는 false로 인식 됩니다. <br>
+                    다음 값이 조건식이에 입력되면 flase로 반환, 그 밖의 값은 true로 인식합니다.
+                </p>
+                <div class="line">0, null, undefined, ""(빈문자)</div>
+
+                <h3>else문</h3>
+                <p>
+                    else문은 조건식을 만족할(true)경우와 만족하지 않을(false) 경우에 따라 실행되는 코드가 달라집니다.
+                    즉, 두 가지 결과가 나올 수 있습니다.
+                </p>
+                <h4>else문 기본형</h4>
+<div class="code">
+<pre><code>{
+    if(조건식) {
+        자바스크립트 코드1; 
+    } else {
+        자바스크립트 코드2; 
+    }
+}</code></pre>
+</div>
+                <h3>if else문</h3>
+                <p>
+                    if else문은 두 가지 이상의 조건식과 정해 놓은 조건을 만족하지 않았을 때 실행되는 코드로 이루어져 있습니다.
+                </p>
+                <h4>if else문의 기본형</h4>
+<div class="code">
+<pre><code>{
+    if(조건식1) {
+        코드1; 
+    } else if(조건식2) {
+        코드2; 
+    } else if(조건식3) {
+        코드3; 
+    } else if(조건식4) {
+        코드4; 
+    }
+}</code></pre>
+</div>
+
+
+                <h3>중첩 if문</h3>
+                <p>
+                    중첩 if문은 조건문 in 조건문, 조건문 안에 조건문이 있으면 중첩 if문이라고 합니다.
+                </p>
+                <h4>중첩 if문의 기본형</h4>
+<div class="code">
+<pre><code>{
+    if(조건식1) {
+    } if(조건식2) {
+        코드; 
+}</code></pre>
+        </div>
+    </main>
+</body>
+</html>

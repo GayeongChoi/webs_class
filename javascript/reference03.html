@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자료형:자바스크립트</title>
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/javascript.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/javascript.png">
+    <link rel="icon" href="../assets/face/javascript.png" sizes="128x128">
+    <!-- style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">Javascript</a></h1>
+        <nav>
+            <ul>
+                <li><a href="reference01.html">기초 문법</a></li>
+                <li><a href="reference02.html">변수</a></li>
+                <li class="active"><a href="reference03.html">자료형</a></li>
+                <li><a href="reference04.html">for문</a></li>
+                <li><a href="reference05.html">연산자</a></li>
+                <li><a href="reference06.html">조건문</a></li>
+                <li><a href="reference07.html">반복문</a></li>
+                <li><a href="reference08.html">함수</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <div class="doc">
+            <h2>데이터 타입(자료형)</h2>
+            <p>변수에는 여러가지 유형이 들어갈 수 있습니다.
+                프로그램 언어에 있어 가장 기본적인 요소이며,데이터 타입이라고 합니다.
+                데이터 타입에는 숫자, 문자열, 논리값, 특수값, 심벌, 객체, 배열, 함수 등을 표현할 수 있습니다</p>
+
+            <h3>숫자(Number)</h3>
+            <p>
+                숫자형(Number) 데이터는 단어 의미 그대로 숫자를 의미.
+                "100"과 같이 큰따옴표가 숫자를 감싸면 숫자가 아닌 문자형 데이터이다.
+                이 경우에는 Number("100")를 이용하면 문자형 데이터를 숫자형 데이터로 바꿀 수 있다.
+            </p>
+            <div class="line">
+                기본형 : var 변수명 = 숫자; or Number("문자형 숫자");
+            </div>
+            <div class="code">            
+<pre><code>{
+    var s = 100;
+    var t = Number("500"); // "500" → 500
+
+    document.write(s); // 100
+    document.write(t); // 500
+}</code></pre> 
+            </div>    
+
+            <h3>문자열(String)</h3>
+            <p>
+                문자형(Sting) 데이터는 문자나 숫자를 큰따옴표("") or 작은따옴표('')로 감싸고 있다.
+                또한 문자형 데이터에 HTML 태그를 포함하여 출력하면 태그로 인식한다.
+            </p>
+
+            <div class="line">
+                기본형 : var 변수명 = "사용할 문자 or 숫자";
+            </div>
+           
+            <div class="code">
+<pre><code>{
+    var s ="javascript";
+    var num = "100";
+    var tag = "&lt;h1&gt;String&lt;/h1&gt;";
+
+    document.write(s);  // javascript
+    document.write(num);// 100
+    document.write(tag);// Srting
+}</code></pre>
+            </div>
+
+            <h3>논리값(Blooean)</h3>
+            <p>
+                논리형(Boolean)데이터는 true(참) 또는 false(거짓)이 있다.
+                이 데이터들은 주로 2개의 데이터를 비교할 때 나오는 결과이다.
+                예)'100보다 10이 크다'는 잘못된 비교이므로 값은 false이 된다.
+            </p>
+            <div class="line">
+                기본형 : var 변수명 = true or false; 또는 Boolean(데이터);
+            </div>
+            <div class="code">
+<pre><code>{
+    var s = true;
+    var t = 10>=100; //false
+    var k = Boolean("hello"); //true
+
+    document.write(s);// true
+    document.write(t);// false
+    document.write(k);// true
+}</code></pre>
+            </div>
+
+            <p>
+                Boolean() 메서드에 데이터를 입력하면 논리형 데이터인 true 또는 flase를 반환한다.
+                Boolean() 메서드는 숫자 0과 null, undefined, 빈 문자(" ")를 제외한 모든 데이터에 대해 true로 반환,
+                0을 입력하면 false로 반환한다. 문자 데이터인 '홍길동'은 true로 반환
+            </p>
+            <div class="code">
+<pre><code>{
+    var m = Boolean(0); //false
+    var k = Boolean("홍길동"); //true
+
+    document.write(m);// false
+    document.write(k);// true
+}</code></pre>
+            </div>
+
+            <h3>특수값(Null)</h3>
+            <p>
+                null은 변수에 저장된 값이 null인 경우를 가르킨다.
+                변수에 저장된 데이터를 비우고자 할 때 사용하는 값.
+            </p>
+            <div class="code">
+<pre><code>{
+    var t = hello;
+        t = null;
+}</code></pre>
+            </div>
+
+            <h3>특수값(Undefined)</h3>
+            <p>
+                undefined는 변수에 값이 등록되기 전의 기본값.
+            </p>
+            <div class="code">
+<pre><code>{
+    var s; 
+
+    document.write(s); //Undefined    
+}</code></pre>
+            </div>
+
+            <h3>심벌(Symbol)</h3>
+            <p>심벌(Symbol)는 유일한 식별자를 만들 때 쓰임, 유일성이 보장 된다.즉 전체 코드 중에 딱 하나
+                특정 위치에 원본 데이터는 건들이지 않고 속성 추가, 
+                다른 사람이 만든 객체에 자신만의 객체를 추가해서 덮어씌울 수 있다.    
+            </p>
+            <div class="code">
+<pre><code>{
+    const symbol1 = Symbol();
+    const symbol2 = Symbol(42);
+    const symbol3 = Symbol('foo');
+
+    console.log(typeof symbol1);
+    // expected output: "symbol"
+
+    console.log(symbol2 === 42);
+    // expected output: false
+
+    console.log(symbol3.toString());
+    // expected output: "Symbol(foo)"
+
+    console.log(Symbol('foo') === Symbol('foo'));
+    // expected output: false  
+}</code></pre>
+            </div>
+
+            <h3>객체(Object)</h3>
+            <p>
+                객체(Object)은 배열과 함께 참조 자료형으로 속하는 자료형인데 
+                하나의 데이터 형에 여러 개의 데이터를 표현하기 위해 사용하는 자료형.
+                객체는 중괄호{}로도 데이터를 표현할 수 있다.
+                배열은 ler arr = 10; 바로 값을 적을 수 있지만 
+                객체는 ler obj = {키Key:값Value}; 을 사용, 키와 값을 한데 묶어서 속성(Property)이라고 한다.
+                배열에는 값만 있지만 객체는 키와 값으로 구성되어 있지만 
+                키의 식별자명으로 인해서 배열보다는 데이터가 어떤 값으로 나타내는 건지
+                직관적으로 파악할 수 있음
+                <br>예시 :  [데이터 저장하기] 페이지 참고.
+            </p>
+                
+            <h3>배열(Array)</h3>
+            <p>
+                배열(Array)은 변수는 하나의 데이터만을 저장했지만  
+                하나의 변수에 여러개의 데이터(값)을 저장할 때 시용하는 자료형.
+                <br>예시 : [데이터 저장하기] 페이지 참고.
+            </p>
+
+            <h3>함수(Function)</h3>
+            <p>
+                함수(Function)는 일련된 공통의 작업을 처리하기 위해서 연관된 코드들을 모아 놓은 자료형.
+                키워드 Function로 선언, {}안에 코드 작성 하면 코드가 일괄적으로 실행시키는 기능이다.
+                선언은 함수 선언식(Function Declarations)과 함수 표현식(Function expression)으로 선언하고
+                함수를 실행 하는 것을 함수를 호출한다고 한다.
+            </p>
+        
+                <p><strong>함수선언식(Function Declarations)</strong></p>
+<div class="code">
+<pre><code>{
+    function 함수명() {
+     //이 안에 코드 작성를 작성
+    }  
+}</code></pre>
+                </div>
+
+            <div class="line">
+                함수 호출 : 함수명();
+            </div>
+<div class="code">
+<pre><code>{
+    function ptintHello() {
+        console.long("hello")
+        };  
+        
+    ptintHello(); //hello 
+}</code></pre>
+</div>
+                
+                <p><strong>함수 표현식(Function expression)</strong></p>
+                <p>
+                    변수에 함수를 할당하는 형식으로 함수를 선언하는 방법
+                    (함수도 자료형중 하나기에 변수에 할당가능)
+                </p>
+<div class="code">
+<pre><code>{
+    const 변수명 = function 함수명() {
+      //code
+    }; 
+}</code></pre>
+</div>
+<div class="code">
+<pre><code>{
+    const ptintHello =function ptintHello() {
+        console.long("hello");
+      };
+      
+    ptintHello(); //hello
+}</code></pre>
+</div>
+                <p><strong>예시) 구구단을  반복해서 출력하는 코드</strong></p>
+                <p>
+                    *함수 사용하지 않았을 시 
+                    <br>반복해서 코드를 입력 : 자바스크립트 성능 하락과 유지보수가 힘듦
+                </p>
+<div class="code">
+<pre><code>{
+    console.log("3 * 1 = 3");
+    console.log("3 * 2 = 6");
+    console.log("3 * 3 = 9");
+    
+    console.log("3 * 1 = 3");
+    console.log("3 * 2 = 6");
+    console.log("3 * 3 = 9");
+    
+    console.log("3 * 1 = 3");
+    console.log("3 * 2 = 6");
+    console.log("3 * 3 = 9"); 
+}</code></pre>
+</div>
+            <p>
+                *함수 사용 시(함수 선언식)
+                <br>코드를 반복하고 싶으면 함수 반복적으로 함수를 호출하기만 하면 된다 
+            </p>
+<div class="code">
+<pre><code>{
+    function gugudan() {
+        console.log("3 * 1 = 3");
+        console.log("3 * 2 = 6");
+        console.log("3 * 3 = 9");
+    };
+    
+    gugudan(); 
+    /* 
+    3 * 1 = 3
+    3 * 2 = 6
+    3 * 3 = 9 
+    */
+}</code></pre>
+</div>         
+            <p>
+                *함수 표현식
+                <br>함수 표현식은 변수의 이름const 'gugudan'으로 만 호출 가능
+                함수의 이름function gugudan1();을 바꾸어도, 함수 이름이 없어도function() 호출 가능 
+            </p>
+            <div class="line">
+                익명 함수(Anonymous function) : 함수의 이름이 없는 경우 : function();
+            </div>
+<div class="code">
+<pre><code>{
+    const gugudan = function gugudan1() {
+        console.log("3 * 1 = 3");
+        console.log("3 * 2 = 6");
+        console.log("3 * 3 = 9");
+    };
+    
+    gugudan(); 
+    /*
+    3 * 1 = 3
+    3 * 2 = 6
+    3 * 3 = 9
+    */
+    
+    function gugudan1(); // 오류
+    
+    function();
+    /*
+    3 * 1 = 3
+    3 * 2 = 6
+    3 * 3 = 9
+    */
+}</code></pre> 
+</div>   
+
+        </div>
+    </main>
+</body>
+
+</html>

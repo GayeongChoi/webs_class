@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃</title>
+
+    <style>
+        * {
+            margin: 0;
+            background: #E3F2FD;
+        }
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        #header {
+            height: 100px;
+            background: #BBDEFB;
+        }
+        #nav {
+            height: 100px;
+            background: #90CAF9;
+        }
+        #main {
+            height: 750px; 
+            overflow: hidden;
+        }
+        #aside {
+            float: left;
+            height: 750px;
+            width: 25%;
+            background: #64B5F6;
+        }
+        #article {
+            float: left;
+            width: 75%;
+        }
+        .article1 {
+            height: 250px;
+            background: #42A5F5;
+        }
+        .article2 {
+            height: 250px;
+            background: #2196F3;
+        }
+        .article3 {
+            height: 250px;
+            background: #1E88E5;
+        }
+        #footer {
+            height: 100px;
+            background: #1976D2;
+        }
+        @media (max-width:1300px) {
+            #wrap {
+                width: 96%;
+            }
+            .article1 {
+                float: left;
+                width: 100%;
+            }
+            .article2 {
+                float: left;
+                width: 50%;
+                height: 500px;
+            }
+            .article3 {
+                float: left;
+                width: 50%;
+                height: 500px;
+            }
+        }
+        @media (max-width:786px) {
+            #article {
+                height: 750px;
+            }
+            .article1 {
+                height: 50%;
+            }
+            .article2 {
+                width: 100%;
+                height: 50%;
+            }
+        }
+        @media (max-width:480px) {
+            #aside {
+                width: 100%;
+                height: 200px;
+            }
+            #article {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+        <nav id="nav"></nav>
+        <main id="main">
+            <aside id="aside"></aside>
+            <article id="article">
+                <article class="article1"></article>
+                <article class="article2"></article>
+                <article class="article3"></article>
+            </article>
+        </main>
+        <footer id="footer"></footer>
+    </div>
+</body>
+</html>

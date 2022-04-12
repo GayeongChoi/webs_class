@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃</title>
+
+    <style>
+        *{
+            margin: 0;
+            background: #E8F5E9;
+        }
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        #header {
+            height: 100px;
+            background: #C8E6C9;
+        }
+        #nav {
+            height: 100px;
+            background: #A5D6A7;
+        }
+        #main {
+            height: 700px;
+            display: flex;
+        }
+        #aside {
+            width: 20%;
+            background: #4CAF50;
+        }
+        #contents {
+            width: 60%;
+            background: #43A047;
+        }
+        #article {
+            width: 20%;
+            background: #2E7D32;
+        }
+        #footer {
+            height: 100px;
+            background: #1B5E20;
+        }
+        @media (max-width: 1220px) {
+            #wrap {
+                width: 96%;
+            }
+            #main {
+                flex-wrap: wrap;
+            }
+            #aside {
+                width: 30%;
+                height: 500px;
+            }
+            #contents {
+                width: 70%;
+                height: 500px;
+            }
+            #article {
+                width: 100%;
+                height: 200px;
+            }
+        }
+        @media (max-width: 768px) {
+            #wrap {
+                width: 100%;
+            }
+        }
+        @media (max-width: 600px) {
+            #aside {
+                width: 100%;
+                height: 300px;
+            }
+            #contents {
+                width: 100%;
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+        <nav id="nav"></nav>
+        <main id="main">
+            <aside id="aside"></aside>
+            <section id="contents"></section>
+            <article id="article"></article>
+        </main>
+        <footer id="footer"></footer>
+    </div>
+</body>
+</html>
