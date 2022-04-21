@@ -7,75 +7,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>게임 메인 페이지</title>
 
-  <link rel="stylesheet" href="css/fonts.css">
-  <link rel="stylesheet" href="css/background.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="assets/css/fonts.css">
+  <link rel="stylesheet" href="assets/css/bg.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 
   <style>
-    body {
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-      cursor: none;
-    }
+  /* .cardGame {
+    position: absolute;
+    width: 710px;
+    height: 710px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+  }
 
-    /* 게임 */
-    iframe {
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      border-radius: 3%;
-    }
+  .cardGame.show {
+    display: block;
+  } */
 
-    .musicBox {
-      position: absolute;
-      right: -500px;
-      top: 50px;
-      width: 380px;
-      height: 590px;
-      transition: all 0.4s;
-    }
+  .typingGame {
+  position: absolute;
+  width: 50vw;
+  height: 690px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
 
-    .musicBox.show {
-      right: 10px;
-    }
+.typingGame.show {
+  display: block;
+}
 
-    .cardGame {
-      position: absolute;
-      width: 710px;
-      height: 710px;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      display: none;
-    }
-
-    .cardGame.show {
-      display: block;
-    }
-
-    .typingGame {
-      position: absolute;
-      width: 50vw;
-      height: 690px;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      display: none;
-    }
-
-    .typingGame.show {
-      display: block;
-    }
-
-    .cursor {
-      position: absolute;
-      left: 0;
-      top: 0;
-    }
-    .cursor img {
-      width: 10%;
-    }
   </style>
 </head>
 
@@ -97,45 +61,35 @@
         <img src="https://assets.codepen.io/756881/pointer.svg" alt="커서">
       </div>
 
-
       <section class="icon__inner">
         <div class="btn btn1">
           <a href="#">
             <div class="icon">
-              <img src="img/guitar-light.svg" alt="">
+              <img src="assets/img/guitar-light.svg" alt="">
             </div>
             <div class="txt">music</div>
           </a>
         </div>
+
         <div class="btn btn2">
           <a href="#">
             <div class="icon">
-              <img src="img/guitar-light.svg" alt="">
+              <img src="assets/img/guitar-light.svg" alt="">
             </div>
             <div class="txt">card Game</div>
           </a>
         </div>
+
         <div class="btn btn3">
           <a href="#">
             <div class="icon">
-              <img src="img/guitar-light.svg" alt="">
+              <img src="assets/img/guitar-light.svg" alt="">
             </div>
             <div class="txt">typing Game</div>
           </a>
         </div>
+
       </section>
-
-      <div class="musicBox">
-        <iframe src="musicPlayer/index.html" frameborder="0"></iframe>
-      </div>
-
-      <div class="cardGame">
-        <iframe src="memoryGame/index.html" frameborder="0"></iframe>
-      </div>
-
-      <div class="typingGame">
-        <iframe src="typingGame/index.html" frameborder="0"></iframe>
-      </div>
 
       <section class="game__inner" style="display: none;">
         <article class="game">
@@ -181,13 +135,29 @@
       </section>
     </main>
 
+    <div class="memoryBox">
+      <iframe src="index2.html" frameborder="0"></iframe>
+    </div>
+
+    <div class="musicBox">
+      <iframe src="musicPlayer/index.html" frameborder="0"></iframe>
+    </div>
+
+    <!-- <div class="cardGame">
+      <iframe src="memoryGame/index.html" frameborder="0"></iframe>
+    </div> -->
+
+    <div class="typingGame">
+      <iframe src="typingGame/index.html" frameborder="0"></iframe>
+    </div>
+
+
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <script src="../javascript/effect/js/gsap.min.js"></script>
   <script>
- 
     $(".btn1").draggable();
     $(".btn2").draggable();
     $(".btn3").draggable();
@@ -198,7 +168,7 @@
     });
 
     $(".btn2").click(function () {
-      $(".cardGame").toggleClass("show")
+      $(".memoryBox").toggleClass("show")
     });
 
     $(".btn3").click(function () {
@@ -223,16 +193,14 @@
       printTime();
     }
 
-       //커서
-       const cursor = document.querySelector(".cursor"); //div.cursor
+      //커서
+      const cursor = document.querySelector(".cursor"); //div.cursor
       window.addEventListener("mousemove", (e) => {
       gsap.to(cursor, {
         left: e.pageX - 5,
         top: e.pageY - 5
       })
     });
-    
-    
   </script>
 
 </body>

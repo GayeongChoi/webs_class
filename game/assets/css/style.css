@@ -6,6 +6,23 @@
   text-decoration-line : none;
 }
 
+body {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  cursor: none;
+}
+
+/* 커서 */
+.cursor {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.cursor img {
+  width: 10%;
+}
+
 #header {
   display: flex;
   height: 40px;
@@ -45,10 +62,6 @@ main {
 }
 
 
-
-
-
-
 /* 게임 아이콘 */
 .game__inner {
   display: flex;
@@ -66,3 +79,44 @@ main {
   display: block;
   margin: 0px auto; 
 }
+
+/* 뮤직 박스 */
+.musicBox {
+  position: absolute;
+  right: -500px;
+  top: 50px;
+  width: 380px;
+  height: 590px;
+  transition: all 0.4s;
+}
+.musicBox.show {
+  right: 10px;
+}
+
+/* 메모리 박스 */
+.memoryBox {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 600px;
+  height: 600px;
+  border-radius: 10px;
+  overflow: hidden;
+
+}
+
+/* 게임 */
+iframe {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 3%;
+}
+
+
+
+
+
