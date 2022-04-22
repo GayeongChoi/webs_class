@@ -12,20 +12,6 @@
   <link rel="stylesheet" href="assets/css/style.css">
 
   <style>
-  /* .cardGame {
-    position: absolute;
-    width: 710px;
-    height: 710px;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    display: none;
-  }
-
-  .cardGame.show {
-    display: block;
-  } */
-
   .typingGame {
   position: absolute;
   width: 50vw;
@@ -45,27 +31,37 @@
 
 <body>
   <!-- 
-    시계: 년도삭제 /위치, 폰트 변경
     아이콘: 이미지 변경
     게임 팝업 이미지 변경
    -->
    
   <div id="wrap">
     <header id="header">
-      <h1>Game Site</h1>
+      <h1>GAME SITE</h1>
       <span id="clock"></span>
     </header>
     <main>
 
-      <div class="cursor">
+      <!-- <div class="cursor">
         <img src="https://assets.codepen.io/756881/pointer.svg" alt="커서">
-      </div>
+      </div> -->
 
       <section class="icon__inner">
+
+        <a href="../index.html">
+          <div class="btn">
+              <div class="icon">
+                <img src="assets/img/icon/icon-apprentice.svg" alt="">
+              </div>
+              <div class="txt">MAIN SITE</div>
+          </div>
+        </a>
+
+        <!-- 버튼 -->
         <div class="btn btn1">
           <a href="#">
             <div class="icon">
-              <img src="assets/img/guitar-light.svg" alt="">
+              <img src="assets/img/6.ico" alt="">
             </div>
             <div class="txt">music</div>
           </a>
@@ -74,7 +70,7 @@
         <div class="btn btn2">
           <a href="#">
             <div class="icon">
-              <img src="assets/img/guitar-light.svg" alt="">
+              <img src="assets/img/icon/icon_heart-balloon(pink).ico" alt="">
             </div>
             <div class="txt">card Game</div>
           </a>
@@ -89,68 +85,40 @@
           </a>
         </div>
 
-      </section>
+        <div class="btn btn4">
+          <a href="#">
+            <div class="icon">
+              <img src="assets/img/guitar-light.svg" alt="">
+            </div>
+            <div class="txt">javascript</div>
+          </a>
+        </div>
 
-      <section class="game__inner" style="display: none;">
-        <article class="game">
-          <a href="#">
-            <img class="icon"
-              src="https://cdn.sanity.io/images/n2xqoc16/production/e6655b12f263328a9ea43f3c4072471682484297-70x49.svg"
-              alt="">
-            <div class="txt">Game01</div>
-          </a>
-        </article>
-        <article class="game">
-          <a href="#">
-            <img class="icon"
-              src="https://cdn.sanity.io/images/n2xqoc16/production/c6f4b70006847102e7f73573970121ca410cb1da-70x68.svg"
-              alt="">
-            <div class="txt">Game01</div>
-          </a>
-        </article>
-        <article class="game">
-          <a href="#">
-            <img class="icon"
-              src="https://cdn.sanity.io/images/n2xqoc16/production/7daf5d0aafcf20f71017555592be39a3105ff2db-63x80.svg"
-              alt="">
-            <div class="txt">Game01</div>
-          </a>
-        </article>
-        <article class="game">
-          <a href="#">
-            <img class="icon"
-              src="https://cdn.sanity.io/images/n2xqoc16/production/ec658febeb2c6dd7ca82577abce9fa23d4be1307-65x80.svg"
-              alt="">
-            <div class="txt">Game01</div>
-          </a>
-        </article>
-        <article class="game">
-          <a href="#">
-            <img class="icon"
-              src="https://cdn.sanity.io/images/n2xqoc16/production/55ac27f631da0ed5a4dbf172a66b9b5580c367b3-67x54.svg"
-              alt="">
-            <div class="txt">Game01</div>
-          </a>
-        </article>
       </section>
     </main>
 
-    <div class="memoryBox">
-      <iframe src="index2.html" frameborder="0"></iframe>
-    </div>
+    <section class="popup_inner">
 
-    <div class="musicBox">
-      <iframe src="musicPlayer/index.html" frameborder="0"></iframe>
-    </div>
+      <div class="memoryBox">
+        <iframe src="index2.html" frameborder="0"></iframe>
+      </div>
 
-    <!-- <div class="cardGame">
-      <iframe src="memoryGame/index.html" frameborder="0"></iframe>
-    </div> -->
+      <div class="musicBox">
+        <iframe src="musicPlayer/index.html" frameborder="0"></iframe>
+      </div>
 
-    <div class="typingGame">
-      <iframe src="typingGame/index.html" frameborder="0"></iframe>
-    </div>
+      <div class="typingGame">
+        <iframe src="typingGame/index.html" frameborder="0"></iframe>
+      </div>
+      
+    
+     
+      
 
+
+
+
+    </section>
 
   </div>
 
@@ -158,6 +126,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <script src="../javascript/effect/js/gsap.min.js"></script>
   <script>
+    $(".btn").draggable();
     $(".btn1").draggable();
     $(".btn2").draggable();
     $(".btn3").draggable();
@@ -175,13 +144,20 @@
       $(".typingGame").toggleClass("show")
     });
 
+    $(".btn4").click(function () {
+      $(".popup").toggleClass("show")
+    });
+
+    $(".close").click(function () {
+      $(".popup").toggleClass("show")
+    });
+
     //현재시간
     function printTime() {
       var clock = document.getElementById("clock"); // 출력할 장소 선택
       var now = new Date(); // 현재시간
       var nowTime =
-        now.getFullYear() + "년" +
-        (now.getMonth() + 1) + "월" +
+        (now.getMonth() + 1) + "월&nbsp" +
         now.getDate() + "일&nbsp" +
         now.getHours() + ":" +
         now.getMinutes() + ":" +
