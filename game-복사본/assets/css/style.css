@@ -1,0 +1,207 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing:content-box;
+  font-family: 'DungGeunMo';
+  text-decoration-line : none;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  /* cursor: none; */
+}
+
+.show{
+  display: block;
+}
+
+/* 커서 */
+/* .cursor {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+}
+.cursor img {
+  width: 10%;
+} */
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  background: #E4DBEE;
+  padding: 0 1%;
+}
+#header span {
+  font-size: 1.3em;
+  line-height: 2;
+  font-family: 'LABDigital';
+}
+main {
+  padding: 20px;
+}
+
+/* 아이콘 */
+.icon__inner {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.btn {
+  padding: 20px;
+}
+.icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(to top, #a8edea 0%, rgba(254,214,227,0.5) 100%);
+  padding: 8%;
+  border-radius: 50px;
+  display: block;
+  margin: 0 auto;
+}
+.icon img {
+  width: inherit;
+}
+
+.txt {
+  /* width: 100px; */
+  height: 20px;
+  background: #31F8CC;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 20px;
+  text-transform: uppercase;
+  padding: 2px 5px;
+}
+
+
+/* 뮤직 박스 */
+.musicBox {
+  position: absolute;
+  right: -500px;
+  top: 50px;
+  width: 380px;
+  height: 590px;
+  transition: all 0.4s;
+}
+.musicBox.show {
+  right: 10px;
+}
+
+/* 메모리 박스 */
+.memoryBox {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 600px;
+  height:700px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: none;
+}
+.memoryBox.show{
+  display: block;
+}
+
+
+/* 팝업 */
+.popup {
+  /* height: 100%; */
+  width: 90vw;
+  height: 85vh;
+  /* background: #fff; */
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #c7c7c7;
+  border-left: 2px solid #FCFCFC;
+  border-top: 2px solid #FCFCFC;
+  border-right: 2px solid #2A2A2A;
+  border-bottom: 2px solid #2A2A2A;
+  padding: 4px;
+  z-index: 2;
+  display: none;
+}
+.popup.show {
+  display: block;
+}
+
+.popup > iframe {
+  height: 95%;
+}
+.popup .bar {
+  width: 100%;
+  height: 5%;
+  min-height: 35px;
+  background-color: #000080;
+  padding: 5px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+
+}
+.popup .bar .close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 90%;
+  min-height: 25px;
+  background: #000;
+  float: right;
+  background-color: #c7c7c7;
+  border-left: 2px solid #FCFCFC;
+  border-top: 2px solid #FCFCFC;
+  position: relative;
+}
+.close > .symbol {
+  width: 60%;
+  height: 3px;
+  background-color: #000000;
+  transform: rotate(45deg);
+}
+.close > .symbol::after {
+  content: "";
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #000000;
+  transform: rotate(90deg);
+}
+.close:hover {
+  background-color: #bababa;
+  border-left: 2px solid #2A2A2A;
+  border-top: 2px solid #2A2A2A;
+  border-right: 2px solid #FCFCFC;
+  border-bottom: 2px solid #FCFCFC;
+}
+
+
+
+
+/* 게임 */
+iframe {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  /* border-radius: 3%; */
+}
+
+
+
+
+
