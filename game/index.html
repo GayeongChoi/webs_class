@@ -13,19 +13,97 @@
 
   <style>
   .typingGame {
-  position: absolute;
-  width: 50vw;
-  height: 690px;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  display: none;
-}
+    position: absolute;
+    width: 50vw;
+    height: 690px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+  }
 
-.typingGame.show {
-  display: block;
-}
+  .typingGame.show {
+    display: block;
+  }
 
+  /* 팝업 디자인*/
+  .popup {
+    /* height: 100%; */
+    width: 90vw;
+    height: 85vh;
+    /* background: #fff; */
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #c7c7c7;
+    border-left: 2px solid #FCFCFC;
+    border-top: 2px solid #FCFCFC;
+    border-right: 2px solid #2A2A2A;
+    border-bottom: 2px solid #2A2A2A;
+    padding: 4px;
+    z-index: 2;
+    display: none;
+  }
+  .popup.show {
+    display: block;
+  }
+
+  .popup > iframe {
+    height: 95%;
+  }
+  .popup .bar {
+    width: 100%;
+    height: 5%;
+    min-height: 35px;
+    background-color: #000080;
+    padding: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+
+  }
+  .popup .bar .close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 90%;
+    min-height: 25px;
+    background: #000;
+    float: right;
+    background-color: #c7c7c7;
+    border-left: 2px solid #FCFCFC;
+    border-top: 2px solid #FCFCFC;
+    position: relative;
+  }
+  .close > .symbol {
+    width: 60%;
+    height: 3px;
+    background-color: #000000;
+    transform: rotate(45deg);
+  }
+  .close > .symbol::after {
+    content: "";
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #000000;
+    transform: rotate(90deg);
+  }
+  .close:hover {
+    background-color: #bababa;
+    border-left: 2px solid #2A2A2A;
+    border-top: 2px solid #2A2A2A;
+    border-right: 2px solid #FCFCFC;
+    border-bottom: 2px solid #FCFCFC;
+  }
   </style>
 </head>
 
@@ -40,61 +118,234 @@
       <h1>GAME SITE</h1>
       <span id="clock"></span>
     </header>
-    <main>
 
+    <main>
       <!-- <div class="cursor">
         <img src="https://assets.codepen.io/756881/pointer.svg" alt="커서">
       </div> -->
 
       <section class="icon__inner">
 
-        <a href="../index.html">
-          <div class="btn">
+          <!-- 버튼 -->
+          <div id="btn" class="btn btn1">
+            <a href="#">
               <div class="icon">
-                <img src="assets/img/icon/icon-apprentice.svg" alt="">
+                <img src="assets/img/icon/music.png" alt="">
               </div>
-              <div class="txt">MAIN SITE</div>
+              <div class="txt">music</div>
+            </a>
           </div>
-        </a>
 
-        <!-- 버튼 -->
-        <div class="btn btn1">
-          <a href="#">
-            <div class="icon">
-              <img src="assets/img/6.ico" alt="">
+          <div  id="btn" class="btn btn2">
+            <a href="#">
+              <div class="icon">
+                <img src="assets/img/icon/icon_heart-balloon(pink).ico" alt="">
+              </div>
+              <div class="txt">card Game</div>
+            </a>
+          </div>
+
+          <div  id="btn" class="btn btn3">
+            <a href="#">
+              <div class="icon">
+                <img src="assets/img/icon/24S2.gif" alt="">
+              </div>
+              <div class="txt">typing Game</div>
+            </a>
+          </div>
+
+            <div id="btn" class="btn btn0">
+                <a href="../index.html">
+                  <div class="icon">
+                    <img src="assets/img/icon/roll.gif" alt="">
+                  </div>
+                  <div class="txt">MAIN SITE</div>
+                </a>
             </div>
-            <div class="txt">music</div>
-          </a>
-        </div>
 
-        <div class="btn btn2">
-          <a href="#">
-            <div class="icon">
-              <img src="assets/img/icon/icon_heart-balloon(pink).ico" alt="">
+            <div id="btn" class="btn btn0">
+              <a href="../class/index.html" target="_blank">
+                <div class="icon">
+                  <img src="assets/img/icon/star.png" alt="">
+                </div>
+                <div class="txt">class</div>
+              </a>
             </div>
-            <div class="txt">card Game</div>
-          </a>
-        </div>
+            <!-- //class -->
 
-        <div class="btn btn3">
-          <a href="#">
-            <div class="icon">
-              <img src="assets/img/guitar-light.svg" alt="">
-            </div>
-            <div class="txt">typing Game</div>
-          </a>
-        </div>
+          <div id="btn" class="btn btn0">
+            <a href="../javascript/index.html" target="_blank">
+              <div class="icon">
+                <img src="assets/img/icon/cat.gif" alt="">
+              </div>
+              <div class="txt">javascript</div>
+            </a>
+          </div>
+          <!-- //javascript -->
 
-        <div class="btn btn4">
-          <a href="#">
-            <div class="icon">
-              <img src="assets/img/guitar-light.svg" alt="">
-            </div>
-            <div class="txt">javascript</div>
-          </a>
-        </div>
+          <div id="btn" class="btn btn0">
+            <a href="../refer/index.html" target="_blank">
+              <div class="icon">
+                <img src="assets/img/icon/refer.png" alt="">
+              </div>
+              <div class="txt">refer</div>
+            </a>
+          </div>
+          <!-- //refer -->
 
+          <div id="btn" class="btn btn0">
+            <a href="../layout/index.html" target="_blank">
+              <div class="icon">
+                <img src="assets/img/icon/layout.png" alt="">
+              </div>
+              <div class="txt">layout</div>
+            </a>
+          </div>
+          <!-- //layout -->
+
+          <div id="btn" class="btn btn0">
+            <a href="../flex/index.html" target="_blank">
+              <div class="icon">
+                <img src="assets/img/icon/soces.webp" alt="">
+              </div>
+              <div class="txt">flex</div>
+            </a>
+          </div>
+          <!-- //flex -->
+
+          <div id="btn" class="btn btn0">
+            <a href="../gird/index.html" target="_blank">
+              <div class="icon">
+                <img src="assets/img/icon/123.gif" alt="">
+              </div>
+              <div class="txt">gird</div>
+            </a>
+          </div>
+          <!-- //gird -->
+
+          <div id="btn" class="btn btn0">
+            <a href="../site/webClass/index.html" target="_blank">
+              <div class="icon">
+                <img src="assets/img/icon/loading.gif" alt="">
+              </div>
+              <div class="txt">web_Class</div>
+            </a>
+          </div>
+          <!-- //web_Class -->
+
+          <div id="btn" class="btn btn0">
+            <a href="../webstandard/index.html" target="_blank">
+              <div class="icon">
+                <img src="assets/img/icon/smail.gif" alt="">
+              </div>
+              <div class="txt">web_standard</div>
+            </a>
+          </div>
+          <!-- //web_standard -->
+
+          <div id="btn" class="btn btn0">
+            <a href="../javascript/effect/searchEffect.html" target="_blank">
+              <div class="icon">
+                <div class="icon_bg"></div>
+                <!-- <img src="assets/img/icon/note.jpg" alt=""> -->
+              </div>
+              <div class="txt">search_Effect</div>
+            </a>
+          </div>
+          <!-- //searchEffect -->
+
+          <div id="btn" class="btn btn0">
+            <a href="../javascript/effect/sliderEffect.html" target="_blank">
+              <div class="icon">
+                <img src="assets/img/icon/slider.gif" alt="">
+              </div>
+              <div class="txt">slider_Effect</div>
+            </a>
+          </div>
+          <!-- //sliderEffect -->
+
+          <div id="btn" class="btn btn0">
+            <a href="../javascript/effect/quizEffect.html" target="_blank">
+              <div class="icon">
+                <img src="assets/img/icon/gif/dog.png" alt="">
+              </div>
+              <div class="txt">quiz_Effect</div>
+            </a>
+          </div>
+          <!-- //quizEffect -->
+
+          <div id="btn" class="btn btn0">
+            <a href="../javascript/effect/mouseEffect.html" target="_blank">
+              <div class="icon">
+                <img src="assets/img/icon/mouse.gif" alt="">
+              </div>
+              <div class="txt">mouse_Effect</div>
+            </a>
+          </div>
+          <!-- //mouseEffect-->
+
+          <div id="btn" class="btn btn0">
+            <a href="../javascript/effect/parallaxEffect.html" target="_blank">
+              <div class="icon">
+                <img src="assets/img/icon/window.gif" alt="">
+              </div>
+              <div class="txt">parallax_Effect</div>
+            </a>
+          </div>
+          <!-- //parallaxEffect -->
+          
+          <div id="btn" class="btn btn0">
+            <a href="http://wwuu123.dothome.co.kr/project/pages/main.php" target="_blank">
+              <div class="icon">
+                <img src="assets/img/icon/soces.webp" alt="">
+              </div>
+              <div class="txt">PHP사이트</div>
+            </a>
+          </div>
+          <!-- PHP사이트 -->
+
+          <div id="btn" class="btn btn0">
+            <a href="https://github.com/GayeongChoi/phpgit" target="_blank">
+              <div class="icon">
+                <img src="assets/img/icon/gif/cookie.png" alt="">
+              </div>
+              <div class="txt">PHP소스</div>
+            </a>
+          </div>
+          <!-- //PHP소스 -->
+
+          <div id="btn" class="btn btn0">
+            <a href="https://github.com/GayeongChoi/react2022" target="_blank">
+              <div class="icon">
+                <img src="assets/img/icon/gif/ghost.png" alt="">
+              </div>
+              <div class="txt">리액트소스</div>
+            </a>
+          </div>
+          <!-- //리액트소스 -->
+
+          <div id="btn" class="btn btn0">
+            <a href="../mysql/index.html" target="_blank">
+              <div class="icon">
+                <img src="assets/img/icon/gif/heart.gif" alt="">
+              </div>
+              <div class="txt">mysql</div>
+            </a>
+          </div>
+          <!-- //mysql -->
+
+          <div id="btn" class="btn btn0">
+            <a href="../site/siteResearch.html" target="_blank">
+              <div class="icon">
+                <img src="assets/img/icon/note.webp" alt="">
+              </div>
+              <div class="txt">사이트_리서치</div>
+            </a>
+          </div>
+          <!-- //siteResearch -->
+      
       </section>
+      <!-- //icon__inner -->
     </main>
 
     <section class="popup_inner">
@@ -126,10 +377,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <script src="../javascript/effect/js/gsap.min.js"></script>
   <script>
+    // $("#btn").draggable();
     $(".btn").draggable();
-    $(".btn1").draggable();
-    $(".btn2").draggable();
-    $(".btn3").draggable();
     $(".musicBox").draggable();
 
     $(".btn1").click(function () {
