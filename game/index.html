@@ -1,182 +1,182 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>게임 메인 페이지</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>게임 메인 페이지</title>
+    <link rel="stylesheet" href="assets/css/fonts.css" />
+    <link rel="stylesheet" href="assets/css/bg.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
 
-  <link rel="stylesheet" href="assets/css/fonts.css">
-  <link rel="stylesheet" href="assets/css/bg.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+      .typingGame {
+        position: absolute;
+        width: 50vw;
+        height: 690px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+      }
 
-  <style>
-  .typingGame {
-    position: absolute;
-    width: 50vw;
-    height: 690px;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    display: none;
-  }
+      .typingGame.show {
+        display: block;
+      }
 
-  .typingGame.show {
-    display: block;
-  }
+      /* 팝업 디자인*/
+      .popup {
+        /* height: 100%; */
+        width: 90vw;
+        height: 85vh;
+        /* background: #fff; */
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #c7c7c7;
+        border-left: 2px solid #fcfcfc;
+        border-top: 2px solid #fcfcfc;
+        border-right: 2px solid #2a2a2a;
+        border-bottom: 2px solid #2a2a2a;
+        padding: 4px;
+        z-index: 2;
+        display: none;
+      }
+      .popup.show {
+        display: block;
+      }
 
-  /* 팝업 디자인*/
-  .popup {
-    /* height: 100%; */
-    width: 90vw;
-    height: 85vh;
-    /* background: #fff; */
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #c7c7c7;
-    border-left: 2px solid #FCFCFC;
-    border-top: 2px solid #FCFCFC;
-    border-right: 2px solid #2A2A2A;
-    border-bottom: 2px solid #2A2A2A;
-    padding: 4px;
-    z-index: 2;
-    display: none;
-  }
-  .popup.show {
-    display: block;
-  }
+      .popup > iframe {
+        height: 95%;
+      }
+      .popup .bar {
+        width: 100%;
+        height: 5%;
+        min-height: 35px;
+        background-color: #000080;
+        padding: 5px;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+      }
+      .popup .bar .close {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 90%;
+        min-height: 25px;
+        background: #000;
+        float: right;
+        background-color: #c7c7c7;
+        border-left: 2px solid #fcfcfc;
+        border-top: 2px solid #fcfcfc;
+        position: relative;
+      }
+      .close > .symbol {
+        width: 60%;
+        height: 3px;
+        background-color: #000000;
+        transform: rotate(45deg);
+      }
+      .close > .symbol::after {
+        content: "";
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: #000000;
+        transform: rotate(90deg);
+      }
+      .close:hover {
+        background-color: #bababa;
+        border-left: 2px solid #2a2a2a;
+        border-top: 2px solid #2a2a2a;
+        border-right: 2px solid #fcfcfc;
+        border-bottom: 2px solid #fcfcfc;
+      }
+    </style>
+  </head>
 
-  .popup > iframe {
-    height: 95%;
-  }
-  .popup .bar {
-    width: 100%;
-    height: 5%;
-    min-height: 35px;
-    background-color: #000080;
-    padding: 5px;
-    box-sizing: border-box;
-    margin-bottom: 10px;
-
-  }
-  .popup .bar .close {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 30px;
-    height: 90%;
-    min-height: 25px;
-    background: #000;
-    float: right;
-    background-color: #c7c7c7;
-    border-left: 2px solid #FCFCFC;
-    border-top: 2px solid #FCFCFC;
-    position: relative;
-  }
-  .close > .symbol {
-    width: 60%;
-    height: 3px;
-    background-color: #000000;
-    transform: rotate(45deg);
-  }
-  .close > .symbol::after {
-    content: "";
-    top: 0;
-    left: 0;
-    position: absolute;
-    width: 100%;
-    height: 3px;
-    background-color: #000000;
-    transform: rotate(90deg);
-  }
-  .close:hover {
-    background-color: #bababa;
-    border-left: 2px solid #2A2A2A;
-    border-top: 2px solid #2A2A2A;
-    border-right: 2px solid #FCFCFC;
-    border-bottom: 2px solid #FCFCFC;
-  }
-  </style>
-</head>
-
-<body>
-  <!-- 
+  <body>
+    <!-- 
     아이콘: 이미지 변경
     게임 팝업 이미지 변경
    -->
-   
-  <div id="wrap">
-    <header id="header">
-      <h1>GAME SITE</h1>
-      <span id="clock"></span>
-    </header>
 
-    <main>
-      <!-- <div class="cursor">
+    <div id="wrap">
+      <header id="header">
+        <h1>GAME SITE</h1>
+        <span id="clock"></span>
+      </header>
+
+      <main>
+        <!-- <div class="cursor">
         <img src="https://assets.codepen.io/756881/pointer.svg" alt="커서">
       </div> -->
 
-      <section class="icon__inner">
-
+        <section class="icon__inner">
           <!-- 버튼 -->
           <div id="btn" class="btn btn1">
             <a href="#">
               <div class="icon">
-                <img src="assets/img/icon/music.png" alt="">
+                <img src="assets/img/icon/music.png" alt="" />
               </div>
               <div class="txt">music</div>
             </a>
           </div>
 
-          <div  id="btn" class="btn btn2">
+          <div id="btn" class="btn btn2">
             <a href="#">
               <div class="icon">
-                <img src="assets/img/icon/icon_heart-balloon(pink).ico" alt="">
+                <img
+                  src="assets/img/icon/icon_heart-balloon(pink).ico"
+                  alt=""
+                />
               </div>
               <div class="txt">card Game</div>
             </a>
           </div>
 
-          <div  id="btn" class="btn btn3">
+          <div id="btn" class="btn btn3">
             <a href="#">
               <div class="icon">
-                <img src="assets/img/icon/24S2.gif" alt="">
+                <img src="assets/img/icon/24S2.gif" alt="" />
               </div>
               <div class="txt">typing Game</div>
             </a>
           </div>
 
-            <div id="btn" class="btn btn0">
-                <a href="../index.html">
-                  <div class="icon">
-                    <img src="assets/img/icon/roll.gif" alt="">
-                  </div>
-                  <div class="txt">MAIN SITE</div>
-                </a>
-            </div>
+          <div id="btn" class="btn btn0">
+            <a href="../index.html">
+              <div class="icon">
+                <img src="assets/img/icon/roll.gif" alt="" />
+              </div>
+              <div class="txt">MAIN SITE</div>
+            </a>
+          </div>
 
-            <div id="btn" class="btn btn0">
-              <a href="../class/index.html" target="_blank">
-                <div class="icon">
-                  <img src="assets/img/icon/star.png" alt="">
-                </div>
-                <div class="txt">class</div>
-              </a>
-            </div>
-            <!-- //class -->
+          <div id="btn" class="btn btn0">
+            <a href="../class/index.html" target="_blank">
+              <div class="icon">
+                <img src="assets/img/icon/star.png" alt="" />
+              </div>
+              <div class="txt">class</div>
+            </a>
+          </div>
+          <!-- //class -->
 
           <div id="btn" class="btn btn0">
             <a href="../javascript/index.html" target="_blank">
               <div class="icon">
-                <img src="assets/img/icon/cat.gif" alt="">
+                <img src="assets/img/icon/cat.gif" alt="" />
               </div>
               <div class="txt">javascript</div>
             </a>
@@ -186,7 +186,7 @@
           <div id="btn" class="btn btn0">
             <a href="../refer/index.html" target="_blank">
               <div class="icon">
-                <img src="assets/img/icon/refer.png" alt="">
+                <img src="assets/img/icon/refer.png" alt="" />
               </div>
               <div class="txt">refer</div>
             </a>
@@ -196,7 +196,7 @@
           <div id="btn" class="btn btn0">
             <a href="../layout/index.html" target="_blank">
               <div class="icon">
-                <img src="assets/img/icon/layout.png" alt="">
+                <img src="assets/img/icon/layout.png" alt="" />
               </div>
               <div class="txt">layout</div>
             </a>
@@ -206,7 +206,7 @@
           <div id="btn" class="btn btn0">
             <a href="../flex/index.html" target="_blank">
               <div class="icon">
-                <img src="assets/img/icon/soces.webp" alt="">
+                <img src="assets/img/icon/soces.webp" alt="" />
               </div>
               <div class="txt">flex</div>
             </a>
@@ -216,7 +216,7 @@
           <div id="btn" class="btn btn0">
             <a href="../gird/index.html" target="_blank">
               <div class="icon">
-                <img src="assets/img/icon/123.gif" alt="">
+                <img src="assets/img/icon/123.gif" alt="" />
               </div>
               <div class="txt">gird</div>
             </a>
@@ -226,7 +226,7 @@
           <div id="btn" class="btn btn0">
             <a href="../site/webClass/index.html" target="_blank">
               <div class="icon">
-                <img src="assets/img/icon/loading.gif" alt="">
+                <img src="assets/img/icon/loading.gif" alt="" />
               </div>
               <div class="txt">web_Class</div>
             </a>
@@ -236,7 +236,7 @@
           <div id="btn" class="btn btn0">
             <a href="../webstandard/index.html" target="_blank">
               <div class="icon">
-                <img src="assets/img/icon/smail.gif" alt="">
+                <img src="assets/img/icon/smail.gif" alt="" />
               </div>
               <div class="txt">web_standard</div>
             </a>
@@ -257,7 +257,7 @@
           <div id="btn" class="btn btn0">
             <a href="../javascript/effect/sliderEffect.html" target="_blank">
               <div class="icon">
-                <img src="assets/img/icon/slider.gif" alt="">
+                <img src="assets/img/icon/slider.gif" alt="" />
               </div>
               <div class="txt">slider_Effect</div>
             </a>
@@ -267,7 +267,7 @@
           <div id="btn" class="btn btn0">
             <a href="../javascript/effect/quizEffect.html" target="_blank">
               <div class="icon">
-                <img src="assets/img/icon/gif/dog.png" alt="">
+                <img src="assets/img/icon/gif/dog.png" alt="" />
               </div>
               <div class="txt">quiz_Effect</div>
             </a>
@@ -277,7 +277,7 @@
           <div id="btn" class="btn btn0">
             <a href="../javascript/effect/mouseEffect.html" target="_blank">
               <div class="icon">
-                <img src="assets/img/icon/mouse.gif" alt="">
+                <img src="assets/img/icon/mouse.gif" alt="" />
               </div>
               <div class="txt">mouse_Effect</div>
             </a>
@@ -287,17 +287,20 @@
           <div id="btn" class="btn btn0">
             <a href="../javascript/effect/parallaxEffect.html" target="_blank">
               <div class="icon">
-                <img src="assets/img/icon/window.gif" alt="">
+                <img src="assets/img/icon/window.gif" alt="" />
               </div>
               <div class="txt">parallax_Effect</div>
             </a>
           </div>
           <!-- //parallaxEffect -->
-          
+
           <div id="btn" class="btn btn0">
-            <a href="http://wwuu123.dothome.co.kr/project/pages/main.php" target="_blank">
+            <a
+              href="http://wwuu123.dothome.co.kr/project/pages/main.php"
+              target="_blank"
+            >
               <div class="icon">
-                <img src="assets/img/icon/soces.webp" alt="">
+                <img src="assets/img/icon/soces.webp" alt="" />
               </div>
               <div class="txt">PHP사이트</div>
             </a>
@@ -307,7 +310,7 @@
           <div id="btn" class="btn btn0">
             <a href="https://github.com/GayeongChoi/phpgit" target="_blank">
               <div class="icon">
-                <img src="assets/img/icon/gif/cookie.png" alt="">
+                <img src="assets/img/icon/gif/cookie.png" alt="" />
               </div>
               <div class="txt">PHP소스</div>
             </a>
@@ -317,7 +320,7 @@
           <div id="btn" class="btn btn0">
             <a href="https://github.com/GayeongChoi/react2022" target="_blank">
               <div class="icon">
-                <img src="assets/img/icon/gif/ghost.png" alt="">
+                <img src="assets/img/icon/gif/ghost.png" alt="" />
               </div>
               <div class="txt">리액트소스</div>
             </a>
@@ -327,7 +330,7 @@
           <div id="btn" class="btn btn0">
             <a href="../mysql/index.html" target="_blank">
               <div class="icon">
-                <img src="assets/img/icon/gif/heart.gif" alt="">
+                <img src="assets/img/icon/gif/heart.gif" alt="" />
               </div>
               <div class="txt">mysql</div>
             </a>
@@ -337,97 +340,91 @@
           <div id="btn" class="btn btn0">
             <a href="../site/siteResearch.html" target="_blank">
               <div class="icon">
-                <img src="assets/img/icon/note.webp" alt="">
+                <img src="assets/img/icon/note.webp" alt="" />
               </div>
               <div class="txt">사이트_리서치</div>
             </a>
           </div>
           <!-- //siteResearch -->
-      
+        </section>
+        <!-- //icon__inner -->
+      </main>
+
+      <section class="popup_inner">
+        <div class="memoryBox">
+          <iframe src="index2.html" frameborder="0"></iframe>
+        </div>
+
+        <div class="musicBox">
+          <iframe src="musicPlayer/index.html" frameborder="0"></iframe>
+        </div>
+
+        <div class="typingGame">
+          <iframe src="typingGame/index.html" frameborder="0"></iframe>
+        </div>
       </section>
-      <!-- //icon__inner -->
-    </main>
+    </div>
 
-    <section class="popup_inner">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="../javascript/effect/js/gsap.min.js"></script>
+    <script>
+      // $("#btn").draggable();
+      $(".btn").draggable();
+      $(".musicBox").draggable();
 
-      <div class="memoryBox">
-        <iframe src="index2.html" frameborder="0"></iframe>
-      </div>
+      $(".btn1").click(function () {
+        $(".musicBox").toggleClass("show");
+      });
 
-      <div class="musicBox">
-        <iframe src="musicPlayer/index.html" frameborder="0"></iframe>
-      </div>
+      $(".btn2").click(function () {
+        $(".memoryBox").toggleClass("show");
+      });
 
-      <div class="typingGame">
-        <iframe src="typingGame/index.html" frameborder="0"></iframe>
-      </div>
-      
-    
-     
-      
+      $(".btn3").click(function () {
+        $(".typingGame").toggleClass("show");
+      });
 
+      $(".btn4").click(function () {
+        $(".popup").toggleClass("show");
+      });
 
+      $(".close").click(function () {
+        $(".popup").toggleClass("show");
+      });
 
-
-    </section>
-
-  </div>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-  <script src="../javascript/effect/js/gsap.min.js"></script>
-  <script>
-    // $("#btn").draggable();
-    $(".btn").draggable();
-    $(".musicBox").draggable();
-
-    $(".btn1").click(function () {
-      $(".musicBox").toggleClass("show")
-    });
-
-    $(".btn2").click(function () {
-      $(".memoryBox").toggleClass("show")
-    });
-
-    $(".btn3").click(function () {
-      $(".typingGame").toggleClass("show")
-    });
-
-    $(".btn4").click(function () {
-      $(".popup").toggleClass("show")
-    });
-
-    $(".close").click(function () {
-      $(".popup").toggleClass("show")
-    });
-
-    //현재시간
-    function printTime() {
-      var clock = document.getElementById("clock"); // 출력할 장소 선택
-      var now = new Date(); // 현재시간
-      var nowTime =
-        (now.getMonth() + 1) + "월&nbsp" +
-        now.getDate() + "일&nbsp" +
-        now.getHours() + ":" +
-        now.getMinutes() + ":" +
-        now.getSeconds() + "";
-      clock.innerHTML = nowTime; // 현재시간을 출력
-      setTimeout("printTime()", 1000); // setTimeout(“실행할함수”,시간) 시간은1초의 경우 1000
-    }
-    window.onload = function () { // 페이지가 로딩되면 실행
-      printTime();
-    }
+      //현재시간
+      function printTime() {
+        var clock = document.getElementById("clock"); // 출력할 장소 선택
+        var now = new Date(); // 현재시간
+        var nowTime =
+          now.getMonth() +
+          1 +
+          "월&nbsp" +
+          now.getDate() +
+          "일&nbsp" +
+          now.getHours() +
+          ":" +
+          now.getMinutes() +
+          ":" +
+          now.getSeconds() +
+          "";
+        clock.innerHTML = nowTime; // 현재시간을 출력
+        setTimeout("printTime()", 1000); // setTimeout(“실행할함수”,시간) 시간은1초의 경우 1000
+      }
+      window.onload = function () {
+        // 페이지가 로딩되면 실행
+        printTime();
+      };
 
       //커서
       const cursor = document.querySelector(".cursor"); //div.cursor
       window.addEventListener("mousemove", (e) => {
-      gsap.to(cursor, {
-        left: e.pageX - 5,
-        top: e.pageY - 5
-      })
-    });
-  </script>
-
-</body>
-
+        gsap.to(cursor, {
+          left: e.pageX - 5,
+          top: e.pageY - 5,
+        });
+      });
+    </script>
+  </body>
 </html>
