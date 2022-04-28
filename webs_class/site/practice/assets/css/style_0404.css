@@ -1,0 +1,36 @@
+
+.container {
+    width: 960px;
+    margin: 0 auto;
+}
+
+#header {height: 100px; white-space: nowrap;}
+#header h1 {float: left; padding-top: 5px;}
+#header h1 img {width: 130px;}
+#header .nav {float: right; z-index: 100; position: relative; margin-top: 20px;}
+#header .nav li {position: relative; float: left; width: 120px; text-align: center;}
+#header .nav li a {display: block; padding: 20px 15px; background: #ccc;}
+#header .nav li a:hover {background: #ddd;}
+#header .nav li ul.submenu {display: none; position: absolute; left: 0; top: 59px; background: #ddd;}
+#header .nav li ul.submenu li a {padding: 10px;}
+#header .nav li ul.submenu li a:hover {background: #999;}
+
+/* slider */
+#slider {}
+#slider img {
+    width: 100%;
+}
+
+.notice {position: relative; padding: 30px;}
+.notice ul li {float: left; margin-right: 20px;}
+.notice ul li a {font-size: 24px; color: #999; font-weight: bold;}
+.notice ul li.active a {color: #000;}
+.notice ul li ul {position: absolute; left: 30px; top: 70px;}
+.notice ul li ul li {width: 95%; padding: 5px 0;}
+.notice ul li ul li a {float: left; width: 60%; font-size: 16px; color: #333;
+    overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-weight: normal;}
+.notice ul li ul li span {float: right; width: 20%;}
+.notice .more {position: absolute; right: 30px; top: 35px;}
+
+#contents {}
+#footer {}

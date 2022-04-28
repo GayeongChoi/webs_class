@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃</title>
+
+    <style>
+        * {
+            margin: 0;
+        }
+        .contair {
+            width: 1200px;
+            margin: 0 auto;
+            height: inherit;
+            background: rgba(0,0,0,0.3);
+        }
+        #wrap {
+            width: 100%;
+            margin: 0 auto;
+        }
+        #header {
+            height: 100px;
+            background: #E0F2F1;
+        }
+        #nav { 
+            height: 250px;
+            background: #B2DFDB;
+        }
+        #main {
+            height: 550px;
+            background: #80CBC4;
+        }
+        #main .contair {
+            display: flex;
+        }
+        #main .contair div {
+            width: 50%;
+        }
+        .cont1 {
+            background: #26A69A;
+        }
+        .cont2 {
+            background: #009688;
+        }
+        #footer {
+            height: 100px;
+            background: #4DB6AC;
+        }
+        @media (max-width: 1220px) {
+            .contair {
+                width: 96%;
+            }
+        }
+        @media (max-width: 780px) {
+            .contair {
+                width: 100%;
+            }
+            #main .contair {
+                flex-direction:column;
+            }
+            #main .contair div {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        @media (max-width: 600px) {
+            .contair {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="contair"></div>
+        </header>
+        <nav id="nav">
+            <div class="contair"></div>
+        </nav>
+        <main id="main">
+            <div class="contair">
+                <div class="cont1">
+                    <div class="contair"></div>
+                </div>
+                <div class="cont2">
+                    <div class="contair"></div>
+                </div>
+            </div>
+        </main>
+        <footer id="footer">
+            <div class="contair"></div>
+        </footer>
+    </div>
+</body>
+</html>

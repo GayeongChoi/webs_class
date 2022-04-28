@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 슬라이드 이펙트</title>
+    
+    <style>
+        @import url(css/dracula.min.css);
+        @import url(css/NexonLv1Gothic.css);
+        @import url(css/custom.css);
+        
+         /* slider */
+         .slider__wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .slider__img {      /*화면보이는 구간*/
+            position: relative;
+            width: 800px;
+            height: 480px;
+            overflow: hidden; 
+            /*이미지 전체가 움직이는 모습을 감춤*/
+        }
+        .slider__inner {     /*이미지를 움직이는 영역*/
+            display: flex;
+            width: 4800px;        /*이미지 총 길이*/
+            transform: translateX(0);    
+        }
+        .slider {
+            width: 800px;
+            position: relative;
+        }
+        .slider::before {
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            background: rgba(0,0,0,0.4);
+            color: #fff;
+            padding: 5px 10px 3px;
+        }
+        .slider:nth-child(1)::before {content: '이미지1';} 
+        .slider:nth-child(2)::before {content: '이미지2';} 
+        .slider:nth-child(3)::before {content: '이미지3';} 
+        .slider:nth-child(4)::before {content: '이미지4';} 
+        .slider:nth-child(5)::before {content: '이미지5';} 
+
+        .slider__btn a {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+            width: 50px;
+            height: 50px;
+            background: rgba(0,0,0,0.4);
+            text-align: center;
+            line-height: 50px;
+            transition: all 0.2s;
+            display: block;
+            color: #fff;
+            text-decoration: none;
+        }
+        .slider__btn a.prev {
+            left: 0;
+        }
+        .slider__btn a.next {
+            right: 0;
+        }
+        .slider__btn a:hover {
+            background: rgb(241,96,86);
+        }
+        .slider__dot {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%) ;
+            bottom: 20px;
+        }
+        .slider__dot .dot {
+            width: 20px;
+            height: 20px;
+            background: rgba(0,0,0,0.4);
+            display: inline-block;
+            border-radius: 50%;
+            transition: ALL 0.3s;
+            margin: 3px;
+        }
+        .slider__dot .dot.active {
+            background: rgba(255,255,255,0.9);
+        }
+    </style>
+
+</head>
+<body class="img04">
+
+         <!-- info -->
+<div class="info">
+    <div class="title">
+        <h1><a href="sliderEffect.html">JavaScript Slider Effect06</a></h1>
+        <p>이미지 슬라이드 : 버튼 추가 / 닷 버튼 추가</p>
+    </div>
+    <div class="number">
+        <ul>
+            <li><a href="sliderEffect01.html">1</a></li>
+            <li><a href="sliderEffect02.html">2</a></li>
+            <li><a href="sliderEffect03.html">3</a></li>
+            <li><a href="sliderEffect04.html">4</a></li>
+            <li><a href="sliderEffect05.html">5</a></li>
+            <li class="active"><a href="sliderEffect06.html">6</a></li>
+            <li><a href="sliderEffect07.html">7</a></li>
+            <li><a href="sliderEffect08.html">8</a></li>
+        </ul>
+    </div>
+    <div class="source">
+        <button class="source-btn">소스보기</button>
+        <div id="modal">
+            <div class="modal-wrap">
+                <div class="modal-cont">
+                    <div class="code-view">
+                        <div class="view-header" aria-hidden="true">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="view-title">
+                            <ul>
+                                <li class="active"><a href="#">HTML</a></li>
+                                <li><a href="#">CSS</a></li>
+                                <li><a href="#">JavaScript</a></li>
+                                <li><a href="#">jQuery</a></li>
+                            </ul>
+                        </div>
+                        <div class="view-cont">
+                            <div>
+<pre><code class="language-javascript">
+</code></pre>
+                            </div>
+                            <!-- //cont1 -->
+                            <div>
+<pre><code class="language-javascript">
+</code></pre>
+                            </div>
+                            <!-- //cont2 -->
+                            <div>
+<pre><code class="language-javascript">
+</code></pre>
+                            </div>
+                            <!-- //cont3 -->
+                            <div>
+<pre><code class="language-javascript">
+</code></pre>
+                            </div>
+                            <!-- //cont4 -->
+                        </div>
+                        <!-- //view-cont -->
+                    </div>
+                </div>
+                <button class="modal-close">닫기</button>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- //info -->
+
+    <!-- main -->
+    <main>
+        <section id="sliderType06">
+            <div class="slider__wrap">
+                <div class="slider__img">
+                    <div class="slider__inner">
+                        <div class="slider"><img src="img/img_slide02.jpg" alt="이미지1"></div>
+                        <div class="slider"><img src="img/img_slide03.jpg" alt="이미지2"></div>
+                        <div class="slider"><img src="img/img_slide04.jpg" alt="이미지3"></div>
+                        <div class="slider"><img src="img/img_slide05.jpg" alt="이미지4"></div>
+                        <div class="slider"><img src="img/img_slide06.jpg" alt="이미지5"></div>
+                    </div>
+                </div>
+                <div class="slider__btn">
+                    <a href="#" class="prev">prev</a>
+                    <a href="#" class="next">next</a>
+                </div>
+                <div class="slider__dot">
+                    <a href="" class="dot"></a>
+                    <a href="" class="dot"></a>
+                    <a href="" class="dot"></a>
+                    <a href="" class="dot"></a>
+                    <a href="" class="dot"></a>
+                    <a href="" class="dot"></a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- //main -->
+
+    <!-- script -->
+    <script src="js/highlight.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/gsap.min.js"></script>
+    <script>
+        hljs.highlightAll(); //외부 스크립트 함수 (highlight)호출
+       modal();  //외부 스크립트 함수 (modal, 소스보기 창)호출
+       tabMenu(); //외부 스크립트 함수 (tabMenu, 소스보기의 탭 메뉴)호출
+   </script>
+    <script>
+        
+    //slider06
+        const sliderWrap = document.querySelector(".slider__wrap")  //전체
+        const sliderImg = document.querySelector(".slider__img")     //이미지 (한칸만) 보이는 영역
+        const sliderInner = document.querySelector(".slider__inner")  //이미지 움직이는 영역 
+        const slider = document.querySelectorAll(".slider")             //5개의 이미지 저장 console.log(slider): 5개 저장한 이미지 확인 가능
+        const sliderBtn = document.querySelector(".slider__btn")      //(슬라이드) 버튼
+        const sliderDot = document.querySelector(".slider__dot")      //닷버튼
+
+        let currentIndex = 0; 
+        let sliderCount = slider.length 
+        let sliderWidth = sliderImg.offsetWidth; 
+        let dotIndex = ""; 
+        let dotActive;
+
+         //이미지 추가됐을 때 닷버튼이 추가되도록
+         function init(){
+            //이미지 갯수만큼 <a></a>
+            slider.forEach(()=>{
+                dotIndex +="<a href='#' class='dot'></a>"
+             })
+           sliderDot.innerHTML = dotIndex; 
+           
+           //첫번째 닷 버튼한테 활성화 표시(active) : 화면 들어온 순간부터 불 들어와 있도록
+           sliderDot.firstElementChild.classList.add("active");
+        }
+        init();
+
+        //슬라이드 설정
+        function gotoSlider(num){
+            //애니메이션(움직임) 설정
+            sliderInner.style.transition = "all 400ms";
+            sliderInner.style.transform = "translateX("+ -sliderWidth*num +"px)"
+            currentIndex = num;
+
+            //currentIndex = n 일때 dot = n, acvtive가 되도록
+            dotActive = document.querySelectorAll(".slider__dot .dot"); 
+            dotActive.forEach((el) =>{
+                el.classList.remove("active")
+            })
+            dotActive[num].classList.add("active")
+        } 
+
+        //이전, 다음 버튼 클릭
+        document.querySelectorAll(".slider__btn a").forEach((btn, index) => { 
+            btn.addEventListener("click", () => {
+                let prevIndex = (currentIndex + (sliderCount - 1)) % sliderCount; 
+                let nextIndex = (currentIndex + 1) % sliderCount;
+
+                if (btn.classList.contains("prev")) {
+                    gotoSlider(prevIndex); 
+                } else {
+                    gotoSlider(nextIndex);
+                }
+            })
+        });
+
+        //닷 버튼 누르면 선택 이미지 이동
+        document.querySelectorAll(".slider__dot .dot").forEach((dot, index) => { //선택: 닷버튼
+            dot.addEventListener("click", () => { //닷버튼을 클릭하면
+                gotoSlider(index); //index에 따라 이미지 이동
+            })
+        })
+        
+
+        // const sliderWrap = document.querySelector(".slider_wrap")  //전체
+        // const sliderImg = document.querySelector(".slider_img")     //이미지 (한칸만) 보이는 영역
+        // const sliderInner = document.querySelector(".slider_inner")  //이미지 움직이는 영역 
+        // const slider = document.querySelectorAll(".slider")             //5개의 이미지 저장 console.log(slider): 5개 저장한 이미지 확인 가능
+        // const sliderBtn = document.querySelector(".slider_btn")      //(슬라이드) 버튼
+        // const sliderDot = document.querySelector(".slider_dot")      //닷버튼
+
+        // let currentIndex = 0; //현재 인덱스 값
+        // let sliderCount = slider.length //이미지 갯수
+        // let sliderWidth = sliderImg.offsetWidth; //이미지 가로 값 (가져오기) 
+        // let dotIndex = ""; //이미지가 추가됐을 때 닷버튼 추가되기 위한 값
+        // let dotActive;      //값은 함수안에 설정함. dotActive = document.querySelectorAll(".slider_dot .dot");
+
+        // //나중에 이미지 추가됐을 때 닷버튼이 추가되도록
+        // function init(){
+        //     //이미지 갯수만큼 <a></a>
+        //     slider.forEach(()=>{
+        //         dotIndex +="<a href='#' class='dot'></a>"
+        //      })
+        //    sliderDot.innerHTML = dotIndex; //웹문서에 추가
+        //     // dotIndex +="<a href='#' class='dot'></a>" 
+        //     // dotIndex +="<a href='#' class='dot'></a>" 
+        //     // dotIndex +="<a href='#' class='dot'></a>" 
+        //     // dotIndex +="<a href='#' class='dot'></a>" 
+        //     // dotIndex +="<a href='#' class='dot'></a>" 
+           
+        //    //첫번째 닷 버튼한테 활성화 표시(active) : 화면 들어온 순간부터 불 들어와 있도록
+        //    sliderDot.firstElementChild.classList.add("active");
+        // }
+        // init();
+
+        // //슬라이드 설정
+        // function gotoSlider(num){ //현재 인덱스 값대신 num을 넣음
+        //     //애니메이션(움직임) 설정
+        //     sliderInner.style.transition = "all 400ms";
+        //     sliderInner.style.transform = "translateX("+ -sliderWidth*num +"px)"; //시작하면 -800(sliderWidth)만큼 움직임 | currentIndex값에 따라 바뀜
+        //     currentIndex = num; //현재 (인덱스) 값을 알기 위해 넣은 값
+
+        //     //currentIndex = n 일때 dot = n, acvtive가 되도록
+        //     dotActive = document.querySelectorAll(".slider_dot .dot"); //dot 5개를 저장
+        //     //num = [1,2,3,4,5] : 배열요소전체(데이터) 불러오기
+        //     dotActive.forEach((el) =>{
+        //         el.classList.remove("active") //.dot에서 class active '전부' 삭제 | forEach쓴 이유
+        //     })
+        //     dotActive[num].classList.add("active") //dot[]에 class active '하나' 추가
+        // } 
+        // //gotoSlider(currentIndex) : 함수를 호출(실행)하면  해당 값에 따라 해당 이미지로 이동함
+
+        // // //함수 호출 (코드 실행)
+        // // sliderBtnPrev.addEventListener("click", () => {
+        // //     let prevIndex = (currentIndex + (sliderCount-1)) % sliderCount /
+        // //     gotoSlider(prevIndex) 
+        // //     console.log("prevIndex :" + prevIndex)
+        // //     console.log("currentIndex :" + currentIndex)
+        // // })
+        // // sliderBtnNext.addEventListener("click", () => {
+        // //     let nextIndex = (currentIndex + 1) % sliderCount //이미지 총 갯수(5) 이상 넘어x
+        // //     gotoSlider(nextIndex)
+        // // })
+
+        // //이전, 다음 버튼 클릭
+        // //위의 prve와 next버튼 클릭 했을 때 구문을 한 함수에 쓰기
+        // document.querySelectorAll(".slider_btn a").forEach((btn, index) => { //선택: .slider_btn  a : 이전,다음 버튼  | forEach: 실행시킬 구문이 2개라서(다중선택)
+        //     btn.addEventListener("click", () => {  //btn: .slider_btn : a의 요소들(prev,next) 선택 ("click" : 요소들을 클릭했을 때,
+        //         let prevIndex = (currentIndex + (sliderCount - 1)) % sliderCount; 
+        //         let nextIndex = (currentIndex + 1) % sliderCount;
+            
+        //         //해당 조건에 따라 gotoSlider(슬라이드:이미지가 움직임)이 실행
+        //         if (btn.classList.contains("prev")) { // prev클래스가 존재하는 지  | classList.contains : 클래스 존재 여부 확인
+        //             gotoSlider(prevIndex);  // 존재하면 prevIndex을 실행 : 클릭하면 현재 이미지의 이전 이미지로 이동 
+        //         } else {
+        //             gotoSlider(nextIndex); //존재하지 않으면 nextIndex값을 실행  : 클릭하면 현재 이미지의 다음 이미지로 이동
+        //         }
+        //     })
+        // });
+
+        // //닷 버튼 누르면 선택 이미지 이동
+        // document.querySelectorAll(".slider_dot .dot").forEach((dot, index) => { //선택: 닷버튼
+        //     dot.addEventListener("click", () => { //닷버튼을 클릭하면
+        //         gotoSlider(index); //index에 따라 이미지 이동
+        //     })
+        // })
+    </script>
+</body>
+</html>

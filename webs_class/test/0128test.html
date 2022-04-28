@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01/28 오답노트</title>
+</head>
+
+<body>
+
+    <script>
+        {
+            if ("") {
+                document.write("조건문이 실행되었습니다.(true)", "<br>")
+            } else {
+                document.write("조건문이 실행되었습니다.(false)", "<br>")
+            } 
+        }
+        {//1번 - 데이터 제어하기 
+            document.write("ㅡㅡㅡㅡㅡㅡㅡ1번ㅡㅡㅡㅡㅡㅡㅡ", "<br>")
+
+            if (null) {
+                document.write("조건문이 실행되었습니다.(true)", "<br>")
+            } else {
+                document.write("조건문이 실행되었습니다.(false)", "<br>")
+            }// 정답:조건문이 실행되었습니다.(false)
+            //오답: 조건문이 실행되었습니다.(true)
+            //따로 조건이 지정 안되있어서 그냥 true로 출력하는 줄 앎
+
+            //기타 true, false, 1, "1", 0, "0", null, undefined, [], {}
+            //true
+            if (true) {
+                document.write("조건문이 실행되었습니다.(true)", "<br>")
+            } else {
+                document.write("조건문이 실행되었습니다.(false)", "<br>")
+            } //조건문이 실행되었습니다.(true)
+
+            //false
+            if (false) {
+                document.write("조건문이 실행되었습니다.(true)", "<br>")
+            } else {
+                document.write("조건문이 실행되었습니다.(false)", "<br>")
+            } //조건문이 실행되었습니다.(false)
+
+            //1,"1"
+            if (1) {
+                document.write("조건문이 실행되었습니다.(true)", "<br>")
+            } else {
+                document.write("조건문이 실행되었습니다.(false)", "<br>")
+            } //조건문이 실행되었습니다.(true)
+            if ("1") {
+                document.write("조건문이 실행되었습니다.(true)", "<br>")
+            } else {
+                document.write("조건문이 실행되었습니다.(false)", "<br>")
+            } //조건문이 실행되었습니다.(true)
+
+            //0,"0"
+            if (0) {
+                document.write("조건문이 실행되었습니다.(true)", "<br>")
+            } else {
+                document.write("조건문이 실행되었습니다.(false)", "<br>")
+            } //조건문이 실행되었습니다.(false)
+            if ("0") {
+                document.write("조건문이 실행되었습니다.(true)", "<br>")
+            } else {
+                document.write("조건문이 실행되었습니다.(false)", "<br>")
+            } //조건문이 실행되었습니다.(true)
+
+            //undefined
+            if (undefined) {
+                document.write("조건문이 실행되었습니다.(true)", "<br>")
+            } else {
+                document.write("조건문이 실행되었습니다.(false)", "<br>")
+            } //조건문이 실행되었습니다.(false)
+
+            //[]
+            if ([]) {
+                document.write("조건문이 실행되었습니다.(true)", "<br>")
+            } else {
+                document.write("조건문이 실행되었습니다.(false)", "<br>")
+            } //조건문이 실행되었습니다.(true)
+
+            //{}
+            if ({}) {
+                document.write("조건문이 실행되었습니다.(true)", "<br>")
+            } else {
+                
+                document.write("조건문이 실행되었습니다.(false)", "<br>")
+            } //조건문이 실행되었습니다.(true)
+
+        } 
+        { //2번 - 데이터 제어하기 
+            document.write("ㅡㅡㅡㅡㅡㅡㅡ2번ㅡㅡㅡㅡㅡㅡㅡ", "<br>")
+
+            //0,"0"
+            if (0) {
+                document.write("조건문이 실행되었습니다.(true)", "<br>")
+            } else {
+                document.write("조건문이 실행되었습니다.(false)", "<br>")
+            }//정답조건문이 실행되었습니다.(false)
+            //오답:조건문이 실행되었습니다.(true)
+            //1번과 같은 이유로 틀림 (풀이는 위에 참고)
+
+        } { //3번 - 데이터 제어하기 04.중첩if문
+            document.write("ㅡㅡㅡㅡㅡㅡㅡ3번ㅡㅡㅡㅡㅡㅡㅡ", "<br>")
+
+
+            let num = 10;
+
+            if (num == 100) {
+                document.write("실행되었습니다(1)");
+                if (num == 100) {
+                    document.write("실행되었습니다(2)");
+                    if (num == 100) {
+                        document.write("실행되었습니다(3)");
+                    }
+                }
+            } else {
+                document.write("실행되었습니다(4)", "<br>");
+            }
+            //정답:실행되었습니다(4)
+            //오답:"실행되었습니다(1)""실행되었습니다(2)""실행되었습니다(3)"
+            //10 == 100 인데 10<=100로 착각   
+
+        } { //4번 - 데이터 제어하기 05.삼항if문-생략
+            document.write("ㅡㅡㅡㅡㅡㅡㅡ4번ㅡㅡㅡㅡㅡㅡㅡ", "<br>")
+
+            let num = 0;
+            (num == 100) ? document.write("true"): document.write("false", "<br>");
+            //정답:false
+            //오답:true
+            //이게 if문인지도 알아보지도 못함
+
+        } 
+        { //5번 - 데이터 제어하기 07. while문
+            document.write("ㅡㅡㅡㅡㅡㅡㅡ5번ㅡㅡㅡㅡㅡㅡㅡ", "<br>")
+
+            let num = 0;
+
+            while (num<= 5) {
+                document.write(num + ".실행되었습니다.", "<br>");
+                num++;
+            }//정답:0.실행되었습니다.1.실행되었습니다.2.실행되었습니다.3.실행되었습니다.4.실행되었습니다.5.실행되었습니다.
+            //오답: 1.실행되었습니다.2.실행되었습니다.3.실행되었습니다.4.실행되었습니다.5.실행되었습니다.
+            //초기 값:0, num<'='5 -0~5까지 출력되어야함. 
+        }
+        { //9번 - 데이터 불러오기 07. 배열 : 데이터 불러오기 : forEach()
+            document.write("ㅡㅡㅡㅡㅡㅡㅡ9번ㅡㅡㅡㅡㅡㅡㅡ", "<br>")
+
+            const str = [100, 200, 300, 400, 500];
+
+            str.forEach(function(i){
+                document.write(i + ".반복문이 실행되었습니다. ", "<br>");
+            });
+            //정답:100.반복문이 실행되었습니다.200.반복문이 실행되었습니다.300.반복문이 실행되었습니다.400.반복문이 실행되었습니다.500.반복문이 실행되었습니다.
+            //오답:1.반복문이 실행되었습니다.2.반복문이 실행되었습니다.3.반복문이 실행되었습니다.4.반복문이 실행되었습니다.5.반복문이 실행되었습니다.
+            //i가 순서만 출력되는 줄 앎
+        }
+        { //10번 - 데이터 불러오기 07. 배열 : 데이터 불러오기 : forEach()
+            document.write("ㅡㅡㅡㅡㅡㅡㅡ10번ㅡㅡㅡㅡㅡㅡㅡ", "<br>")
+
+            const str = [100, 200, 300, 400, 500];
+
+            str.forEach(function(element, index, array) {
+                document.write(element, "<br>");
+                document.write(index, "<br>");
+                document.write(array, "<br>");
+            }); 
+
+            //정답: 100 0 100,200,300,400,500
+                 // 200 1 100,200,300,400,500
+                 // 300 2 100,200,300,400,500
+                 // 400 3 100,200,300,400,500
+                 // 500 4 100,200,300,400,500
+            //오답: 100 200 300 400 500 1 2 3 4 5 0
+                 // 100 200 300 400 500 1 2 3 4 5 1
+                 // 100 200 300 400 500 1 2 3 4 5 2
+                 // 100 200 300 400 500 1 2 3 4 5 3
+                 // 100 200 300 400 500 1 2 3 4 5 4
+                 // 100 200 300 400 500 1 2 3 4 5 5
+                 //element=배열, index=찍음, array=순서
+            //보류: element=배열 요소, index=배열의 인덱스 번호,  array=배열 그 자체
+            
+            // str.forEach(function(e, i, a) {
+            //     document.write(e, "<br>");
+            //     document.write(i, "<br>");
+            //     document.write(a, "<br>");
+            // }); 
+
+        }
+        { //11번 - 데이터 불러오기 08. 배열 : 데이터 불러오기 : for of
+            document.write("ㅡㅡㅡㅡㅡㅡㅡ11번ㅡㅡㅡㅡㅡㅡㅡ", "<br>")
+
+            const str = [100, 200];
+
+            for( let i of str ){
+                document.write(i + ".반복문이 실행되었습니다. ", "<br>");
+            }
+            //정답: 100.반복문이 실행되었습니다. 200.반복문이 실행되었습니다.
+            //오답: 1.반복문이 실행되었습니다. 2.반복문이 실행되었습니다.
+            //번호 부른 것하고 헷갈린다
+        }
+        { //12번 - 데이터 불러오기 09. 배열 : 데이터 불러오기 : for in
+            document.write("ㅡㅡㅡㅡㅡㅡㅡ12번ㅡㅡㅡㅡㅡㅡㅡ", "<br>")
+
+            const str = [100, 200, 600];
+
+                for( let i in str ){
+                    document.write(str[i] + ".반복문이 실행되었습니다. ", "<br>");
+            }
+            //정답: 100.반복문이 실행되었습니다. 200.반복문이 실행되었습니다. 600.반복문이 실행되었습니다.
+            //오답: 1.반복문이 실행되었습니다. 2.반복문이 실행되었습니다. 3.반복문이 실행되었습니다.
+            //for( let i in str ){document.write(i);}-0 1 2 배열 번호 출력
+           
+        }
+        { //13번 - 데이터 불러오기 16. 객체 : 데이터 불러오기 : for in
+            document.write("ㅡㅡㅡㅡㅡㅡㅡ13번ㅡㅡㅡㅡㅡㅡㅡ", "<br>")
+
+            const obj = {
+                a: 100,
+                b: 200
+            }
+
+            for (let key in obj ){
+                document.write(key);
+                document.write(obj[key]);
+            } 
+            //정답: a100 b200
+            //오답: ab 100200
+            // key= a, b / obj[key]=값 / 호출문이 2개라서 값을 2개씩 출력하는게 1세트  
+        }
+        { //14번 -  데이터 제어하기 12. continue문, 11. breack문
+            document.write("<br>", "ㅡㅡㅡㅡㅡㅡㅡ14번ㅡㅡㅡㅡㅡㅡㅡ", "<br>")
+
+            let num = 0;
+               
+            while(true) { 
+                num++;
+                if(num == 3) {
+                    continue;   
+                } 
+                
+                if(num > 6 ) {
+                    break;
+                }   
+                document.write(num);
+            }
+            //정답: 12''456
+            //오답: 12345
+            /*continue문: 조건을 건너뛰고 출력,  break문: 조건까지만 출력
+              변수num=0, 조건:num == 3,num > 6  while반복문에서 증감식(num++)으로 1씩 증가
+              continue에서 3증가에서 */
+
+        }
+        { //15번 - 데이터 제어하기 11. breack문
+            document.write("<br>", "ㅡㅡㅡㅡㅡㅡㅡ15번ㅡㅡㅡㅡㅡㅡㅡ", "<br>")
+
+            for (let i=1; i<=10; i++) {
+                document.write(i);
+                if(i == 10) {
+                    break;
+                }
+            }//정답: 12345678910
+            //오답: 123456789
+            //if문에서 break가 걸리는 줄 알았으나, 조건이(i == 10) 때문에 10까지는 반환
+            //(그런데 if문 없어도 원래 10까지 반환하는 조건)
+            //A == B  표기된 숫자만 일치하면 true로 반환.
+        }
+        { //16번 - 데이터 제어하기 11. breack문
+            document.write("<br>", "ㅡㅡㅡㅡㅡㅡㅡ16번ㅡㅡㅡㅡㅡㅡㅡ", "<br>")
+
+            let num = 0;
+                
+                while(num<20) {
+                    num++; 
+                    document.write(num);
+                    if(num == 10) {
+                        break;
+                    }
+                }//정답: 12345678910
+                //오답: 123456789
+                //초기값:0 | 증감식:1씩 증가 | 조건:20미만 (if문 없으면 19까지 출력) | if조건:10까지 출력 - 10까지 출력
+                //0이 반환 안되는 이유: 숫자 0은 flase로 반환        
+        } 
+        { //20번 - 04. 중첩 if문
+            document.write("<br>", "ㅡㅡㅡㅡㅡㅡㅡ20번ㅡㅡㅡㅡㅡㅡㅡ", "<br>")
+
+           let direct = 1;
+
+           function gallery(num){
+               if(num)
+                {if(num == 2) direct++;} 
+                else {if(num == 1) direct++ ;}
+           }
+           gallery(8)
+
+           document.write(direct)
+            //정답:1
+            //오답:12345678
+            //그냥 변수(direct = 1) 호출한 거라고함 
+        } 
+        document.write("<br>", "ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ", "<br>")
+    </script>
+</body>
+</html>

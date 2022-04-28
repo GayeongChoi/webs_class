@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test pra</title>
+</head>
+<body>
+    <script>
+        {
+            const str = "자바스크립트(javascript) 공부";
+            const text0 = str.length;
+            console.log(text0)
+            const text1 = str.indexOf( '자', '바', '스' ,'크',  '립');
+            console.log(text1)
+            const text2 = str.slice(20);
+            console.log(text2)
+            const text3 = str.split('');
+            console.log(text3)
+            const text4 = str.split('').join('/');
+            console.log(text4)
+
+            const str4 ="https://webstoryboy.co.kr/main.html?id=1234&name=weds"
+            const arrText4 = str4.split('&');
+            console.log(arrText4)
+
+            const num2 = "456";
+            const text = num2.padStart(5,123)
+            console.log(text)
+
+            const num4 = "abc";
+            const text7 = num4.padStart(6);
+            console.log(text7)
+
+            const arrNum = [100, 200, 300, 400, 500];
+            const arrPop = arrNum.pop()
+            console.log(arrPop)
+
+
+            const plants = ['broccoli', 'cauliflower', 'cabbage', 'kale', 'tomato'];
+            // console.log(plants.pop()); // expected output: "tomato" //리턴값
+            // console.log(plants); // expected output: Array ["broccoli", "cauliflower", "cabbage", "kale"] //결과값
+
+            plants.pop();
+            console.log(plants);
+            // expected output: Array ["broccoli", "cauliflower", "cabbage"]
+
+            const arrText47= ["javascript", "react", "vue"];
+            const result4 = arrText47.findIndex(el => el === "react");
+            console.log(result4);
+
+            const arrNum1 = [100, 200, 300, 400, 500];
+            const arrReduce1 = arrNum1.reduce(element => element);
+            console.log(arrReduce1);
+
+            const arrNum2 = [100, 200, 300, 400, 500];
+            const arrReduce2 = arrNum2.reduce((previous, current) => current );
+            console.log(arrReduce2);
+
+            const arrNum6 = [100, 200, 300, 400, 500];
+            const result6 = arrNum6.splice(0, 4, 'javascript','jquery')
+            console.log(result6);  
+
+        }
+
+
+
+
+    </script>
+</body>
+</html>

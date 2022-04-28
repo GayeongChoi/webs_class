@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko ">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시멘틱태그 : HTML</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/html.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/html.png">
+    <link rel="icon" href="../assets/face/html.png" sizes="128x128">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+</head>
+
+<body>
+
+    <header id="header">
+        <h1><a href="#">라인 중학교 1학년 코딩반</a></h1>
+        <strong>최가영</strong>
+    </header>
+
+    <main id="contents">
+        <h2><a href="html.html">HTML <em>시맨틱 태그</em></a></h2>
+        <div class="menu">
+            <ul>
+                <li><a href="html.html">속성</a></li>
+                <li><a href="htmlRefer01.html">기초 문법</a></li>
+                <li><a href="htmlRefer02.html">웹표준/웹접근성/웹호환성</a></li>
+                <li class="active"><a href="htmlRefer03.html">시맨틱 태그</a></li>
+                <li><a href="htmlRefer04.html">SEO</a></li>
+                <li><a href="htmlRefer05.html">그리드 시스템</a></li>
+            </ul>
+        </div>
+        <!-- //menu -->
+
+        <div class="refer">
+            <div class="doc">
+                <h3>시맨틱 태그</h3>
+                <p>
+                    시맨틱(Semantic)은 "의미의, 의미론적인"이라는 뜻이다. 즉, HTML5에 도입된 시맨틱 태그는 개발자와 브라우저에게 의미있는 태그를 제공하게 된다.
+                    인터넷의 발전으로 방대한 양의 웹문서가 생기면서, 제각기 일관적이지 않게 생성된 문서 구조는
+                    웹문서에서 원하는 정보를 찾기가 점점 힘들어 지게 만드는 원인이었다.
+                    &lt;div&gt; 태그의 기능과 마찬가지로 block element이면서 사이트의 구조(레이아웃)을 설계하기 위한 태그.
+                    HTML의 구조를 설계하는데 있어 태그에 의미를 부여 함으로써
+                    사이트의 구조를 파악하기 용이할 수 있도록 도와주기 위해 만들어진 태그.
+                    HTML5 이전에는 구조를 구분하기 위하여 div태그에 id 또는 클래스 등으로 구분하며 구조를 설계했으나
+                    시멘틱태그의 등장으로 인하여 좀더 명시적이면서도 직관적인 구조의 설계가 가능해졌다.
+                </p>
+
+                <h3>종류</h3>
+                <div class="table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>태그</th>
+                                <th>설명</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>&lt;header&gt;</th>
+                                <td>header 태그는 페이지의 머리글, 제목, 헤더 입니다.</td>
+                            </tr>
+                            <tr>
+                                <th>&lt;nav&gt;</th>
+                                <td>nav 태그는 네이게이션, 목차, 리스트 등 다른 페이지로의 이동을 위한 링크 공간을 위주로 표현</td>
+                            </tr>
+                            <tr>
+                                <th>&lt;aside&gt;</th>
+                                <td>aside 태그는 좌측과 우측 사이드 위치의 공간을 의미하며, 본문 외에 부수적인 내용을 주로 표현하는 태그입니다.</td>
+                            </tr>
+                            <tr>
+                                <th>&lt;section&gt;</th>
+                                <td>section 태그는 말그대로 주제, 카테고리 별로 섹션을 구분하는 용도의 태그로 주로 사용. 같은 테마를 가진 여러개의 콘텐츠의 그룹화할 때
+                                    사용합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>&lt;article&gt;</th>
+                                <td>article 태그는 기사, 블로그 등 텍스트 위주의 페이지를 구성할때 주로 사용합니다 </td>
+                            </tr>
+                            <tr>
+                                <th>&lt;footer&gt;</th>
+                                <td>footer 태그는 바닥글, 문서 하단에 들어가는 정보 구분 공간을 표현하는 태그 입니다.</td>
+                            </tr>
+                            <tr>
+                                <th>&lt;address&gt;</th>
+                                <td>address 태그는 콘텐츠 작성자나 사이트 소유자의 정보등을 부가적으로 담는 기능 입니다.</td>
+                            </tr>
+                            <tr>
+                                <th>&lt;hgroup&gt;</th>
+                                <td>hgroup 태그는 제목과 관련된 부제목을 묶는 태그입니다.</td>
+                            </tr>
+                            <tr>
+                                <th>&lt;main&gt;</th>
+                                <td>main 태그는 이름처럼 문서 &lt;body&gt;의 중심 주제, 주요 내용 또는 응용 프로그램의 중심 기능과 직접 관련되어나 확장되는 콘텐츠를
+                                    나타냅니다.</td>
+                            </tr>
+                            <tr>
+                                <th>&lt;details&gt;</th>
+                                <td>details 태그는 주변 문맥에서 표시된 구절의 관련성 또는 중요성으로 인해 참조 또는 표기 목적으로 표시되거나 강조된 텍스트를 나타냅니다.</td>
+                            </tr>
+                            <tr>
+                                <th>&lt;figure&gt;</th>
+                                <td>figure 태그는 이미지, 다이어그램, 사진 등 독립적인 컨텐츠 정의시 사용입니다.</td>
+                            </tr>
+                            <tr>
+                                <th>&lt;figcaption&gt;</th>
+                                <td>figcaption 태그는 &lt;figure&gt; 요소의 설명 캔션(caption) 정의합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>&lt;mark&gt;</th>
+                                <td>mark 태그는 현재 맥락에 관련이 깊거나 중요한 부분 강조합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>&lt;time&gt;</th>
+                                <td>time 태그는 시간의 특정 지점 또는 구간, datetime과 같은 속성을 이용해 알림같은 기능 구현합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>&lt;summary&gt;</th>
+                                <td>summary 태그는 details 요소에 대한 요약, 캡션 또는 범례를 지정합니다. summary 요소를 클릭하면 상위 details 요소의 상태가
+                                    열리고 닫힙니다.</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>HTML5에 없어진 태그</h3>
+                <ul>
+                    <li>&lt;basefont&gt; 태그</li>
+                    <li>&lt;big&gt; 태그</li>
+                    <li>&lt;center&gt; 태그</li>
+                    <li>&lt;fonr&gt; 태그</li>
+                    <li>&lt;tt&gt; 태그</li>
+                    <li>&lt;frame&gt; 태그</li>
+                    <li>&lt;frameset&gt; 태그</li>
+                    <li>&lt;noframes&gt; 태그</li>
+                    <li>&lt;acronym&gt; 태그</li>
+                    <li>&lt;applet&gt; 태그</li>
+                    <li>&lt;isindex&gt; 태그</li>
+                    <li>&lt;isindex&gt; 태그</li>
+                </ul>
+                <h3>HTML5에 의미가 변경된 태그</h3>
+                <ul>
+                    <li>&lt;a&gt; 태그 : HTML4에서는 href="#" 또는 href="javascript:;"로 지정해야 널 링크로 사용할 수 있었지만 HTML5에서는 href 속성 없이 사용해도 널 링크로 사용 가능
+
+                        </li>
+                    <li> &lt;address&gt; 태그 : HTML4에서는 이름이나 이메일 주소, 전화번호 등 제작자에 대한 정보를 표시할 때 사용하였지만, HTML5에서는 실제 우편물 주소를 표시
+
+                        </li>
+                    <li>
+                        &lt;b&gt;태그 : HTML4에서는 텍스트를 진하게 표시할 때 사용하였지만, HTML5에서는 텍스트를 진하게 표시할뿐 아니라, 제품 소개서 안의 제품명, 요약문서 안의 키워드처럼 특별하게 중요하지는 않지만 진하게 표시하려고 할 때 사용
+
+                            
+                    </li>
+                    <li>
+                        &lt;i&gt;태그 : HTML4에서는 텍스트를 기울어지게 표시할 때 사용하였지만, HTML5에서는 텍스트를 기울어지게 표시할 뿐 아니라, 중요한 정보가 들어 있지 않은 주변 콘텐츠로부터 텍스트를 따로 표시할 때 사용
+
+
+
+                        
+                    </li>
+                    <li>
+                        &lt;menu&gt;태그 : HTML4에서는 &lt;menu&gt;태그를 사용하지 않도록 권고하였으나, HTML5에서는 실제 문서 메뉴 정보를 제공하는데 사용
+
+        
+                    </li>
+                    <li>
+                        &lt;small&gt; 태그 : HTML4에서는 작은 글자로 표시할 때 사용하였지만, HTML5에서는 세부 주석이나 법적 인쇄문서에서 작은 인쇄 정보를 표시할 때 사용
+
+                            
+                    </li>
+                    <li>
+                        &lt;strong&gt; 태그 : HTML4에서는 글자를 강조할 때 사용하였지만, HTML5에서는 단순히 진하게 표시하는 것보다 중요한 정보를 표시할 때 사용
+
+                            
+                    </li>
+                    <li>
+                        &lt;hr&gt; 태그 : HTML4에서는 가로줄을 표시할 때 사용하였지만, HTML5에서는 단락 단위로 주제를 바꾸려고 할 때 사용
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- //refer -->
+
+    </main>
+
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+
+</body>
+
+</html>

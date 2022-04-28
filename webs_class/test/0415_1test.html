@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0415</title>
+</head>
+<body>
+    
+    <script>
+        {
+            let a = 1;
+            // function func() {
+                for(i=1; i<5; i++){
+                    a = a*i
+                }
+                document.write(a);
+            // }
+            // func();
+            document.write("<br>","ㅡㅡㅡㅡㅡㅡㅡ00번ㅡㅡㅡㅡㅡㅡㅡ", "<br>")
+        }
+
+
+        //{4}
+        {
+            // function func(data, exp) {
+                let result = 1;
+                // let exp = 5;
+                // let data = 1;
+
+                for(i=1; i<5; i++){
+                    result = result*i
+                    // result *=i
+                }
+                document.write(result);
+            // }
+            // func(1,5);
+
+            //풀이
+            //
+
+            document.write("<br>","ㅡㅡㅡㅡㅡㅡㅡ4번ㅡㅡㅡㅡㅡㅡㅡ", "<br>")
+        }
+
+        //{6}
+        {
+            // function func() {
+                let i,j = 0;
+                for(i=0; i<=8; i++){
+                    j += i;
+                }
+                document.write(i);
+            // }
+            // func();
+
+            //풀이
+            // j = 0+1+2+3+4+5+6+7+8 = 36         : 대입 연산자 = 누적
+            // i = 9 : 조건문의 i++는 9까지 증가  : 증감 연산자 = 변수의 값을 변화시킴
+            document.write("<br>","ㅡㅡㅡㅡㅡㅡㅡ 6번ㅡㅡㅡㅡㅡㅡㅡ", "<br>")
+        }
+
+        //{7}
+        {
+            function func() {
+                let a=12, b=8, c=2, d=3;
+                a /= b-c*d
+                document.write(a);   
+            }
+            func();
+
+            //풀이
+            // 대입 연산자 : A/=B | A=A/B
+            // a /= b-c*d => a = 12/6
+
+            document.write("<br>","ㅡㅡㅡㅡㅡㅡㅡ 7번ㅡㅡㅡㅡㅡㅡㅡ", "<br>")
+        }
+
+        //{9}
+        {
+            function func() {
+                let a,b,c,result;
+                a=10;
+                b=20;
+                c=30;
+                result = a<b ? b/a : c;
+              
+                if(a<b){  
+                    result =b/a;
+                } else { 
+                    result =c;
+                }
+                
+                
+                document.write(result);
+            }
+            func();
+
+
+            document.write("<br>","ㅡㅡㅡㅡㅡㅡㅡ 8번ㅡㅡㅡㅡㅡㅡㅡ", "<br>")
+        }
+
+        // //{}
+        // {
+        //     function func() {
+        //         let result = 1;
+        //         for(i=1; i<exp; i++){
+                    
+        //         }
+        //         document.write();
+        //     }
+        //     func();
+        //     document.write("<br>","ㅡㅡㅡㅡㅡㅡㅡ 번ㅡㅡㅡㅡㅡㅡㅡ", "<br>")
+        // }
+
+
+        
+
+        
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 이펙트</title>
+    
+    <link rel="stylesheet" href="css/nexon.css">
+    <link rel="stylesheet" href="css/dracula.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <style>
+        body::before {
+            background: rgb(0, 0, 0,0.5);
+        }
+        #mouseType02 {}
+        .mouse__wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: #fff;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            /* cursor: none; */
+        }
+        .mouse__wrap p {
+            font-size: 2.5vw;
+            line-height: 2;
+            font-weight: 500;
+        }
+        .mouse__wrap p:last-child {
+            font-size: 3vw;
+            font-weight: 400;
+        }
+        .mouse__wrap p span {
+            border-bottom: 0.15vw dashed rgb(141, 245, 167);
+            color: rgb(141, 245, 167);
+        }
+        .cursor {
+            position: absolute;
+            width: 200px; 
+            height: 200px;
+            left: 0px;
+            top: 0px;
+            z-index: -1;
+            border-radius: 50%;
+            background-image: url(img/img_slide02.jpg);
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            border: 5px solid #fff;
+        }
+
+    </style>
+</head>
+<body class="img02">
+
+    <main>
+        <section id="mouseType03"> 
+            <div class="cursor"></div>
+            <div class="cursor-follower"></div>
+
+            <div class="mouse__wrap">
+                <p> 
+                    <span class="style1">The way </span>
+                    to
+                    <span class="style2">get started  </span>
+                    is
+                    <span class="style3">to quit </span>
+                    talking and
+                    <span class="style4">begin doing.</span>
+                </p>
+                <p> 
+                        
+
+                     무언가를 <span class="style4">시작하려면</span> 말은 <span class="style5">멈추고</span> <span class="style6">행동</span> 해야 한다
+                </p>
+         </div>
+        </section>
+    </main>
+    <!-- //main -->
+
+    <!-- info -->
+    <div class="info">
+        <div class="title">
+            <h1><a href="mouseEffect.html">JavaScript Mouse Effect03</a></h1>
+            <p>마우스 이펙트 - 조명 효과</p>
+        </div>
+        <div class="number">
+            <ul>
+                <li><a href="mouseEffect01.html">1</a></li>
+                <li><a href="mouseEffect02.html">2</a></li>
+                <li class="active"><a href="mouseEffect03.html">3</a></li>
+                <li><a href="mouseEffect04.html">4</a></li>
+                <li><a href="mouseEffect05.html">5</a></li>
+                <li><a href="mouseEffect06.html">6</a></li>
+                <li><a href="mouseEffect07.html">7</a></li>
+                <li><a href="mouseEffect08.html">8</a></li>
+            </ul>
+        </div>
+        <div class="source">
+            <button class="source-btn">소스보기</button>
+            <div id="modal">
+                <div class="modal-wrap">
+                    <div class="modal-cont">
+                        <div class="code-view">
+                            <div class="view-header" aria-hidden="true">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="view-title">
+                                <ul>
+                                    <li class="active"><a href="#">HTML</a></li>
+                                    <li><a href="#">CSS</a></li>
+                                    <li><a href="#">JavaScript</a></li>
+                                </ul>
+                            </div>
+                            <div class="view-cont">
+                                <div>
+<pre><code class="language-html">
+</code></pre>
+                                </div>
+                                <!-- //cont1 -->
+                                <div>
+<pre><code class="language-javascript">
+</code></pre>
+                                </div>
+                                <!-- //cont2 -->
+                                <div>
+<pre><code class="language-javascript">
+</code></pre>
+                                </div>
+                                <!-- //cont3 -->
+                            </div>
+                        </div>
+                    </div>
+                    <button class="modal-close">닫기</button>
+                </div>
+            </div>
+        </div>
+        <div class="attr">
+            <ul>
+                <!-- 페이지 문서 기준 좌표 -->
+                <li>pageX : <span class="pageX">0</span>px</li>
+                <li>pageY : <span class="pageY">0</span>px</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //info -->
+    <!-- script -->
+    <script src="js/highlight.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/gsap.min.js"></script>
+    <script>
+        hljs.highlightAll(); //외부 스크립트 함수 (highlight)호출
+        modal(); //외부 스크립트 함수 (modal, 소스보기 창)호출
+        tabMenu(); //외부 스크립트 함수 (tabMenu, 소스보기의 탭 메뉴)호출
+
+        function follow(e){
+            // const circle1 = document.querySelector(".cursor").clientWidth;  //190 : border값 빠진 상태
+            // const circle2 = document.querySelector(".cursor").offsetWidth;  //200 : border값 포함 상태
+            const circle3 = document.querySelector(".cursor").getBoundingClientRect();  //bottom, height, left, right, top, width, x(좌표값), y(좌표값)
+
+            // console.log(circle1);
+            // console.log(circle2);
+            // console.log(circle3);
+            
+            //div.cursor를 마우스 정 가운데로 위치시킨다.
+            gsap.to(".cursor", {duration: .3, left: e.pageX - (circle3.width / 2), top: e.pageY - (circle3.height / 2)});
+
+            //출력용
+            document.querySelector(".pageX").innerText = e.pageX;
+            document.querySelector(".pageY").innerText = e.pageY;
+        }
+
+        window.addEventListener("mousemove", follow);   //mousemove이벤트 발생 시 follow함수 실행
+       
+       // highlight();
+        // modal();
+        // tabMenu();
+       
+        // // const cursor1 = document.querySelector(".cursor").clientWidth  //190 : border 빠진 상태
+        // // const cursor2 = document.querySelector(".cursor").offsetWidth //200  : border 포함 상태
+        // const circle3 = document.querySelector(".cursor").getBoundingClientRect(); //bottom, height, left, right, top, w,y
+
+        // // const cursor3 = {
+        // //     bottom : 0, 
+        // //     height : 200, 
+        // //     left : 0, 
+        // //     width : 200
+        // // }
+
+        // function follower(e) {
+            
+        //     //gsap
+        //     gsap.to(".cursor", {duration: .3, left: e.pageX - circle.width/2, top: e.pageY  - circle.height/2 });
+
+        //     //출력용
+        //     document.querySelector(".pageX").innerText = e.pageX
+        //     document.querySelector(".pageY").innerText = e.pageY
+        // }
+        // window.addEventListener("mousemove",follow);
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

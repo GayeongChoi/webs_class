@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트</title>
+    <!-- style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+</head>
+
+<body>
+    <div class="top"><a href="#header">Top</a></div>
+    <header id="header">
+        <h1><a href="index.html">Javascript 레퍼런스</a></h1>
+        <nav>
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li class="active"><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul>
+                <li><a href="practice.html">데이터 연습하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="sample_menu.html">메뉴 이펙트</a></li>
+                <li><a href="sample_search.html">검색 이펙트</a></li>
+                <li><a href="sample_mouse.html">마우스 이펙트</a></li>
+                <li><a href="sample_parallax.html">패랠랙스 이펙트</a></li>
+                <li><a href="sample_slider.html">슬라이드 이펙트</a></li>
+                <li><a href="sample_game.html">게임 이펙트</a></li>
+              </ul>
+        </nav>
+    </header>
+    <main id="main">
+        <div class="list">
+            <ul>
+                <li><a href="#sample1">01. 문자열 : 문자열 결합 / 템플릿 문자열</a></li>
+                <li><a href="#sample2">02. 문자열 속성 : length : 문자열 길이 구하기 : 반환(숫자)</a></li>
+
+                <li><a href="#sample3">03. 문자열 메서드</a> : toUpperCase() : 문자열 대문자 변경 : 반환(문자열)</li>
+                <li><a href="#sample3">04. 문자열 메서드</a> : toLowerCase() : 문자열 소문자 변경 : 반환(문자열)</li>
+
+                <li><a href="#sample4">05. 문자열 메서드</a> : trim() : 문자열 공백 제거 : 반환(문자열)</li>
+
+                <li><a href="#sample5">06. 문자열 메서드</a> : indexOf() : 문자열 검색 : 반환(숫자)</li>
+                <li><a href="#sample5">07. 문자열 메서드</a> : lastIndexOf() : 문자열 검색 : 반환(숫자)</li>
+                <li><a href="#sample5">08. 문자열 메서드</a> : search() : 문자열 검색 : 반환(숫자)</li>
+                <li><a href="#sample5">09. 문자열 메서드</a> : includes() : 문자열 포함 여부 검색 : 반환(Boolean)</li>
+                <li><a href="#sample5">10. 문자열 메서드</a> : startWidth() : 문자열 포함 여부 검색 : 반환(Boolean)</li>
+                <li><a href="#sample5">11. 문자열 메서드</a> : endWidth() : 문자열 포함 여부 검색 : 반환(Boolean)</li>
+
+                <li><a href="#sample6">12. 문자열 메서드</a>: charAt() : 지정한 인덱스의 문자를 추출 : 반환(문자열)</li>
+
+                <li><a href="#sample7">13. 문자열 메서드</a> : slice() : 지정한 범위 내 문자열을 추출 : 반환(문자열)</li>
+                <li><a href="#sample7">14. 문자열 메서드</a> : substring() : 지정한 범위 내 문자열을 추출 : 반환(문자열)</li>
+                <li><a href="#sample7">15. 문자열 메서드</a> : substr() : 지정한 범위 내 문자열을 추출 : 반환(문자열)</li>
+    
+                <li><a href="#sample8">16. 문자열 메서드</a> : replace() : 문자열 변경 : 반환(문자열)</li>
+
+                <li><a href="#sample9">17. 문자열 메서드</a> : split() : 문자열 반환 : 반환(문자열)</li>
+
+                <li><a href="#sample10">18. 문자열 메서드</a> : padStart() : 문자열 시작 부분에 문자열 추가 : 반환(문자열)</li>
+                <li><a href="#sample10">19. 문자열 메서드</a> : padEnd() : 문자열 끝 부분에 문자열 추가 : 반환(문자열)</li>
+                
+                <li><a href="#sample11">20. 문자열 메서드</a> : encodeURL() : 문자열을 인코딩 : 반환(문자열)</li>
+                <li><a href="#sample11">21. 문자열 메서드</a> : encodeURLComponent() : 문자열을 인코딩 : 반환(문자열)</li>
+                <li><a href="#sample11">22. 문자열 메서드</a> : decodeURL() : 문자열을 디코딩 : 반환(문자열)</li>
+                <li><a href="#sample11">23. 문자열 메서드</a> : decodeURLComponent() : 문자열을 디코딩 : 반환(문자열)</li>
+            </ul>
+        </div>
+        <!-- //list -->
+        <div class="script">
+
+            <div class="script">
+                <div id="sample1" class="sample">
+                    <h3>01. 문자열 : 문자열 결합 / 템플릿 문자열</h3>
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col style="width: 4%;">
+                                <col style="width: 32%;">
+                                <col style="width: 22%;">
+                                <col style="width: 42%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>번호</th>
+                                    <th>기본값</th>
+                                    <th>속성</th>
+                                    <th>리턴 값</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="sample1_N1"></td>
+                                    <td class="sample1_Q1"></td>
+                                    <td class="sample1_M1"></td>
+                                    <td class="sample1_R1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample1_N2"></td>
+                                    <td class="sample1_Q2"></td>
+                                    <td class="sample1_M2"></td>
+                                    <td class="sample1_R2"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample1_N3"></td>
+                                    <td class="sample1_Q3"></td>
+                                    <td class="sample1_M3"></td>
+                                    <td class="sample1_R3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample1_N4"></td>
+                                    <td class="sample1_Q4"></td>
+                                    <td class="sample1_M4"></td>
+                                    <td class="sample1_R4"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const str1 = "자바스트립트";
+    const str2 = "제이쿼리";
+    document.querySelector(".sample1_R1").innerHTML = str1 + str2;
+
+    const num1 = 100;
+    const num2 = 200;
+    document.querySelector(".sample1_R2").innerHTML = num1 + num2;
+
+    const txt1 = "모던";
+    const txt2 = "자바스크립트";
+    const txt3 = "핵심";
+    document.querySelector(".sample1_R3").innerHTML = "나는 " + txt1 + "(modern) " + txt2 + "(javascript) " + txt3 + "을 배우고 싶다.";
+
+    const tem1 = "모던";
+    const tem2 = "자바스크립트";
+    const tem3 = "핵심";
+    document.querySelector(".sample1_R4").innerHTML = `나는 ${txt1}(modern) ${txt2}(javascript) ${txt3}을 배우고 싶다.`;
+}</code></pre>
+                    </div>
+                </div>
+                <!-- //sample01 -->
+
+                <div id="sample2" class="sample">
+                    <h3>02. 문자열 속성 : length : 문자열 길이 구하기 : 반환(숫자)</h3>
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col style="width: 4%;">
+                                <col style="width: 32%;">
+                                <col style="width: 22%;">
+                                <col style="width: 42%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>번호</th>
+                                    <th>기본값</th>
+                                    <th>속성</th>
+                                    <th>리턴 값</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="sample2_N1"></td>
+                                    <td class="sample2_Q1"></td>
+                                    <td class="sample2_M1"></td>
+                                    <td class="sample2_R1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample2_N2"></td>
+                                    <td class="sample2_Q2"></td>
+                                    <td class="sample2_M2"></td>
+                                    <td class="sample2_R2"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="code">
+                        <pre class="line-numbers"><code class="language-js">{
+    const str1 = "자바스크립트"
+    const currenStr1 = str1.length;
+
+    const str2 = "javascript"
+    const currenStr2 = str2.length;
+}</code></pre>
+                    </div>
+                </div>
+                <!-- //sample02 -->
+
+                <div id="sample3" class="sample">
+                    <h3>03. 문자열 메서드 : toUpperCase() / toLowerCase() : 문자열 대문자,소문자 변경 : 반환(문자열) </h3>
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col style="width: 4%;">
+                                <col style="width: 32%;">
+                                <col style="width: 22%;">
+                                <col style="width: 42%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>번호</th>
+                                    <th>기본값</th>
+                                    <th>속성</th>
+                                    <th>리턴 값</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="sample3_N1"></td>
+                                    <td class="sample3_Q1"></td>
+                                    <td class="sample3_M1"></td>
+                                    <td class="sample3_R1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample3_N2"></td>
+                                    <td class="sample3_Q2"></td>
+                                    <td class="sample3_M2"></td>
+                                    <td class="sample3_R2"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="code">
+                        <pre class="line-numbers"><code class="language-js">{
+    // 03. 문자열 메서드 : toUpperCase() : 문자열 대문자 변경 : 반환(문자열)
+    const str1 = "javascript"
+    const currenStr1 = str1.toUpperCase();
+
+    // 04. 문자열 메서드 : toLowerCase() : 문자열 소문자 변경 : 반환(문자열)
+    const str2 = "JAVASCRIPT"
+    const currenStr2 = str2.toLowerCase();
+}</code></pre>
+                    </div>
+                </div>
+                <!-- //sample03 -->
+
+                <div id="sample4" class="sample">
+                    <h3>04. 문자열 메서드 : trim() : 문자열 공백 제거 : 반환(문자열)</h3>
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col style="width: 4%;">
+                                <col style="width: 32%;">
+                                <col style="width: 22%;">
+                                <col style="width: 42%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>번호</th>
+                                    <th>기본값</th>
+                                    <th>속성</th>
+                                    <th>리턴 값</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="sample4_N1"></td>
+                                    <td class="sample4_Q1"></td>
+                                    <td class="sample4_M1"></td>
+                                    <td class="sample4_R1"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="code">
+                        <pre class="line-numbers"><code class="language-js">{
+    //05. 문자열 메서드 : trim() : 문자열 공백 제거 : 반환(문자열)
+    const str1 = "  'javascript'  "
+    const currenStr1 = str1.trim();                            
+}</code></pre>
+                    </div>
+                </div>
+                <!-- //sample04 -->
+
+                <div id="sample5" class="sample">
+                    <h3>05. 문자열 :  문자열 검색 : indexOf() / lastIndexOf() / search() / includes() / startWidth() / endWidth() 
+                    </h3>
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col style="width: 4%;">
+                                <col style="width: 32%;">
+                                <col style="width: 22%;">
+                                <col style="width: 42%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>번호</th>
+                                    <th>기본값</th>
+                                    <th>속성</th>
+                                    <th>리턴 값</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="sample5_N1"></td>
+                                    <td class="sample5_Q1"></td>
+                                    <td class="sample5_M1"></td>
+                                    <td class="sample5_R1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample5_N2"></td>
+                                    <td class="sample5_Q2"></td>
+                                    <td class="sample5_M2"></td>
+                                    <td class="sample5_R2"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample5_N3"></td>
+                                    <td class="sample5_Q3"></td>
+                                    <td class="sample5_M3"></td>
+                                    <td class="sample5_R3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample5_N4"></td>
+                                    <td class="sample5_Q4"></td>
+                                    <td class="sample5_M4"></td>
+                                    <td class="sample5_R4"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample5_N5"></td>
+                                    <td class="sample5_Q5"></td>
+                                    <td class="sample5_M5"></td>
+                                    <td class="sample5_R5"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample5_N6"></td>
+                                    <td class="sample5_Q6"></td>
+                                    <td class="sample5_M6"></td>
+                                    <td class="sample5_R6"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample5_N7"></td>
+                                    <td class="sample5_Q7"></td>
+                                    <td class="sample5_M7"></td>
+                                    <td class="sample5_R7"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample5_N8"></td>
+                                    <td class="sample5_Q8"></td>
+                                    <td class="sample5_M8"></td>
+                                    <td class="sample5_R8"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample5_N9"></td>
+                                    <td class="sample5_Q9"></td>
+                                    <td class="sample5_M9"></td>
+                                    <td class="sample5_R9"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample5_N10"></td>
+                                    <td class="sample5_Q10"></td>
+                                    <td class="sample5_M10"></td>
+                                    <td class="sample5_R10"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample5_N11"></td>
+                                    <td class="sample5_Q11"></td>
+                                    <td class="sample5_M11"></td>
+                                    <td class="sample5_R11"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="code">
+                        <pre class="line-numbers"><code class="language-js">{
+    const str = "자바스크립트(javascript) 공부";
+
+//반환(숫자)
+    // 06. 문자열 메서드 : indexOf() : 문자열 검색 : 반환(숫자)
+    const text1 = str.indexOf("javascript");
+    const text2 = str.indexOf("자바스크립트");
+    const text3 = str.indexOf("제이쿼리");
+    const text4 = str.indexOf('a');
+
+    // 07. 문자열 메서드 : lastIndexOf() : 문자열 검색 : 반환(숫자)
+    const text5 = str.lastIndexOf('a');
+
+    // 08. 문자열 메서드 : search() : 문자열 검색 : 반환(숫자)
+    //정규식 표현 - search는 정규식 표현(//)을 사용할 수 있다 /는 정규식 표현을 썼다!
+    const text6 = str.search(/javascript/);
+    const text7 = str.search(/jaquery/);
+    
+//반환(Boolean)
+    // 09. 문자열 메서드 : includes() : 문자열 포함 여부 검색 : 반환(Boolean)
+    const text8 = str.includes("javascript");
+    const text9 = str.includes("jquery");
+
+    // 10. 문자열 메서드 : startWidth() : 문자열 포함 여부 검색 : 반환(Boolean)
+    const text10 = str.startsWith("자바스크립트");
+
+    // 11. 문자열 메서드 : endWidth() : 문자열 포함 여부 검색 : 반환(Boolean)
+    const text11 = str.endsWith("javascript");
+}</code></pre>
+                    </div>
+                </div>
+                <!-- //sample05 -->
+
+                <div id="sample6" class="sample">
+                    <h3>06. 문자열 메서드 : charAt() : 지정한 인덱스의 <b>문자</b>를 추출 : 반환(문자열) </h3>
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col style="width: 4%;">
+                                <col style="width: 32%;">
+                                <col style="width: 22%;">
+                                <col style="width: 42%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>번호</th>
+                                    <th>기본값</th>
+                                    <th>속성</th>
+                                    <th>리턴 값</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="sample6_N1"></td>
+                                    <td class="sample6_Q1"></td>
+                                    <td class="sample6_M1"></td>
+                                    <td class="sample6_R1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample6_N2"></td>
+                                    <td class="sample6_Q2"></td>
+                                    <td class="sample6_M2"></td>
+                                    <td class="sample6_R2"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="code">
+                        <pre class="line-numbers"><code class="language-js">{   
+    // 12. 문자열 메서드 : charAt() : 지정한 인덱스의 문자를 추출 : 반환(문자열)
+    const str = "자바스크립트(javascript) 공부";
+    
+    const text1 = str.charAt(4);
+    const text2 = str.charAt();
+
+    //index를 제공하지 않으면 기본값은 0
+}</code></pre>
+                    </div>
+                </div>
+                <!-- //sample06 -->
+
+                <div id="sample7" class="sample">
+                    <h3>07. 문자열 메서드 : slice() / substring() / substr() : 지정한 '범위 내' 문자열을 추출 : 반환(문자열)</h3>
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col style="width: 4%;">
+                                <col style="width: 32%;">
+                                <col style="width: 32%;">
+                                <col style="width: 32%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>번호</th>
+                                    <th>기본값</th>
+                                    <th>속성</th>
+                                    <th>리턴 값</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="sample7_N1"></td>
+                                    <td class="sample7_Q1"></td>
+                                    <td class="sample7_M1"></td>
+                                    <td class="sample7_R1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample7_N2"></td>
+                                    <td class="sample7_Q2"></td>
+                                    <td class="sample7_M2"></td>
+                                    <td class="sample7_R2"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample7_N3"></td>
+                                    <td class="sample7_Q3"></td>
+                                    <td class="sample7_M3"></td>
+                                    <td class="sample7_R3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample7_N4"></td>
+                                    <td class="sample7_Q4"></td>
+                                    <td class="sample7_M4"></td>
+                                    <td class="sample7_R4"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample7_N5"></td>
+                                    <td class="sample7_Q5"></td>
+                                    <td class="sample7_M5"></td>
+                                    <td class="sample7_R5"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample7_N6"></td>
+                                    <td class="sample7_Q6"></td>
+                                    <td class="sample7_M6"></td>
+                                    <td class="sample7_R6"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample7_N7"></td>
+                                    <td class="sample7_Q7"></td>
+                                    <td class="sample7_M7"></td>
+                                    <td class="sample7_R7"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="code">
+                        <pre class="line-numbers"><code class="language-js"> {
+    const str = "자바스크립트(javascript) 공부";
+
+    // 13. 문자열 메서드 : slice() : 지정한 범위 내 문자열을 추출 : 반환(문자열)
+    //slice(시작 인덱스)
+    //slice(시작 인덱스, 종료 인덱스) | 종료 인덱스의 문자열은 반환X
+    //시작 값이 정료 값보다 클 경우 : 결과 값 없음
+    const text = str.slice(1, 4);
+    const text2 = str.slice(1);
+    const text3 = str.slice(3, -1);
+    const text4 = str.slice(-14, 17); // (7, 17) / (7, -4) / (-14, -4)
+    const text5 = str.slice(5, 1);  //  뒷자리 수보다 앞 자리가 크면 안됨
+
+    // 14. 문자열 메서드 : substring() : 지정한 범위 내 문자열을 추출 : 반환(문자열)
+    //substring() : 시작 값이 종료 값보다 클 경우 : 두 값을 바꿔서 처리
+    const text6 = str.substring(5, 1);  //앞자리와 뒷자리 수를 바꿔줌
+    
+    // 15. 문자열 메서드 : substr() : 지정한 범위 내 문자열을 추출 : 반환(문자열)
+    //substr(시작인덱스, 글자수) | 시작한 인덱스부터 지정한 글자수 추출
+    const text7 = str.substr(4, 2);
+}</code></pre>
+                    </div>
+                </div>
+                <!-- //sample07 -->
+    
+                <div id="sample8" class="sample">
+                    <h3>08. 문자열 메서드 : replace() : 문자열 변경 : 반환(문자열)</h3>
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col style="width: 4%;">
+                                <col style="width: 32%;">
+                                <col style="width: 22%;">
+                                <col style="width: 42%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>번호</th>
+                                    <th>기본값</th>
+                                    <th>속성</th>
+                                    <th>리턴 값</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="sample8_N1"></td>
+                                    <td class="sample8_Q1"></td>
+                                    <td class="sample8_M1"></td>
+                                    <td class="sample8_R1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample8_N2"></td>
+                                    <td class="sample8_Q2"></td>
+                                    <td class="sample8_M2"></td>
+                                    <td class="sample8_R2"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample8_N3"></td>
+                                    <td class="sample8_Q3"></td>
+                                    <td class="sample8_M3"></td>
+                                    <td class="sample8_R3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample8_N4"></td>
+                                    <td class="sample8_Q4"></td>
+                                    <td class="sample8_M4"></td>
+                                    <td class="sample8_R4"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample8_N5"></td>
+                                    <td class="sample8_Q5"></td>
+                                    <td class="sample8_M5"></td>
+                                    <td class="sample8_R5"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="code">
+                        <pre class="line-numbers"><code class="language-js">{
+    const str = "자바스크립트(javascript) 공부";
+
+    // 16. 문자열 메서드 : replace() : 문자열 변경 : 반환(문자열)
+    //replace(문자열,문자열) = replace(변경될 문자,변경할 문자)
+    const text = str.replace('공부','스터디')
+
+    const str2 = "img01.jpg";
+    const text2 = str2.replace('img01.jpg','img02.jpg')
+
+    const str3 = "010-9312-9004";
+    const text3 = str3.replace('-','')
+
+    //정규식 표현
+    const str4 = "010-9312-9004";
+    const text4 = str4.replace(/-/g,'') 
+
+    const str5 = "010-9312-9004";
+    const text5 = str5.replace(/-/g,' ') 
+}</code></pre>
+                    </div>
+                </div>
+                <!-- //sample08 -->
+
+                <div id="sample9" class="sample">
+                    <h3>09. 문자열 메서드 : split() : 문자열 반환 : 반환(문자열) - 엄청 많이 쓴다 </h3>
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col style="width: 4%;">
+                                <col style="width: 42%;">
+                                <col style="width: 12%;">
+                                <col style="width: 42%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>번호</th>
+                                    <th>기본값</th>
+                                    <th>속성</th>
+                                    <th>리턴 값</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="sample9_N1"></td>
+                                    <td class="sample9_Q1"></td>
+                                    <td class="sample9_M1"></td>
+                                    <td class="sample9_R1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample9_N2"></td>
+                                    <td class="sample9_Q2"></td>
+                                    <td class="sample9_M2"></td>
+                                    <td class="sample9_R2"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample9_N3"></td>
+                                    <td class="sample9_Q3"></td>
+                                    <td class="sample9_M3"></td>
+                                    <td class="sample9_R3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample9_N4"></td>
+                                    <td class="sample9_Q4"></td>
+                                    <td class="sample9_M4"></td>
+                                    <td class="sample9_R4"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample9_N5"></td>
+                                    <td class="sample9_Q5"></td>
+                                    <td class="sample9_M5"></td>
+                                    <td class="sample9_R5"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="code">
+                        <pre class="line-numbers"><code class="language-js">{
+    // 17. 문자열 메서드 : split() : 문자열 반환 : 반환(문자열)
+    //split() 메서드는 String(문자열) 객체를 지정한 구분자를 이용하여 문자열을 나눈다.
+    //반환값 : 주어진 문자열을 separator마다 끊은 부분 문자열을 담은 배열.
+    const str = "자바스크립트(javascript) 공부"; //,를 붙이는게 아닌 각각의 문자열을 반환한 것
+    const text = str.split('');
+    const text2 = str.split(' ');
+    const text3 = str.split('').join('/');
+    //const text = str.split(); //자바스크립트(javascript) 공부 ..라는 배열을 반환 
+
+    const str4 ="https://webstoryboy.co.kr/main.html?id=1234&name=weds"
+    const arrText4 = str4.split('&');   //(https://~=1234)과 (name=weds)를 반환
+
+    const str5 ="https://webstoryboy.co.kr/main.html?id=1234&name=weds"
+    const arrText5 = str5.split(/&|\?/);
+}</code></pre>
+                    </div>
+                </div>
+                <!-- //sample09 -->
+
+                <div id="sample10" class="sample">
+                    <h3>10. 문자열 메서드 : padStart() / padEnd() : 문자열 시작 부분,끝 부분에 문자열 추가 : 반환(문자열)</h3>
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col style="width: 4%;">
+                                <col style="width: 32%;">
+                                <col style="width: 22%;">
+                                <col style="width: 42%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>번호</th>
+                                    <th>기본값</th>
+                                    <th>속성</th>
+                                    <th>리턴 값</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="sample10_N1"></td>
+                                    <td class="sample10_Q1"></td>
+                                    <td class="sample10_M1"></td>
+                                    <td class="sample10_R1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample10_N2"></td>
+                                    <td class="sample10_Q2"></td>
+                                    <td class="sample10_M2"></td>
+                                    <td class="sample10_R2"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample10_N3"></td>
+                                    <td class="sample10_Q3"></td>
+                                    <td class="sample10_M3"></td>
+                                    <td class="sample10_R3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample10_N4"></td>
+                                    <td class="sample10_Q4"></td>
+                                    <td class="sample10_M4"></td>
+                                    <td class="sample10_R4"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample10_N5"></td>
+                                    <td class="sample10_Q5"></td>
+                                    <td class="sample10_M5"></td>
+                                    <td class="sample10_R5"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample10_N6"></td>
+                                    <td class="sample10_Q6"></td>
+                                    <td class="sample10_M6"></td>
+                                    <td class="sample10_R6"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample10_N7"></td>
+                                    <td class="sample10_Q7"></td>
+                                    <td class="sample10_M7"></td>
+                                    <td class="sample10_R7"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample10_N8"></td>
+                                    <td class="sample10_Q8"></td>
+                                    <td class="sample10_M8"></td>
+                                    <td class="sample10_R8"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="code">
+                        <pre class="line-numbers"><code class="language-js">{
+    // 18. 문자열 메서드 : padStart() : 문자열 시작 부분에 문자열 추가 : 반환(문자열)
+    //문자열.padStart(전체길이, 추가 문자열)
+    const num = "7";
+    const text = num.padStart(2,0)
+
+    const num2 = "456";
+    const text2 = num2.padStart(6,123)
+
+    const num3 = "abc";
+    const text3 = num3.padStart(3,'0');
+
+    const num4 = "abc";
+    const text4 = num4.padStart(6);
+
+    // 19. 문자열 메서드 : padEnd() : 문자열 끝 부분에 문자열 추가 : 반환(문자열)                    
+    const num5 = "7";
+    const text5 = num5.padEnd(2,'0');
+
+    const num6 = "456";
+    const text6 = num6.padEnd(6,'123');
+
+    const num7 = "abc";
+    const text7 = num7.padEnd(3,'0');
+
+    const num8 = "abc";
+    const text8 = num8.padEnd(6);
+}</code></pre>
+                    </div>
+                </div>
+                <!-- //sample10 -->
+
+                <div id="sample11" class="sample">
+                    <h3>11. 문자열 메서드 : encodeURL() / encodeURLComponent() / decodeURL() / decodeURLComponent() : 문자열을 인코딩 : 반환(문자열)</h3>
+                    <div class="table" style="word-break: break-all;">
+                        <table>
+                            <colgroup>
+                                <col style="width: 4%;">
+                                <col style="width: 32%;">
+                                <col style="width: 22%;">
+                                <col style="width: 42%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>번호</th>
+                                    <th>기본값</th>
+                                    <th>속성</th>
+                                    <th>리턴 값</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="sample11_N1"></td>
+                                    <td class="sample11_Q1"></td>
+                                    <td class="sample11_M1"></td>
+                                    <td class="sample11_R1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample11_N2"></td>
+                                    <td class="sample11_Q2"></td>
+                                    <td class="sample11_M2"></td>
+                                    <td class="sample11_R2"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample11_N3"></td>
+                                    <td class="sample11_Q3"></td>
+                                    <td class="sample11_M3"></td>
+                                    <td class="sample11_R3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="sample11_N4"></td>
+                                    <td class="sample11_Q4"></td>
+                                    <td class="sample11_M4"></td>
+                                    <td class="sample11_R4"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="code">
+                        <pre class="line-numbers"><code class="language-js">{
+    //url에 한글이 포함되면 사용 할 수 없기 때문에 인코딩을 해줍니다.
+    *인코딩:사용자가 입력한 문자나 기호들을 컴퓨터가 이용할 수 있는 신호로 만드는 것
+
+    // 20. 문자열 메서드 : encodeURL() : 문자열을 인코딩 : 반환(문자열)
+    const text = "https://webstoryboy.co.kr/자바스크립트.html";
+    const url = encodeURI(text);
+
+    // 21. 문자열 메서드 : encodeURLComponent() : 문자열을 인코딩 : 반환(문자열)
+    const text2 = "https://webstoryboy.co.kr/자바스크립트.html";
+    const url2 = encodeURIComponent(text2)
+
+    // 22. 문자열 메서드 : decodeURL() : 문자열을 디코딩 : 반환(문자열)
+    const text3 = "https://webstoryboy.co.kr/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8.html";
+    const url3 = decodeURI(text3);
+
+    // 23. 문자열 메서드 : decodeURLComponent() : 문자열을 디코딩 : 반환(문자열)
+    const text4 = "https%3A%2F%2Fwebstoryboy.co.kr%2F%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8.html";
+    const url4 = decodeURIComponent(text4);
+}</code></pre>
+                    </div>
+                </div>
+                <!-- //sample11 -->
+
+
+
+            </div>
+            <!-- //script -->
+    </main>
+
+
+    <!-- script -->
+    <script>
+        //#id 이동하기 //마우스로 클릭하면 스무스하게 이동하는 효과
+        document.querySelectorAll("a[href^='#']").forEach(el => { //id(#)을 다중 선택
+            el.addEventListener("click", (event) => { //클릭하면 이벤트 발생
+                event.preventDefault();
+                document.querySelector(el.getAttribute("href")).scrollIntoView({
+                    behavior: "smooth"
+                })
+            })
+        })
+
+        //01. 문자열 : 문자열 결합 / 템플릿 문자열
+        //이렇게 결합한다
+        {
+            const str1 = "자바스트립트";
+            const str2 = "제이쿼리";
+
+            document.querySelector(".sample1_N1").innerHTML = 1;
+            document.querySelector(".sample1_Q1").innerHTML = "자바스크립트, 제이쿼리";
+            document.querySelector(".sample1_M1").innerHTML = "string 결합";
+            document.querySelector(".sample1_R1").innerHTML = str1 + str2;
+
+            const num1 = 100;
+            const num2 = 200;
+
+            document.querySelector(".sample1_N2").innerHTML = 2;
+            document.querySelector(".sample1_Q2").innerHTML = "100, 200";
+            document.querySelector(".sample1_M2").innerHTML = "number 결합";
+            document.querySelector(".sample1_R2").innerHTML = num1 + num2;
+
+            const txt1 = "모던";
+            const txt2 = "자바스크립트";
+            const txt3 = "핵심";
+
+            document.querySelector(".sample1_N3").innerHTML = 3;
+            document.querySelector(".sample1_Q3").innerHTML = "모던, 자바스크립트, 핵심";
+            document.querySelector(".sample1_M3").innerHTML = "문자열 결합";
+            document.querySelector(".sample1_R3").innerHTML = "나는 " + txt1 + "(modern) " + txt2 + "(javascript) " +
+                txt3 + "을 배우고 싶다.";
+
+            const tem1 = "모던";
+            const tem2 = "자바스크립트";
+            const tem3 = "핵심";
+
+            document.querySelector(".sample1_N4").innerHTML = 4;
+            document.querySelector(".sample1_Q4").innerHTML = "모던, 자바스크립트, 핵심";
+            document.querySelector(".sample1_M4").innerHTML = "문자열 결합";
+            document.querySelector(".sample1_R4").innerHTML = `나는 ${txt1}(modern) ${txt2}(javascript) ${txt3}을 배우고 싶다.`;
+        }
+        //02. 문자열 속성 : length : 문자열 길이 구하기 : 반환(숫자)
+        {
+            const str1 = "자바스크립트"
+            const currenStr1 = str1.length;
+
+            document.querySelector(".sample2_N1").innerHTML = 1;
+            document.querySelector(".sample2_Q1").innerHTML = str1;
+            document.querySelector(".sample2_M1").innerHTML = "length";
+            document.querySelector(".sample2_R1").innerHTML = currenStr1;
+
+            const str2 = "javascript"
+            const currenStr2 = str2.length;
+
+            document.querySelector(".sample2_N2").innerHTML = 2;
+            document.querySelector(".sample2_Q2").innerHTML = str2;
+            document.querySelector(".sample2_M2").innerHTML = "length";
+            document.querySelector(".sample2_R2").innerHTML = currenStr2;
+        }
+        //{3}
+        // 03. 문자열 메서드 : toUpperCase() : 문자열 대문자 변경 : 반환(문자열)
+        // 04. 문자열 메서드 : toLowerCase() : 문자열 소문자 변경 : 반환(문자열)
+        {
+            const str1 = "javascript"
+            const currenStr1 = str1.toUpperCase();
+
+            document.querySelector(".sample3_N1").innerHTML = 1;
+            document.querySelector(".sample3_Q1").innerHTML = str1;
+            document.querySelector(".sample3_M1").innerHTML = "toUpperCase()";
+            document.querySelector(".sample3_R1").innerHTML = currenStr1;
+
+            const str2 = "JAVASCRIPT"
+            const currenStr2 = str2.toLowerCase();
+
+            document.querySelector(".sample3_N2").innerHTML = 2;
+            document.querySelector(".sample3_Q2").innerHTML = str2;
+            document.querySelector(".sample3_M2").innerHTML = "toLowerCase()";
+            document.querySelector(".sample3_R2").innerHTML = currenStr2;
+        }
+        //{4}
+        //05. 문자열 메서드 : trim() : 문자열 공백 제거 : 반환(문자열)
+        {
+            const str1 = "  'javascript'  "
+            const currenStr1 = str1.trim();
+
+            document.querySelector(".sample4_N1").innerHTML = 1;
+            document.querySelector(".sample4_Q1").innerHTML = "' &nbsp; &nbsp; &nbsp; javascript  &nbsp;  &nbsp; '";
+            document.querySelector(".sample4_M1").innerHTML = "trim()";
+            document.querySelector(".sample4_R1").innerHTML = currenStr1;
+        }
+        //{5} 검색
+        // 06. 문자열 메서드 : indexOf() : 문자열 검색 : 반환(숫자)
+        // 07. 문자열 메서드 : lastIndexOf() : 문자열 검색 : 반환(숫자)
+        // 08. 문자열 메서드 : search() : 문자열 검색 : 반환(숫자)
+        // 09. 문자열 메서드 : includes() : 문자열 포함 여부 검색 : 반환(Boolean)
+        // 10. 문자열 메서드 : startWidth() : 문자열 포함 여부 검색 : 반환(Boolean)
+        // 11. 문자열 메서드 : endWidth() : 문자열 포함 여부 검색 : 반환(Boolean)
+        {
+            const str = "자바스크립트(javascript) 공부";
+
+            const text1 = str.indexOf("javascript");
+
+            document.querySelector(".sample5_N1").innerHTML = "1";
+            document.querySelector(".sample5_Q1").innerHTML = str;
+            document.querySelector(".sample5_M1").innerHTML = "indexOf('javascript')";
+            document.querySelector(".sample5_R1").innerHTML = text1; //7 
+
+            const text2 = str.indexOf("자바스크립트");
+
+            document.querySelector(".sample5_N2").innerHTML = "2";
+            document.querySelector(".sample5_Q2").innerHTML = str;
+            document.querySelector(".sample5_M2").innerHTML = "indexOf('자바스크립트')";
+            document.querySelector(".sample5_R2").innerHTML = text2;
+
+            const text3 = str.indexOf("제이쿼리");
+
+            document.querySelector(".sample5_N3").innerHTML = "3";
+            document.querySelector(".sample5_Q3").innerHTML = str;
+            document.querySelector(".sample5_M3").innerHTML = "indexOf('제이쿼리')";
+            document.querySelector(".sample5_R3").innerHTML = text3;
+
+            const text4 = str.indexOf('a');
+
+            document.querySelector(".sample5_N4").innerHTML = "4";
+            document.querySelector(".sample5_Q4").innerHTML = str;
+            document.querySelector(".sample5_M4").innerHTML = "indexOf('a')";
+            document.querySelector(".sample5_R4").innerHTML = text4;
+
+            const text5 = str.lastIndexOf('a');
+
+            document.querySelector(".sample5_N5").innerHTML = "5";
+            document.querySelector(".sample5_Q5").innerHTML = str;
+            document.querySelector(".sample5_M5").innerHTML = "lastIndexOf('a')";
+            document.querySelector(".sample5_R5").innerHTML = text5; //10 - 뒤는 1번부터 시작
+
+            //정규식 표현 - search는 정규식 표현(//)을 사용할 수 있다 /는 정규식 표현을 썼다!
+            const text6 = str.search(/javascript/);
+
+            document.querySelector(".sample5_N6").innerHTML = "6";
+            document.querySelector(".sample5_Q6").innerHTML = str;
+            document.querySelector(".sample5_M6").innerHTML = "search(/javascript/)";
+            document.querySelector(".sample5_R6").innerHTML = text6;
+
+            const text7 = str.search(/jaquery/);
+
+            document.querySelector(".sample5_N7").innerHTML = "7";
+            document.querySelector(".sample5_Q7").innerHTML = str;
+            document.querySelector(".sample5_M7").innerHTML = "search(/jaquery/)";
+            document.querySelector(".sample5_R7").innerHTML = text7;
+
+            const text8 = str.includes("javascript");
+
+            document.querySelector(".sample5_N8").innerHTML = "8";
+            document.querySelector(".sample5_Q8").innerHTML = str;
+            document.querySelector(".sample5_M8").innerHTML = "includes('javascript')";
+            document.querySelector(".sample5_R8").innerHTML = text8;
+
+            const text9 = str.includes("jquery");
+
+            document.querySelector(".sample5_N9").innerHTML = "9";
+            document.querySelector(".sample5_Q9").innerHTML = str;
+            document.querySelector(".sample5_M9").innerHTML = "includes('jquery')";
+            document.querySelector(".sample5_R9").innerHTML = text9;
+
+            const text10 = str.startsWith("자바스크립트");
+
+            document.querySelector(".sample5_N10").innerHTML = "10";
+            document.querySelector(".sample5_Q10").innerHTML = str;
+            document.querySelector(".sample5_M10").innerHTML = "startsWith('자바스크립트')";
+            document.querySelector(".sample5_R10").innerHTML = text10;
+
+            const text11 = str.endsWith("javascript");
+
+            document.querySelector(".sample5_N11").innerHTML = "11";
+            document.querySelector(".sample5_Q11").innerHTML = str;
+            document.querySelector(".sample5_M11").innerHTML = "endsWith('javascript')";
+            document.querySelector(".sample5_R11").innerHTML = text11;
+
+        }
+        //{6}
+        // 12. 문자열 메서드 : charAt() : 지정한 인덱스의 문자를 추출 : 반환(문자열)
+        // 어느 자리에 뭐가 있냐
+        {
+            const str = "자바스크립트(javascript) 공부";
+            const text1 = str.charAt(4);
+
+            document.querySelector(".sample6_N1").innerHTML = "1";
+            document.querySelector(".sample6_Q1").innerHTML = str;
+            document.querySelector(".sample6_M1").innerHTML = "charAt(4)";
+            document.querySelector(".sample6_R1").innerHTML = text1;
+
+            const text2 = str.charAt();
+
+            document.querySelector(".sample6_N2").innerHTML = "2";
+            document.querySelector(".sample6_Q2").innerHTML = str;
+            document.querySelector(".sample6_M2").innerHTML = "charAt()";
+            document.querySelector(".sample6_R2").innerHTML = text2;
+
+        }
+        //{7}
+        // 13. 문자열 메서드 : slice() : 지정한 범위 내 문자열을 추출 : 반환(문자열)
+        // 14. 문자열 메서드 : substring() : 지정한 범위 내 문자열을 추출 : 반환(문자열)
+        // 15. 문자열 메서드 : substr() : 지정한 범위 내 문자열을 추출 : 반환(문자열)
+        //slice(시작 인덱스)
+        //slice(시작 인덱스, 종료 인덱스)
+        //시작 값이 정료 값보다 클 경우 : 결과 값 없음
+        //substring() : 시작 값이 종료 값보다 클 경우 : 두 값을 바꿔서 처리
+        //substr(시작인덱스, 글자수)
+        {
+            const str = "자바스크립트(javascript) 공부";
+
+            const text = str.slice(1, 4);
+
+            document.querySelector(".sample7_N1").innerHTML = "1";
+            document.querySelector(".sample7_Q1").innerHTML = str;
+            document.querySelector(".sample7_M1").innerHTML = "slice(1,4)";
+            document.querySelector(".sample7_R1").innerHTML = text;
+
+            const text2 = str.slice(1);
+
+            document.querySelector(".sample7_N2").innerHTML = "2";
+            document.querySelector(".sample7_Q2").innerHTML = str;
+            document.querySelector(".sample7_M2").innerHTML = "slice(1)";
+            document.querySelector(".sample7_R2").innerHTML = text2;
+
+            const text3 = str.slice(3, -1);
+
+            document.querySelector(".sample7_N3").innerHTML = "3";
+            document.querySelector(".sample7_Q3").innerHTML = str;
+            document.querySelector(".sample7_M3").innerHTML = "slice(3, -1)";
+            document.querySelector(".sample7_R3").innerHTML = text3;
+
+            // const text4 = str.slice(7, 17);
+            // const text4 = str.slice(7, -4);
+            // const text4 = str.slice(-14, -4);
+            const text4 = str.slice(-14, 17);
+
+            document.querySelector(".sample7_N4").innerHTML = "4";
+            document.querySelector(".sample7_Q4").innerHTML = str;
+            document.querySelector(".sample7_M4").innerHTML = "slice(7, 17) / (7, -4) / (-14, -4) / (-14, 17)";
+            document.querySelector(".sample7_R4").innerHTML = text4;
+
+            const text5 = str.slice(5, 1);
+
+            document.querySelector(".sample7_N5").innerHTML = "5";
+            document.querySelector(".sample7_Q5").innerHTML = str;
+            document.querySelector(".sample7_M5").innerHTML = "slice(5,1)";
+            document.querySelector(".sample7_R5").innerHTML = "실행 안됨"; // 뒷자리 수보다 앞 자리가 크면 안됨
+
+            const text6 = str.substring(5, 1);
+
+            document.querySelector(".sample7_N6").innerHTML = "6";
+            document.querySelector(".sample7_Q6").innerHTML = str;
+            document.querySelector(".sample7_M6").innerHTML = "substring(5,1)";
+            document.querySelector(".sample7_R6").innerHTML = text6; //앞자리와 뒷자리 수를 바꿔줌
+
+            const text7 = str.substr(4, 2);
+
+            document.querySelector(".sample7_N7").innerHTML = "7";
+            document.querySelector(".sample7_Q7").innerHTML = str;
+            document.querySelector(".sample7_M7").innerHTML = "substr(4,2)";
+            document.querySelector(".sample7_R7").innerHTML = text7;
+
+        }
+        //{8}
+        // 15. 문자열 메서드 : replace() : 문자열 변경 : 반환(문자열)
+        //replace(문자열,문자열)
+        {
+            const str = "자바스크립트(javascript) 공부";
+            const text = str.replace('공부','스터디')
+            
+            document.querySelector(".sample8_N1").innerHTML = "1";
+            document.querySelector(".sample8_Q1").innerHTML = str;
+            document.querySelector(".sample8_M1").innerHTML = "replace('')";
+            document.querySelector(".sample8_R1").innerHTML = text;
+
+            const str2 = "img01.jpg";
+            const text2 = str2.replace('img01.jpg','img02.jpg')
+            
+            document.querySelector(".sample8_N2").innerHTML = "2";
+            document.querySelector(".sample8_Q2").innerHTML = str2;
+            document.querySelector(".sample8_M2").innerHTML = "replace('img01.jpg','img02.jpg')";
+            document.querySelector(".sample8_R2").innerHTML = text2;
+
+            const str3 = "010-9312-9004";
+            const text3 = str3.replace('-','')
+            
+            document.querySelector(".sample8_N3").innerHTML = "3";
+            document.querySelector(".sample8_Q3").innerHTML = str3;
+            document.querySelector(".sample8_M3").innerHTML = "replace('-',''))";
+            document.querySelector(".sample8_R3").innerHTML = text3;
+
+            const str4 = "010-9312-9004";
+            const text4 = str4.replace(/-/g,'') //정규식 표현
+            
+            document.querySelector(".sample8_N4").innerHTML = "4";
+            document.querySelector(".sample8_Q4").innerHTML = str4;
+            document.querySelector(".sample8_M4").innerHTML = "replace(/-/g,'')";
+            document.querySelector(".sample8_R4").innerHTML = text4;
+
+            const str5 = "010-9312-9004";
+            const text5 = str5.replace(/-/g,' ') //정규식 표현
+            
+            document.querySelector(".sample8_N5").innerHTML = "5";
+            document.querySelector(".sample8_Q5").innerHTML = str5;
+            document.querySelector(".sample8_M5").innerHTML = "replace(/-/g,'')";
+            document.querySelector(".sample8_R5").innerHTML = text5;
+        }
+        //{9}
+        // 16. 문자열 메서드 : split() : 문자열 반환 : 반환(문자열) - 엄청 많이 쓴다
+        {
+            const str = "자바스크립트(javascript) 공부";
+            const text = str.split('');
+
+            document.querySelector(".sample9_N1").innerHTML = "1";
+            document.querySelector(".sample9_Q1").innerHTML = str;
+            document.querySelector(".sample9_M1").innerHTML = "split('')";
+            document.querySelector(".sample9_R1").innerHTML = text;
+
+            const text2 = str.split(' ');
+
+            document.querySelector(".sample9_N2").innerHTML = "2";
+            document.querySelector(".sample9_Q2").innerHTML = str;
+            document.querySelector(".sample9_M2").innerHTML = "split(' ')";
+            document.querySelector(".sample9_R2").innerHTML = text2;
+
+            const text3 = str.split('').join('/');
+
+            document.querySelector(".sample9_N3").innerHTML = "3";
+            document.querySelector(".sample9_Q3").innerHTML = str;
+            document.querySelector(".sample9_M3").innerHTML = "split('').join('/')";
+            document.querySelector(".sample9_R3").innerHTML = text3;
+
+            const str4 ="https://webstoryboy.co.kr/main.html?id=1234&name=weds"
+            const arrText4 = str4.split('&');
+
+            document.querySelector(".sample9_N4").innerHTML = "4";
+            document.querySelector(".sample9_Q4").innerHTML = str4;
+            document.querySelector(".sample9_M4").innerHTML = "split('&')";
+            document.querySelector(".sample9_R4").innerHTML = arrText4;
+
+            const str5 ="https://webstoryboy.co.kr/main.html?id=1234&name=weds"
+            const arrText5 = str5.split(/&|\?/);
+
+            document.querySelector(".sample9_N5").innerHTML = "5";
+            document.querySelector(".sample9_Q5").innerHTML = str5;
+            document.querySelector(".sample9_M5").innerHTML = "split(/&|&#92/)";
+            document.querySelector(".sample9_R5").innerHTML = arrText5;
+        }
+        //{10}
+        // 17. 문자열 메서드 : padStart() : 문자열 시작 부분에 문자열 추가 : 반환(문자열)
+        // 18. 문자열 메서드 : padEnd() : 문자열 끝 부분에 문자열 추가 : 반환(문자열)
+        //문자열.padStart(전체길이, 추가 문자열)
+        {
+            const num = "7";
+            const text = num.padStart(2,0)
+
+            document.querySelector(".sample10_N1").innerHTML = "1";
+            document.querySelector(".sample10_Q1").innerHTML = num;
+            document.querySelector(".sample10_M1").innerHTML = ".padStart(2,0)";
+            document.querySelector(".sample10_R1").innerHTML = text;
+
+            const num2 = "456";
+            const text2 = num2.padStart(6,123)
+
+            document.querySelector(".sample10_N2").innerHTML = "2";
+            document.querySelector(".sample10_Q2").innerHTML = num2;
+            document.querySelector(".sample10_M2").innerHTML = ".padStart(6,'123')";
+            document.querySelector(".sample10_R2").innerHTML = text2;
+
+            const num3 = "abc";
+            const text3 = num3.padStart(3,'0');
+
+            document.querySelector(".sample10_N3").innerHTML = "3";
+            document.querySelector(".sample10_Q3").innerHTML = num3;
+            document.querySelector(".sample10_M3").innerHTML = ".padStart(3,'0')";
+            document.querySelector(".sample10_R3").innerHTML = text3;
+
+            const num4 = "abc";
+            const text4 = num4.padStart(6);
+
+            document.querySelector(".sample10_N4").innerHTML = "4";
+            document.querySelector(".sample10_Q4").innerHTML = num4;
+            document.querySelector(".sample10_M4").innerHTML = ".padStart(6)";
+            document.querySelector(".sample10_R4").innerHTML = "<pre>'" + text4 +"'</pre>";
+
+            const num5 = "7";
+            const text5 = num5.padEnd(2,'0');
+
+            document.querySelector(".sample10_N5").innerHTML = "5";
+            document.querySelector(".sample10_Q5").innerHTML = num5;
+            document.querySelector(".sample10_M5").innerHTML = "padEnd(2,'0')";
+            document.querySelector(".sample10_R5").innerHTML = text5;
+
+            const num6 = "456";
+            const text6 = num6.padEnd(6,'123');
+
+            document.querySelector(".sample10_N6").innerHTML = "6";
+            document.querySelector(".sample10_Q6").innerHTML = num6;
+            document.querySelector(".sample10_M6").innerHTML = ".padEnd(6,'123')";
+            document.querySelector(".sample10_R6").innerHTML = text6;
+
+            const num7 = "abc";
+            const text7 = num7.padEnd(3,'0');
+
+            document.querySelector(".sample10_N7").innerHTML = "7";
+            document.querySelector(".sample10_Q7").innerHTML = num7;
+            document.querySelector(".sample10_M7").innerHTML = ".padEnd(3,'0')";
+            document.querySelector(".sample10_R7").innerHTML = text7;
+
+            const num8 = "abc";
+            const text8 = num8.padEnd(6);
+
+            document.querySelector(".sample10_N8").innerHTML = 8;
+            document.querySelector(".sample10_Q8").innerHTML = num8;
+            document.querySelector(".sample10_M8").innerHTML = "padEnd(6)";
+            document.querySelector(".sample10_R8").innerHTML = "<pre>'" + text8 +"'</pre>" ;
+        }
+
+        //{11}
+        //url에 한글이 포함되면 사용 할 수 없기 때문에 인코딩을 해줍니다.       
+        // 19. 문자열 메서드 : encodeURL() : 문자열을 인코딩 : 반환(문자열)
+        // 20. 문자열 메서드 : encodeURLComponent() : 문자열을 인코딩 : 반환(문자열)
+        // 21. 문자열 메서드 : decodeURL() : 문자열을 디코딩 : 반환(문자열)
+        // 22. 문자열 메서드 : decodeURLComponent() : 문자열을 디코딩 : 반환(문자열)
+        {
+            const text = "https://webstoryboy.co.kr/자바스크립트.html";
+            const url = encodeURI(text);
+            document.querySelector(".sample11_N1").innerHTML = "1";
+            document.querySelector(".sample11_Q1").innerHTML = text;
+            document.querySelector(".sample11_M1").innerHTML = "encodeURI()";
+            document.querySelector(".sample11_R1").innerHTML = url;
+
+            const text2 = "https://webstoryboy.co.kr/자바스크립트.html";
+            const url2 = encodeURIComponent(text2);
+            document.querySelector(".sample11_N2").innerHTML = "2";
+            document.querySelector(".sample11_Q2").innerHTML = text2;
+            document.querySelector(".sample11_M2").innerHTML = "encodeURIComponent()";
+            document.querySelector(".sample11_R2").innerHTML = url2;
+
+            const text3 = "https://webstoryboy.co.kr/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8.html";
+            const url3 = decodeURI(text3);
+            document.querySelector(".sample11_N3").innerHTML = "3";
+            document.querySelector(".sample11_Q3").innerHTML = text3;
+            document.querySelector(".sample11_M3").innerHTML = "decodeURI()";
+            document.querySelector(".sample11_R3").innerHTML = url3;
+
+            const text4 = "https%3A%2F%2Fwebstoryboy.co.kr%2F%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8.html";
+            const url4 = decodeURIComponent(text4);
+            document.querySelector(".sample11_N4").innerHTML = "4";
+            document.querySelector(".sample11_Q4").innerHTML = text4;
+            document.querySelector(".sample11_M4").innerHTML = "decodeURIComponent()";
+            document.querySelector(".sample11_R4").innerHTML = url4;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice03-2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #E8F5E9;
+        }
+
+        #wrap {
+            width: 1200px;
+            margin: auto;
+        }
+
+        #header {
+            width: 1200px;
+            height: 100px;
+            background-color: #C8E6C9;
+        }
+
+        #nav {
+            width: 1200px;
+            height: 100px;
+            background-color: #A5D6A7;
+        }
+
+        #main {
+            width: 1200px;
+            display: flex;
+        }
+
+        #main .aside {
+            width: 300px;
+            height: 780px;
+            background-color: #4CAF50;
+        }
+
+        #main .contents .article1 {
+            width: 900px;
+            height: 260px;
+            display: flex;
+        }
+        #main .contents .article1 .article1-1 {
+            width: 50%;
+            height: 260px;
+            background-color: #43A047;
+        }
+        #main .contents .article1 .article1-2 {
+            width: 50%;
+            height: 260px;
+            background-color: #2E7D32;
+        }
+
+        #main .contents .article2 {
+            width: 900px;
+            height: 260px;
+            background-color: #388E3C;
+        }
+
+        #main .contents .article3 {
+            width: 900px;
+            height: 260px;
+            background-color: #2E7D32;
+        }
+
+        #footer {
+            width: 1200px;
+            height: 100px;
+            background-color: #1B5E20;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+        <nav id="nav"></nav>
+        <main id="main">
+            <aside class="aside"></aside>
+            <section class="contents">
+                <article class="article1">
+                    <div class="article1-1"></div>
+                    <div class="article1-2"></div>
+                </article>
+                <article class="article2"></article>
+                <article class="article3"></article>
+            </section>
+        </main>
+        <footer id="footer"></footer>
+    </div>
+</body>
+</html>
+

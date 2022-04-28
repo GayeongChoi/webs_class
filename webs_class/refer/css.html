@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="ko ">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Reference</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/css.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/css.png">
+    <link rel="icon" href="../assets/face/css.png" sizes="128x128">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+</head>
+<body>
+
+    <header id="header">
+        <h1><a href="#">라인 중학교 1학년 코딩반</a></h1>
+        <strong>최가영</strong>
+    </header>
+
+    <main id="contents">
+        <h2><a href="css.html">CSS <em>레퍼런스 북</em></a></h2>
+        <div class="menu">
+            <ul>
+                <li class="active"><a href="css.html">속성</a></li>
+                <li><a href="cssRefer01.html">기초 문법</a></li>
+                <li><a href="cssRefer02.html">Block/Inline</a></li>
+                <li><a href="cssRefer03.html">CSS 단위</a></li>
+                <li><a href="cssRefer04.html">CSS 색상</a></li>
+                <li><a href="cssRefer05.html">id/class 차이점</a></li>
+                <li><a href="cssRefer06.html">float 영역 깨짐 현상</a></li>
+                <li><a href="cssRefer07.html">웹에서 이미지 표현방법/ir효과</a></li>
+                <li><a href="cssRefer08.html">벤더 프리픽스(Vendor Prefix)</a></li>
+            </ul>
+        </div>
+        <!-- //menu -->
+
+        <div class="refer">
+            <div class="title">
+                <ul>
+                    <li><a href="css.html">Alphabet</a></li>
+                    <li><a href="cssSelector.html">Selector</a></li>
+                    <li><a href="cssFlex.html">Flex</a></li>
+                    <li><a href="cssGrid.html">Grid</a></li>
+                    <li><a href="cssTransfrom.html">Transfrom</a></li>
+                    <li><a href="cssAnimation.html">Animation</a></li>
+                </ul>
+        </div>
+
+            <div class="table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>속성</th>
+                            <th>설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>align-content</th>
+                            <td>align-content 속성은 콘텐츠 사이와 콘텐츠 주위 빈 공간을 플렉스박스의 교차축, 그리드의 블록 축을 따라 배치하는 방식을 결정합니다. </td>
+                        </tr>
+                        <tr>
+                            <th>align-items</th>
+                            <td>align-items 속성은 요소를 세로 축을 기준으로 정렬을 합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>align-self</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>all</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>animation</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>animation-delay</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>animation-direction</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>animation-duration</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>animation-fill-mode</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>animation-iteration-count</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>animation-name</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>animation-play-state</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>animation-timing-function</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>backface-visibility</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>background</td>
+                            <td>background 속성은 백그라운드 속성을 일괄적으로 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>background-attachment</td>
+                            <td>background-attachment 속성은 배경 이미지의 고정 여부를 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>background-blend-mode</td>
+                            <td>background-blend-mode 속성은 배경을 혼합했을 때의 상태를 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>background-clip</td>
+                            <td>background-clip 속성은 백그라운드 이미지의 위치 기준점을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>background-color</td>
+                            <td>background-color 속성은 백그라운드 색을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>background-image</td>
+                            <td>background-image 속성은 백그라운드 이미지및 배경 속성을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>background-origin</td>
+                            <td>background-origin 속성은 백그라운드 이미지의 위치 기준점을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>background-position</td>
+                            <td>background-position 속성은 백그라운드 이미지의 위치 영역을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>background-repeat</td>
+                            <td>background-repeat 속성은 백그라운드 이미지의 반복 여부를 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>background-size</td>
+                            <td>background-size 속성은 백그라운드 이미지의 사이즈를 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>border</td>
+                            <td>border 속성은 테두리 속성을 일괄적으로 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>border-bottom</td>
+                            <td>border-bottom 속성은 테두리 아래쪽 속성을 일괄적으로 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>border-bottom-color</td>
+                            <td>border-bottom-color 속성은 테ㄹ두리 아래쪽 색 속성을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>border-bottom-left-radius</td>
+                            <td>border-bottom-left-radius 속성은 아래부분 왼쪽 모서리 굴곡을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>border-bottom-right-radius</td>
+                            <td>border-bottom-right-radius 속성은 아래부분 오른쪽 모서리 굴곡을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>border-bottom-style</td>
+                            <td>border-bottom-style 속성은 테두리 아래쪽 스타일 속성을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>border-bottom-width</td>
+                            <td>>border-bottom-width 속성은 테두리 아래쪽 두께 속성을 설정합니다. </td>
+                        </tr>
+                        <tr>
+                            <th>border-collapse</td>
+                            <td>border-collapse 속성은 테이블의 데두리 분리 여부를 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>border-color</td>
+                            <td>border-color 속성은 테두리 색 속성을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>border-image</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>border-image-outset</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>border-image-repeat</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>border-image-slice</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>border-image-source</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>border-image-width</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>border-left</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>border-left-color</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>border-left-style</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>border-left-width</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>border-radius</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>border-right</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>border-right-color</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>border-right-style</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>border-right-width</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>border-spacing</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>border-style</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>border-top</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>border-top-color</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>border-top-left-radius</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>border-top-right-radius</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>border-top-style</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>border-top-width </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>border-width</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>bottom</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>box-decoration-break</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>box-shadow</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>box-sizing</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>caption-side</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>caret-color</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>clear</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>clip</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>color</td>
+                            <td>color 속성은 글자의 색상을 자정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>column-count</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>column-fill</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>column-gap</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>column-rule </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>column-rule-color</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>column-rule-style</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>column-rule-width</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>column-span</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>column-width</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>columns</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>content</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>counter-increment</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>counter-reset</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>cursor</td>
+                            <td>cursor 속성은요소 위에 마우스 커서가 올라갔을 때 보여줄 모양을 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>direction</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>display</td>
+                            <td>display 속성은 요소를 어떻게 보여줄지를 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>empty-cells</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>filter</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>flex</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>flex-basis</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>flex-direction</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>flex-flow</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>flex-grow</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>flex-shrink</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>flex-wrap</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>float</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>font</td>
+                            <td>font 속성은 font-style (en-US), font-variant (en-US), font-weight, font-size, line-height (en-US), font-family의 단축 속성입니다.</td>
+                        </tr>
+                        <tr>
+                            <th>font-family</td>
+                            <td>font-family 속성은 특정 글꼴이나 대표 글꼴을 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>font-size</td>
+                            <td>font-size 속성은 글꼴의 크기를 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>font-size-adjust</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>font-stretch</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>font-style</td>
+                            <td>font-style속성은 font-family에서 지정된 폰트의 스타일을 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>font-variant</td>
+                            <td>font-variant 속성은 글꼴의 변형을 지정합니다</td>
+                        </tr>
+                        <tr>
+                            <th>font-weight</td>
+                            <td>font-weight 속성은 글꼴의 굵기를 지정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>grid</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>grid-area</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>grid-auto-columns</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>grid-auto-flow</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>grid-auto-rows</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>grid-column</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>grid-column-end</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>grid-column-gap</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>grid-column-start</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>grid-gap</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>grid-row</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>grid-row-end</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>grid-row-gap</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>grid-row-start</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>grid-template</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>grid-template-areas</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>grid-template-columns</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>grid-template-rows</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>hanging-punctuation</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>height</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>hyphens</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>isolation</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>justify-content</td>
+                            <td>justify-content 속성은 요소를 가로 축을 기준으로 좌우에 대한 정렬을 합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>left</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>letter-spacing</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>line-height</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>list-style</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>list-style-image</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>list-style-position</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>list-style-type</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th><a href="margin.html">margin</a></th>
+                            <td>margin 속성은 요소의 네 방향 바깥 여백 영역을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>margin-bottom</th>
+                            <td>margin-bottom 속성은 요소의 아래쪽에 바깥 여백 영역을 설정합니다. 양수 값은 인접 요소와 거리를 넓히고, 음수 값은 더 좁힙니다.</td>
+                        </tr>
+                        <tr>
+                            <th>margin-left</th>
+                            <td>margin-left 속성은 요소의 왼쪽에 바깥 여백 영역을 설정합니다. </td>
+                        </tr>
+                        <tr>
+                            <th>margin-right</th>
+                            <td>margin-right 속성은 요소의 오른쪽에 바깥 여백 영역을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>margin-top</th>
+                            <td>margin-top 속성은 요소의 위쪽에 바깥 여백 영역을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>max-height</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>max-width </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>min-height</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>min-width</td>
+                            <td>min-width CSS 속성은 요소의 최소 너비를 설정합니다. 설정값 이하로 크기가 줄어들지 않습니다.</td>
+                        </tr>
+                        <tr>
+                            <th>mix-blend-mode</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>object-fit</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>object-position</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>opacity</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>order</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>outline</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>outline-color</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>outline-offset</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>outline-style</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>outline-width</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>overflow</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>overflow-x</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>overflow-y</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th><a href="padding.html">padding</a></th>
+                            <td>padding 속성은 요소의 네 방향 안쪽 여백 영역을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>padding-bottom</th>
+                            <td>padding-bottom 속성은 요소의 아래쪽에 안쪽 여백 영역을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>padding-left</th>
+                            <td>padding-left 속성은 요소의 왼쪽에 안쪽 여백 영역을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>padding-right</th>
+                            <td>padding-right 속성은 요소의 오른쪽에 안쪽 여백 영역을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>padding-top</th>
+                            <td>padding-top 속성은 요소의 위쪽에 안쪽 여백 영역을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>page-break-after</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>page-break-before</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>page-break-inside</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>perspective</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>perspective-origin</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>pointer-events</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>position</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>quotes</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>resize</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>right</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>tab-size</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>table-layout</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>text-align</td>
+                            <td>text-align 속성은 텍스트의 정렬 방향을 의미합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>text-align-last</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>text-decoration</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>text-decoration-color </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>text-decoration-line</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>text-decoration-style</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>text-indent</td>
+                            <td>text-indent 속성은 요소의 첫번째 줄 텍스트의 들여쓰기를 지정한다.</td>
+                        </tr>
+                        <tr>
+                            <th>text-justify</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>text-overflow</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>text-shadow</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>text-transform</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>top</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>transform</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>transform-origin</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>transform-style</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>transition</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>transition-delay</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>transition-duration</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>transition-property</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>transition-timing-function</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>unicode-bidi</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>user-select</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>vertical-align</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>visibility</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>white-space</td>
+                            <td>white-space는 공백(스페이스와 탭, 줄바꿈, 자동줄바꿈) 처리 방법 정하는 속성입니다.</td>
+                        </tr>
+                        <tr>
+                            <th>width</td>
+                            <td>width 속성은 요소의 너비를 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>word-break</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>word-spacing</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>word-wrap</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>z-index</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
+        <!-- //refer -->
+        
+    </main>
+
+    <!-- script -->
+    <script src="assets/js/prism.js">
+
+    </script>
+    
+</body>
+</html>

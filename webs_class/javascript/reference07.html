@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문:자바스크립트</title>
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/javascript.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/javascript.png">
+    <link rel="icon" href="../assets/face/javascript.png" sizes="128x128">
+    <!-- style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+</head>
+<body>
+    <header id="header">
+        <h1><a href="index.html">Javascript</a></h1>
+        <nav>
+            <ul>
+                <li><a href="reference01.html">기초 문법</a></li>
+                <li><a href="reference02.html">변수</a></li>
+                <li><a href="reference03.html">자료형</a></li>
+                <li><a href="reference04.html">for문</a></li>
+                <li><a href="reference05.html">연산자</a></li>
+                <li><a href="reference06.html">조건문</a></li>
+                <li class="active"><a href="reference07.html">반복문</a></li>
+                <li><a href="reference08.html">함수</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+    <main id="main">
+        <div class="doc">
+            <h2>반복문</h2>
+            <p>
+                반복문은 코드를 원하는 횟수만큼 반복하여 실행 할 수 있게합니다. <br>
+                "안녕"이라는 문구를 100회 출력하려면 출력문을 100번 작성해야하는 대신
+                반복문을 사용하면 한 줄의 출력문으로 100회 출력할 수 있습니다. <br>
+                반복문의 종류에는 while문,for문,break문,continue문 등이 있습니다.
+            </p>
+            
+            <h3>while문</h3>
+            <p>
+                while문은 조건식을 만족할 때까지 코드를 여러 회 반복하여 실행할 수 있습니다.
+            </p>
+            <h4>while문의 기본형</h4>
+<div class="code">
+<pre><code>{
+    var 변수 = 초기값;
+    while(조건식) {
+    증감식;
+    }
+}</code></pre>
+</div>
+
+
+            <h3>for문</h3>
+            <p>
+                for문은 조건식을 만족할 때까지 특정 코드를 반복하여 실행합니다.
+            </p>
+            <h4>for문의 기본형</h4>
+<div class="code">
+<pre><code>{
+    for (초기값; 조건식; 증감식;) {
+        자바스크립트 코드;
+    }
+}</code></pre>
+</div>
+
+            <h3>break문</h3>
+            <p>
+                break문은 while문 or for문에서 break문을 실행하면 조건식과 상관없이 강제로 반복문을 합니다.
+            </p>
+            <h4>break문의 기본형</h4>
+<div class="code">
+<pre><code>{
+    for (초기값; 조건식; 증감식;) {
+        break; //반복문을 강제로 종료합니다.
+        자바스크립트 코드;
+    }
+
+    var 변수 = 초기값;
+    while(조건식) {
+        break;
+        continue;
+        증감식;
+    }
+}</code></pre>
+</div>
+
+
+            <h3>continue문</h3>
+            <p>
+                continue문은 반복문에서만 사용할 수 있습니다. <br>
+            </p>
+            <p>
+                while문에서 사용할 경우 continue문 다음에 오는 코드는 무시하고 바로 '조건식'으로 이동해 조건 검사를 합니다. <br>
+                for문에서 사용할 경우 continue문 다음에 오는 코드는 무시하고 바로 '증감식'으로 이동해 증감 연산을 합니다.                      
+            </p>
+            <h4>continue문의 기본형</h4>
+<div class="code">
+<pre><code>{
+    for (초기값; 조건식; 증감식;) {
+        continue; 
+        자바스크립트
+    }
+
+    var 변수 = 초기값;
+    while(조건식) {
+        증감식;
+        continue;
+        자바스크립트 코드;
+    }
+}</code></pre>
+</div>
+
+        </div>
+    </main>
+</body>
+</html>

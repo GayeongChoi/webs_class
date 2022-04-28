@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="webstoryboy">
+    <meta name="description" content="웹 퍼블리셔를 위한 정보 공유 사이트입니다.">
+    <meta name="keywords"
+        content="웹스토리보이, 웹 퍼블리셔, 웹 표준, 웹 접근성, 화려한 디자인, webstoryboy, publisher, css3, html, markup, design, Webstoryboy">
+    <title>웹스토리보이 | Webstoryboy | Class</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../assets/css/docs.min.css" rel="stylesheet">
+    <link href="../assets/css/prism.css" rel="stylesheet">
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/layout.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/layout.png">
+    <link rel="icon" href="../assets/face/layout.png">
+    <link rel="icon" href="../assets/face/layout.png" sizes="16x16">
+    <link rel="icon" href="../assets/face/layout.png" sizes="32x32">
+    <link rel="icon" href="../assets/face/layout.png" sizes="48x48">
+    <link rel="icon" href="../assets/face/layout.png" sizes="64x64">
+    <link rel="icon" href="../assets/face/layout.png" sizes="128x128">
+    <!-- Facebook meta tags -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="웹스토리보이" />
+    <meta property="og:url" content="https://webstoryboy.co.kr/" />
+    <meta property="og:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png" />
+    <meta property="og:site_name" content="웹스토리보이" />
+    <meta property="og:description" content="웹과 관련된 정보를 제공합니다." />
+    <!-- twitter meta tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@webstoryboy" />
+    <meta name="twitter:title" content="웹스토리보이" />
+    <meta name="twitter:description" content="웹과 관련된 정보를 제공합니다." />
+    <meta property="twitter:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png" />
+    <!-- 웹 폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gaegu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.../assets2/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!-- info -->
+    <a class="sr-only" href="#content">Skip to main content</a>
+    <header class="navbar navbar-inverse navbar-static-top bs-docs-nav" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="../index.html" class="navbar-brand">WEB'S &lt;/doc&gt;</a>
+            </div>
+            <nav class="collapse navbar-collapse bs-navbar-collapse pull-right" role="navigation">
+                <ul class="nav navbar-nav">
+                    <li><a href="https://websinssa.tistory.com/">Tistory</a></li>
+                    <li><a href="https://codepen.io/webstoryboy">Codepen</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="bs-header bgs1" id="content">
+        <div class="container">
+            <h1>MySQL v1.0 &lt;/doc&gt;</h1>
+            <p><a href="http://SungilRyuu.tistory.co.kr" target="_blank">티스토리</a></p>
+        </div>
+    </div>
+    <!-- //info -->
+
+    <!-- 부트스트랩, 프레임 웍, 워드프레스, 그누보드, 제로보드 -->
+    <div class="container bs-docs-container">
+        <div class="row">
+            <div class="col-md-9">
+                
+                <!-- MySQL -->
+                <div class="bs-docs-section">
+                    <h2 id="intro1" class="page-header">MySQL</h2>
+                    <p class="lead">
+                        MySQL은 데이터베이스 소프트웨어입니다. 
+                        일반적으로 데이터를 추가하거나 검색, 추출하는 기능을 모두 포함해서 데이터베이스라고 부릅니다. 
+                    </p>
+                    <p>
+                        MySQL은 세계에서 가장 많이 쓰이는 오픈 소스의 관계형 데이터베이스 관리 시스템(RDBMS)입니다. 
+                        MySQL은 PHP 스크립트 언어와 상호 연동이 잘 되면서 오픈소스로 개발된 무료 프로그램입니다. 
+                        그래서 홈페이지나 쇼핑몰(워드프레서, cafe24, 제로보드, 그누보드) 등 일반적으로 웹 개발에 널리 사용하고 있습니다. 
+                    </p>
+                </div>
+                <!-- //MySQL -->
+
+                <!-- MySQL 설치 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro2" class="page-header">MySQL 설치</h2>
+                    <h3>MAMP 설치</h3>
+                    <img src="img/mamp.PNG" alt="MAMP">
+                </div>
+                <!-- //MySQL 설치 -->
+
+                <!-- MySQL 실행 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro3" class="page-header">MySQL 실행</h2>
+                    <div class="bs-callout bs-callout-info">
+                        윈도우 : cd MAMP/bin/mysql/bin <br>
+                        로그인 : mysql -uroot -proot
+                    </div> 
+<pre class="language-js"><code>C:\Users\line>cd C:\
+C:\>cd MAMP/bin/mysql/bin
+C:\MAMP\bin\mysql\bin>mysql -uroot -proot
+mysql: [Warning] Using a password on the command line interface can be insecure.
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 5
+Server version: 5.7.24 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql>
+</code></pre>
+                    <div class="bs-callout bs-callout-info">
+                        맥 : Application/mamp/Library/bin <br>
+                        맥 : sudo ./mysql -uroot -p<br>
+                        맥 : mac password<br>
+                        맥 : root password
+                    </div>
+<pre class="language-js"><code>MacBook-Air ~ % cd /Applications/MAMP/Library/bin
+MacBook-Air bin % sudo ./mysql -uroot -p
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 186
+Server version: 5.7.34 MySQL Community Server (GPL)
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+</code></pre>
+                </div>
+                 <!-- //MySQL 실행 -->
+
+                <!-- 데이터베이스 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro4" class="page-header">데이터베이스</h2>
+                    <h3 id="intro4-1" class="page-header">데이터베이스 만들기</h3>
+                    <div class="bs-callout bs-callout-info">
+                        create database 데이터베이스 이름;
+                    </div>
+                    <pre class="language-js"><code>mysql> create database sample;
+Query OK, 1 row affected (0.00 sec)</code></pre>
+
+                    <h3 id="intro4-2" class="page-header">데이터베이스 보기</h3>
+                    <div class="bs-callout bs-callout-info">
+                        show databases;
+                    </div>
+                    <pre class="language-js"><code>mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sample             |
++--------------------+
+5 rows in set (0.00 sec)</code></pre>
+
+                    <h3 id="intro4-3" class="page-header">데이터베이스 사용</h3>
+                    <div class="bs-callout bs-callout-info">
+                        use 데이터베이스 이름;
+                    </div>
+                    <pre class="language-js"><code>mysql> use sample;
+Database changed </code></pre>
+
+                    <h3 id="intro4-4" class="page-header">데이터베이스 삭제</h3>
+                    <div class="bs-callout bs-callout-info">
+                        drop database 데이터베이스 이름;
+                    </div>
+                    <pre class="language-js"><code>mysql> drop database sample;
+Query OK, 0 rows affected (0.00 sec)</code></pre>
+
+                </div>
+                <!-- //데이터베이스 -->
+
+                <!-- 테이블 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro5" class="page-header">테이블</h2>
+                    <h3 id="intro5-1" class="page-header">테이블 만들기</h3>
+                    <div class="bs-callout bs-callout-info">
+                        create table 테이블 이름;
+                    </div>
+<pre class="language-js"><code>mysql> CREATE TABLE myData (
+        myMemberID int(10) unsigned auto_increment comment "회원의 고유번호", 
+        youEmail varchar(40) NOT NULL comment "회원 아이디", 
+        youName varchar(12) NOT NULL comment "회원 이름",
+        youPass varchar(20) NOT NULL comment "회원 비밀번호",
+        youBirth varchar(12) NOT NULL comment "회원 생일",
+        youAge varchar(12) NOT NULL comment "회원 나이",
+        regTime int(11) NOT NULL comment "회원 가입 시간",
+        PRIMARY KEY (myMemberID)
+    ) charset=utf8 comment "회원 정보 테이블";
+
+Query OK, 0 rows affected (0.04 sec)
+</code></pre>
+<pre class="language-js"><code>mysql> CREATE TABLE myMember (
+    memberID int(10) unsigned auto_increment,
+    youEmail varchar(40) NOT NULL,
+    youName varchar(20) NOT NULL,
+    youPass varchar(20) NOT NULL,
+    youBirth int(20) NOT NULL,
+    youAge int(20) NOT NULL,
+    youPhone int(20) NOT NULL,
+    regTime int(11) NOT NULL,
+    PRIMARY KEY (memberID)
+) charset=utf8;
+
+Query OK, 0 rows affected (0.04 sec)
+</code></pre>
+                        
+                   
+                    <h3 id="intro5-2" class="page-header">테이블 전체 보기</h3>
+                    <div class="bs-callout bs-callout-info">
+                        show tables;
+                    </div>
+<pre class="language-js"><code>mysql> show tables;
++------------------+
+| Tables_in_tast01 |
++------------------+
+| mydata           |
++------------------+
+1 row in set (0.00 sec)    
+</code></pre>
+
+                    <h3 id="intro5-3" class="page-header">테이블 보기</h3>
+                    <div class="bs-callout bs-callout-info">
+                        desc 테이블 이름;
+                    </div>
+<pre class="language-js"><code>mysql> desc myData;
++------------+------------------+------+-----+---------+----------------+
+| Field      | Type             | Null | Key | Default | Extra          |
++------------+------------------+------+-----+---------+----------------+
+| myMemberID | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| youEmail   | varchar(40)      | NO   |     | NULL    |                |
+| youName    | varchar(12)      | NO   |     | NULL    |                |
+| youPass    | varchar(20)      | NO   |     | NULL    |                |
+| youBirth   | varchar(12)      | NO   |     | NULL    |                |
+| youAge     | varchar(12)      | NO   |     | NULL    |                |
+| regTime    | int(11)          | NO   |     | NULL    |                |
++------------+------------------+------+-----+---------+----------------+
+7 rows in set (0.00 sec)
+</code></pre>
+
+                    <h3 id="intro5-4" class="page-header">테이블 삭제</h3>
+                    <div class="bs-callout bs-callout-info">
+                        drop table 테이블 이름;
+                    </div>
+<pre class="language-js"><code>mysql> drop table myMember;
+Query OK, 0 rows affected (0.01 sec) 
+</code></pre>
+                    
+                    <h3 id="intro5-4" class="page-header">테이블 복사</h3>
+                    <div class="bs-callout bs-callout-info">
+                        create table 새로운 테이블명 SELECT*FROM 복사할 테이블명;
+                    </div>
+<pre class="language-js"><code>mysql> create table myMember1 SELECT*FROM myMember;
+</code></pre>
+
+                    <h3 id="intro5-5" class="page-header">테이블 구조 복사</h3>
+                    <div class="bs-callout bs-callout-info">
+                        create table 새로운 테이블명 LIKE 복사할 테이블명;
+                    </div>
+<pre class="language-js"><code>mysql> create table myMember2 LIKE myMember;
+</code></pre>
+
+                    <h3 id="intro5-6" class="page-header">테이블 데이터 복사</h3>
+                    <div class="bs-callout bs-callout-info">
+                        INSERT INTO 새로운 테이블명 SELECT*FROM 복사할 테이블명;
+                    </div>
+<pre class="language-js"><code>mysql> INSERT INTO myMember3 SELECT*FROM myMember1;
+</code></pre>
+
+                </div>
+                <!-- //테이블 -->
+
+                <!-- 테이블 수정 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro6" class="page-header">테이블 수정</h2>
+                    <h3 id="intro6-1" class="page-header">필드 추가하기</h3>
+                    <div class="bs-callout bs-callout-info">
+                        ALTER TABLE 테이블명 ADD 추가할 필드명 AFTER 필드명 위치; 
+                    </div>
+<pre class="language-js"><code>mysql> ALTER TABLE myData ADD youGender enum('m','w','x') default 'x' comment "남성은 m, 여성은 w" AFTER youAge;
+Query OK, 0 rows affected (0.09 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+</code></pre>
+<pre class="language-js"><code>mysql> desc myData;
++------------+-------------------+------+-----+---------+----------------+
+| Field      | Type              | Null | Key | Default | Extra          |
++------------+-------------------+------+-----+---------+----------------+
+| myMemberID | int(10) unsigned  | NO   | PRI | NULL    | auto_increment |
+| youEmail   | varchar(40)       | NO   |     | NULL    |                |
+| youName    | varchar(12)       | NO   |     | NULL    |                |
+| youPass    | varchar(20)       | NO   |     | NULL    |                |
+| youBirth   | varchar(12)       | NO   |     | NULL    |                |
+| youAge     | varchar(12)       | NO   |     | NULL    |                |
+| youGender  | enum('m','w','x') | YES  |     | x       |                |
+| regTime    | int(11)           | NO   |     | NULL    |                |
++------------+-------------------+------+-----+---------+----------------+
+8 rows in set (0.00 sec)
+</code></pre>
+                        
+                    <h3 id="intro6-2" class="page-header">필드 수정하기</h3>
+                    <div class="bs-callout bs-callout-info">
+                        ALTER TABLE 테이블명 MODIFY 수정할 필드명;
+                    </div>
+<pre class="language-js"><code>mysql> ALTER TABLE myData MODIFY youGender int(20);
+Query OK, 10 rows affected (0.04 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+</code></pre>
+<pre class="language-js"><code>mysql> desc myData;
++------------+------------------+------+-----+---------+----------------+
+| Field      | Type             | Null | Key | Default | Extra          |
++------------+------------------+------+-----+---------+----------------+
+| myMemberID | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| youEmail   | varchar(40)      | NO   |     | NULL    |                |
+| youName    | varchar(12)      | NO   |     | NULL    |                |
+| youPass    | varchar(20)      | NO   |     | NULL    |                |
+| youBirth   | varchar(12)      | NO   |     | NULL    |                |
+| youAge     | varchar(12)      | NO   |     | NULL    |                |
+| youGender  | int(20)          | YES  |     | NULL    |                |
+| regTime    | int(11)          | NO   |     | NULL    |                |
++------------+------------------+------+-----+---------+----------------+
+8 rows in set (0.00 sec)
+</code></pre>
+
+                    <h3 id="intro6-3" class="page-header">필드 삭제하기</h3>
+                    <div class="bs-callout bs-callout-info">
+                        ALTER TABLE 테이블명 DROP 삭제할 필드명
+                    </div>
+<pre class="language-js"><code>ALTER TABLE myData DROP youGender;
+Query OK, 0 rows affected (0.08 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+</code></pre>
+<pre class="language-js"><code>mysql> desc myData;
++------------+------------------+------+-----+---------+----------------+
+| Field      | Type             | Null | Key | Default | Extra          |
++------------+------------------+------+-----+---------+----------------+
+| myMemberID | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| youEmail   | varchar(40)      | NO   |     | NULL    |                |
+| youName    | varchar(12)      | NO   |     | NULL    |                |
+| youPass    | varchar(20)      | NO   |     | NULL    |                |
+| youBirth   | varchar(12)      | NO   |     | NULL    |                |
+| youAge     | varchar(12)      | NO   |     | NULL    |                |
+| regTime    | int(11)          | NO   |     | NULL    |                |
++------------+------------------+------+-----+---------+----------------+
+7 rows in set (0.00 sec)
+</code></pre>
+                </div>
+                <!-- //테이블 수정 -->
+
+                <!-- 테이블 데이터 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro7" class="page-header">테이블 데이터</h2>
+                    <h3 id="intro7-1" class="page-header">데이터 입력하기</h3>
+                    <div class="bs-callout bs-callout-info">
+                        INSERT INTO 필드명(입력할 데이터) VALUES(입력할 데이터값);
+                    </div>
+<pre class="language-js"><code>INSERT INTO myData(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('wwuu123@naver.com','최가영','12345678','19970506','26','01066179991','12345678');
+</code></pre>
+
+                    <h3 id="intro7-2" class="page-header">데이터 불러오기</h3>
+                    <div class="bs-callout bs-callout-info">
+                        SELECT*FROM 테이블명;
+                    </div>
+                    <h4>전체 데이터 불러오기</h4>
+<pre class="language-js"><code>mysql> SELECT*FROM myMember;
++----------+-----------------------+---------+-----------+----------+--------+------------+-----------+
+| memberID | youEmail              | youName | youPass   | youBirth | youAge | youPhone   | regTime   |
++----------+-----------------------+---------+-----------+----------+--------+------------+-----------+
+|        1 | wwuu123@naver.com     | 최가영  | 12345678  | 19970506 |     26 | 1066179991 |  12345678 |
+|        2 | webstoryboy@naver.com | 황상연  | 12dfsdecv | 19920405 |     33 | 1039858583 | 578365839 |
+|        3 | jungsik321@naver.com  | 김정식  | 1234      | 19930209 |     30 | 1025738580 |  20220314 |
+|        4 | ik6623@naver.com      | 박종호  | 1234qwer  | 19950909 |     28 | 1040976623 |  10293857 |
+|        5 | apdlvmf8044@gmail.com | 송준섭  | qweasdf   |   931120 |     30 | 1088648044 |  21846351 |
+|        6 | apdlvmf8044@gmail.com | 송준섭  | qweasdf   |   931120 |     30 | 1088648044 |  21846351 |
+|        7 | rmsgur2275@gmail.com  | 박근혁  | alcls2860 | 19980611 |     25 | 1058122860 |  12345678 |
+|        8 | sbxjs6999@naver.com   | 박근희  | 1234qwer  | 19970214 |     28 | 1041046999 |  12345678 |
+|        9 | dnwls7738@naver.com   | 천우진  | 12asdf    | 19960324 |     27 | 1055805274 |  45678941 |
+|       10 | dnstjq6305@naver.com  | 조운섭  | qweasdf   | 19911110 |     32 | 1024068904 |  12345678 |
+|       11 | dhtpfls321@naver.com  | 오세린  | 1234      | 19980214 |     25 | 1032229944 |  12345678 |
+|       12 | GarenChoi@naver.com   | 최근영  | 1234      | 19970117 |     26 | 1054651345 |       234 |
++----------+-----------------------+---------+-----------+----------+--------+------------+-----------+
+12 rows in set (0.00 sec)
+</code></pre>
+                        <h4>myMemberID가 6번인 경우</h4>
+<pre class="language-js"><code> SELECT * FROM myData WHERE myMemberID = 6;
++------------+---------------------+---------+---------+------------+--------+---------+
+| myMemberID | youEmail            | youName | youPass | youBirth   | youAge | regTime |
++------------+---------------------+---------+---------+------------+--------+---------+
+|          6 | dnwls7738@naver.com | 천우진  | 1234    | 1996-03-24 | 27     |    1234 |
++------------+---------------------+---------+---------+------------+--------+---------+
+1 row in set (0.00 sec)
+</code></pre>
+                        <h4>이메일 중에 네이버 텍스트를 포함하는 경우</h4>
+<pre class="language-js"><code> SELECT * FROM myData WHERE youEmail LIKE '%naver%';
++------------+-----------------------+---------+---------+------------+--------+---------+
+| myMemberID | youEmail              | youName | youPass | youBirth   | youAge | regTime |
++------------+-----------------------+---------+---------+------------+--------+---------+
+|          1 | wwuu123@naver.com     | 최가영  | 1234    | 1997-05-06 | 26     |    1234 |
+|          2 | dhtpfls321@naver.com  | 오세린  | 1234    | 1998-02-14 | 25     |    1234 |
+|          3 | jsjh442@naver.com     | 박지선  | 1234    | 1998-04-23 | 25     |     327 |
+|          5 | sbxjs6999@naver.com   | 박근희  | 1234    | 1997-02-14 | 26     |    1234 |
+|          6 | dnwls7738@naver.com   | 천우진  | 1234    | 1996-03-24 | 27     |    1234 |
+|          7 | ohwehoh@naver.com     | 이연우  | 1234    | 1995-07-20 | 28     |    1234 |
+|          8 | jungsik321@naver.com  | 김정식  | 1234    | 1993-02-09 | 30     |     327 |
+|          9 | qhd1994@naver.com     | 유희봉  | 0620    | 1994-07-28 | 29     |    1234 |
+|         10 | webstoryboy@naver.com | 황상연  | 1234    | 1992-04-05 | 33     |    1234 |
++------------+-----------------------+---------+---------+------------+--------+---------+
+9 rows in set (0.00 sec)
+</code></pre>
+
+                    <h3 id="intro7-3" class="page-header">데이터 수정하기</h3>
+                    <div class="bs-callout bs-callout-info">
+                    </div>
+<pre class="language-js"><code>
+</code></pre>
+<pre class="language-js"><code>
+</code></pre>
+
+                    <h3 id="intro7-4" class="page-header">데이터 삭제하기</h3>
+                    <div class="bs-callout bs-callout-info">
+                    </div>
+<pre class="language-js"><code>
+</code></pre>
+<pre class="language-js"><code>
+</code></pre>
+
+                </div>
+                <!-- //테이블 데이터 -->
+                
+
+            </div>
+            <!-- //col-md-9 -->
+
+            <div class="col-md-3">
+                <div class="bs-sidebar hidden-print" role="complementary">
+                    <ul class="nav bs-sidenav">
+                        <li><a href="#intro1">MySQL</a></li>
+                        <li><a href="#intro2">MySQL 설치</a></li>
+                        <li><a href="#intro3">MySQL 실행</a></li>
+                        <li><a href="#intro4">데이터베이스</a>
+                            <ul class="nav bs-sidenav">
+                                <li><a href="#intro4-1">데이터베이스 만들기</a></li>
+                                <li><a href="#intro4-2">데이터베이스 보기</a></li>
+                                <li><a href="#intro4-3">데이터베이스 사용</a></li>
+                                <li><a href="#intro4-4">데이터베이스 삭제</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#intro5">테이블</a>
+                            <ul class="nav bs-sidenav">
+                                <li><a href="#intro5-1">테이블 만들기</a></li>
+                                <li><a href="#intro5-2">테이블 전체 보기</a></li>
+                                <li><a href="#intro5-3">테이블 보기</a></li>
+                                <li><a href="#intro5-4">테이블 삭제</a></li>
+                                <li><a href="#intro5-4">테이블 복사</a></li>
+                                <li><a href="#intro5-5">테이블 구조 복사</a></li>
+                                <li><a href="#intro5-6">테이블 데이터 복사</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#intro6">테이블 수정</a>
+                            <ul class="nav bs-sidenav">
+                                <li><a href="#intro6-1">필드 추가하기</a></li>
+                                <li><a href="#intro6-2">필드 수정하기</a></li>
+                                <li><a href="#intro6-3">필드 삭제하기</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#intro7">테이블 데이터</a>
+                            <ul class="nav bs-sidenav">
+                                <li><a href="#intro7-1">데이터 입력하기</a></li>
+                                <li><a href="#intro7-2">데이터 불러오기</a></li>
+                                <li><a href="#intro7-3">데이터 수정하기</a></li>
+                                <li><a href="#intro7-4">데이터 삭제하기</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        <!-- //row -->
+    </div>
+    <!-- //container -->
+
+    <!-- Footer -->
+    <footer class="bs-footer" role="contentinfo">
+        <div class="container">
+            <ul class="footer-links muted">
+                <li>Currently v2.0</li>
+                <li>&middot;</li>
+                <li><a href="http://webstoryboy.co.kr">webstoryboy</a></li>
+                <li>&middot;</li>
+                <li><a href="http://cafe.naver.com/crossbrowsing" target="_blank">publisher cafe</a></li>
+                <li>&middot;</li>
+                <li><a href="http://cafe.daum.net/flairdesignlink" target="_blank">designer cafe</a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- //Footer -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="../assets/js/jquery-1.9.1.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/docs.min.js"></script>
+    <script src="../assets/js/prism.js"></script>
+</body>
+
+</html>

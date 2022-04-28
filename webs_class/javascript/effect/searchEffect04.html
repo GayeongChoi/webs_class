@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Effect</title>
+    <style>
+        @font-face {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.ttf') format("truetype");
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'TmonMonsori';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/TmonMonsori.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'NexonLv1Gothic';
+            font-size: 16px;
+            line-height: 1.6;
+            word-break: break-all;
+            color: #223547;
+        }
+        a {
+            text-decoration: none;
+            color: #223547;
+        }
+        .number {
+            margin: 10px;
+        }
+        .number li {
+            list-style: none;
+            display: inline;
+        }
+        .number li a {
+            border: 1px solid #223547;
+            width: 30px;
+            height: 30px;
+            border-radius: 50px;
+            display: inline-block;
+            text-align: center;
+            line-height: 30px;
+            transition: all 0.3s;
+        }
+        .number li.active a {
+            background: #223547;
+            color: #fff;
+        }
+        .board {
+            margin: 5vw 10vw 10vw 10vw;
+            width: 80vw;
+            background: #F1F3F6;
+            border: 2px solid #223547;
+            padding: 3vw;
+            text-align: center;
+            border-radius: 10px;
+        }
+        .board .sub {
+            font-size: 20px;
+        }
+        .board .sub a {
+            font-size: 20px;
+            border-bottom: 1px solid #223547;
+        }
+        .board h1 a{
+            font-family: 'TmonMonsori';
+            font-size: 80px;
+            margin-bottom: 1vw;
+        }
+        .board .search {
+            margin-bottom: 3vw;
+        }
+        .board .search label {
+            display: none;
+        }
+        .board .search input {
+            font-size: 24px;
+            border: 2px solid #223547;
+            padding: 10px 40px;
+            border-radius: 40px;
+            width: 50%;
+        }
+        .board .count {
+            text-align: right;
+            color: #777;
+        }
+        .board .count em {
+            font-style: normal;
+        }
+        .board .list {
+            text-align: left;
+        }
+        .board .list li {
+            background-color: #BDD6E6;
+            margin: 5px 0;
+            padding: 7px 10px;
+            border-radius: 4px;
+            list-style: none;
+            transition: all 0.3s;
+        }
+        .board .list li:hover {
+            background-color: #A5C3D5;
+            cursor: grabbing
+        }
+        .board .list li.hide {
+            display: none;
+        }
+        @media (max-width: 800px){
+            .board {
+                margin: 2vw 2vw 2vw 2vw;
+                width: 96vw;
+                padding: 4vw 2vw;
+            }
+            .board .sub {
+                font-size: 14px;
+            }
+            .board .sub a {
+                font-size: 14px;
+            }
+            .board h1 a{
+                font-size: 40px;
+            }
+            .board .search input {
+                font-size: 16px;
+                padding: 5px 20px;
+                width: 100%;
+            }
+            .board .list li {
+                font-size: 14px;
+            }
+        }
+        /* option */
+        .board .desc {
+            background: #fff;
+            font-size: 18px;
+            margin: 5px 0;
+            border-radius: 4px;
+            padding: 15px 10px;
+            border: #223547 2px solid;
+        }
+        .board .list {
+            /* background: #A5C3D5; */
+            padding: 15px 10px;
+            border-radius: 4px;
+        }
+        .board .list span {
+            border: 1px solid #223547;
+            border-radius: 20px;
+            padding: 5px 20px;
+            margin: 3px;
+            display: inline-block;
+            transition: all 0.3s;
+            cursor: pointer;
+            background: #A5C3D5;
+            font-weight: bold;
+        }
+        .board .list span:hover {
+            background: #223547;
+            color: #fff;
+            font-weight: normal;
+        }
+        #search-box {
+            text-align: center;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="number">
+            <ul>
+                <li><a href="searchEffect01.html">1</a></li>
+                <li><a href="searchEffect02.html">2</a></li>
+                <li><a href="searchEffect03.html">3</a></li>
+                <li class="active"><a href="searchEffect04.html">4</a></li>
+                <li><a href="searchEffect05.html">5</a></li>
+                <li><a href="searchEffect06.html">6</a></li>
+                <li><a href="searchEffect07.html">7</a></li>
+                <li><a href="searchEffect08.html">8</a></li>
+                <li><a href="searchEffect09.html">9</a></li>
+                <li><a href="searchEffect10.html">10</a></li>
+            </ul>
+        </div>
+        <div class="board">
+            <span class="sub"><a href="../javascript06.html#sample11">find()를 이용하여 속성을 검색하면 설명 보여주기</a></span>
+            <h1><a href="searchEffect.html">CSS 속성 검색하기</a></h1>
+
+           <!-- 검색 영역 -->
+            <div class="search">
+                <label for="search-box">검색하기</label>
+                <input type="text" id="search-box" placeholder="CSS 속성을 입력해주세요!!">
+            </div>
+
+            <!-- 전체 목록 갯수 -->
+            <div class="count">전체 목록 갯수 : 0개</div>
+
+            <!-- CSS 설명 영역 -->
+            <div class="desc">아래의 속성을 검색하면 설명이 나옵니다.</div>
+
+            <!-- CSS 속성 리스트 -->
+            <div class="list"></div>
+            
+        </div>
+    </div>
+   
+
+    <!-- script -->
+    <script>
+        //데이터를 변수(명)에 저장
+        const cssProperty = [ //CSS 속성 목록
+            {name:"all", desc:"all 속성은 CSS 속성을 재설정하는데 사용할 수 있는 약식 속성입니다."},
+            {name:"animation", desc:"animation 속성은 애니메이션 속성을 설정하기 위한 약식 속성입니다."},
+            {name:"animation-delay", desc:"animation-delay 속성은 애니메이션이 시작되는 시간을 설정합니다."},
+            {name:"animation-direction", desc:"animation-direction 속성은 애니메이션이 움직이는 방향을 설정합니다."},
+            {name:"animation-duration", desc:"animation-duration 속성은 애니메이션이 움직이는 시간을 설정합니다."},
+            {name:"animation-fill-mode", desc:"animation-fill-mode 속성은 애니메이션이 끝난 후의 상태를 설정합니다."},
+            {name:"animation-iteration-count", desc:"animation-iteration-count 속성은 애니메이션 반복 횟수를 설정합니다."},
+            {name:"animation-name", desc:"animation-name 속성은 애니메이션 키프레임 이름을 설정합니다."},
+            {name:"animation-play-state", desc:"animation-play-state 속성은 애니메이션의 진행상태를 설정합니다."},
+            {name:"animation-timing-function", desc:"animation-timing-function 속성은 애니메이션 움직임의 속도를 설정합니다."},
+            {name:"appearance", desc:"appearance 속성은 기본 양식 컨트롤이 렌더링되는 방식을 제어합니다."},
+
+            //b
+            {name:"backdrop-filter", desc: "backdrop-filter 속성은 요소 뒤에 필터효과를 설정합니다."},
+            {name:"backface-visibility", desc: "backdrop-visibility 속성은 요소 뒷면 출력 여부 설정합니다."},
+            {name:"background", desc: "background 속성은 배경 속성 값을 정의합니다."},
+            {name:"background-attachment", desc:"background-attachment</strong> : background-attachment 속성은 배경이미지의 고정여부를 설정하기 위한 속성입니다."},
+            {name:"background-blend-mode", desc:"background-blend-mode</strong> : background-blend-mode 속성은 배경을 혼합했을 때의 상태를 설정합니다."},
+            {name:"background-clip", desc:"background-clip</strong> : background-clip 속성은 백그라운드 이미지의 위치 기준점을 설정하기 위한 속성입니다"},
+            {name:"background-color", desc:"background-color</strong> : background-color 속성은 백그라운드 색을 설정합니다"},
+            {name:"background-image", desc:"background-image</strong> : background-image 속성은 백그라운드 이미지 및 배경 속성을 설정합니다"},
+            {name:"background-origin", desc:"background-origin</strong> : background-origin 속성은 백그라운드 이미지의 위치 기준점을 설정하기 위한 속성입니다"},
+            {name:"background-position", desc:"background-position</strong> : background-position 속성은 백그라운드 이미지의 위치 영역을 설정합니다"},
+            {name:"background-repeat", desc:"background-repeat</strong> : background-repeat 속성은 백그라운드 이미지 반복 여부를 설정합니다"},
+            {name:"background-repeat", desc:"background-repeat</strong> : background-repeat 속성은 백그라운드 이미지 반복 여부를 설정합니다"},
+            {name:"background-size", desc:"background-size</strong> : background-size 속성은 백그라운드 이미지 사이즈를 설정합니다"},
+            {name:"border", desc:"border</strong> : border 속성은 테두리 속성을 일괄적으로 설정합니다"},
+            {name:"border-bottom", desc:"border-bottom</strong> : border-bottom 속성은 테두리 아래쪽 속성을 일괄적으로 설정합니다"},
+            {name:"border-bottom-color", desc:"border-bottom-color</strong> : border-bottom-color 속성은 테두리 아래쪽 색 속성을 설정합니다"},
+            {name:"border-bottom-left-radius", desc:"border-bottom-left-radius</strong> : border-bottom-left-radius 속성은 아래부분 왼쪽 모서리 굴곡을 설정합니다"},
+            {name:"border-bottom-right-radius", desc:"border-bottom-right-radius</strong> : border-bottom-right-radius 속성은 아래부분 오른쪽 모서리 굴곡을 설정합니다"},
+            {name:"border-bottom-style", desc:"border-bottom-style</strong> : border-bottom-style 속성은 테두리 아래쪽 스타일 속성을 설정합니다"},
+            {name:"border-bottom-width", desc:"border-bottom-width</strong> : border-bottom-width 속성은 테두리 아래쪽 두께 속성을 설정합니다"},
+            {name:"border-collapse", desc:"border-collapse</strong> : border-collapse 속성은 테이블의 테두리 분리 여부를 설정합니다"},
+            {name:"border-color", desc:"border-color</strong> : border-color 속성은 테두리 색 속성을 설정합니다"},
+            {name:"border-image", desc:"border-image</strong> : border-image 속성은 테두리 이미지 속성을 설정합니다"},
+            {name:"border-image-outset", desc:"border-image-outset</strong> : border-image-outset 속성은 테두리 이미지 간격 속성을 설정합니다"},
+            {name:"border-image-repeat", desc:"border-image-repeat</strong> : border-image-repeat 속성은 테두리 이미지 반복 속성을 설정합니다"},
+            {name:"border-image-slice", desc:"border-image-slice</strong> : border-image-slice 속성은 테두리 이미지 크기 속성을 설정합니다"},
+            {name:"border-image-source", desc:"border-image-source</strong> : border-image-source 속성은 테두리 이미지 경로 속성을 설정합니다"},
+            {name:"border-image-width", desc:"border-image-width</strong> : border-image-width 속성은 테두리 이미지 두께 속성을 설정합니다"},
+            {name:"border-image-left", desc:"border-image-left</strong> : border-image-left 속성은 테두리 왼쪽 속성을 일괄적으로 설정합니다"},
+            {name:"border-image-left-color", desc:"border-image-left-color</strong> : border-image-left-color 속성은 테두리 왼쪽 색 속성을 설정합니다"},
+            {name:"border-image-left-style", desc:"border-image-left-style</strong> : border-image-left-style 속성은 테두리 왼쪽 스타일 속성을 설정합니다"},
+            {name:"border-image-left-width", desc:"border-image-left-width </strong> : border-image-left-width 속성은 테두리 왼쪽 두께 속성을 설정합니다"},
+            {name:"border-radius", desc:"border-radius</strong> : border-radius 속성은 모서리 굴곡을 설정합니다"},
+            {name:"border-image-right", desc:"border-image-right</strong> : border-image-right 속성은 테두리 오른쪽 속성을 일괄적으로 설정합니다"},
+            {name:"border-image-right-color", desc:"border-image-right-color</strong> : border-image-right-color 속성은 테두리 오른쪽 색 속성을 설정합니다"},
+            {name:"border-image-right-style", desc:"border-image-right-style</strong> : border-image-right-style 속성은 테두리 오른쪽 스타일 속성을 설정합니다"},
+            {name:"border-image-right-width", desc:"border-image-right-width </strong> : border-image-right-width 속성은 테두리 오른쪽 두께 속성을 설정합니다"},
+            {name:"border-spacing", desc:"border-spacing</strong> : border-spacing 속성은 테이블의 테두리 간격을 설정합니다"},
+            {name:"border-style", desc:"border-style </strong> : border-style 속성은 테두리 스타일 속성을 설정합니다"},
+            {name:"border-top", desc:"border-top </strong> : border-top 속성은 위쪽 속성을 일괄적으로 설정합니다"},
+            {name:"border-top-color", desc:"border-top-color </strong> : border-top-color 속성은 위쪽 색 속성을 설정합니다"},
+            {name:"border-top-color", desc:"border-top-color </strong> : border-top-color 속성은 위쪽 색 속성을 설정합니다"},
+            {name:"border-top-left-radius", desc:"border-top-left-radius </strong> : border-top-left-radius 속성은 윗부분 왼쪽 모서리 굴곡을 설정합니다"},
+            {name:"border-top-rigth-radius", desc:"border-top-rigth-radius </strong> : border-top-rigth-radius 속성은 윗부분 오른쪽 모서리 굴곡을 설정합니다"},
+            {name:"border-top-style", desc:"border-top-style </strong> : border-top-style 테두리 위쪽 스타일 속성을 설정합니다"},
+            {name:"border-top-width", desc:"border-top-width </strong> : border-top-width 테두리 위쪽 두께 속성을 설정합니다"},
+            {name:"bottom", desc:"bottom </strong> : bottom 속성은 위치 요소의 아래쪽 속성을 설정합니다"},
+            {name:"box-decoration-break", desc:"box-decoration-break </strong> : box-decoration-break 속성은 컬럼 및 줄바꿈시 테두리와 패딩의 방식을 설정합니다"},
+            {name:"box-shadow", desc:"box-shadow </strong> : box-shadow 속성은 박스 요소의 그림자를 설정합니다"},
+            {name:"box-sizing", desc:"box-sizing </strong> : box-sizing 속성은 요소 크기에 패딩 포함 여부를 설정합니다"},
+            //c
+            {name:"caption-side", desc:"caption-side 속성은 테이블 caption의 위치를 설정합니다."},
+            {name:"caret-color", desc:"caret-color 속성은 input의 커서 색을 정의합니다."},
+            {name:"clear", desc:"clear 속성은 float 요소의 성질을 차단합니다."},
+            {name:"clip", desc:"clip 속성은 보이는 영역을 설정합니다."},
+            {name:"color", desc:"color 속성은 글씨 색을 설정합니다."},
+            {name:"column-count", desc:" column-count 속성은 컬럼의 수를 정의합니다."},
+            {name:"column-fill", desc:"column-fill 속성은 열의 지정방법을 정의합니다."},
+            {name:"column-gap", desc:"column-gap 속성은 컬럼의 간격을 정의합니다."},
+            {name:"column-rule", desc:"column-rule 속성은 컬럼 라인의 가로값, 스타일, 컬러를 정의합니다."},
+            {name:"column-rule-color", desc:"column-rule-color 속성은 컬럼의 라인 색을 정의합니다."},
+            {name:"column-rule-style", desc:"column-rule-style 속성은 컬럼 라인의 스타일을 정의합니다."},
+            {name:"column-rule-width", desc:"column-rule-width 속성은 컬럼 라인의 가로값을 정의합니다."},
+            {name:"column-span", desc:"column-span 속성은 열의 속성을 정의합니다."},
+            {name:"column-width", desc:"column-width 속성은 컬럼의 가로 값을 정의합니다."},
+            {name:"columns", desc:"columns 속성은 컬럼의 열의 폭과 열의 수를 정의합니다."},
+            {name:"content", desc:"content 속성은 콘텐츠 내용을 설정합니다."},
+            {name:"counter-increment", desc:"counter-increment 속성은 콘텐츠의 순서 상태를 정의합니다."},
+            {name:"counter-reset", desc:"counter-reset 속성은 콘텐츠의 숫자를 초기화합니다."},
+            {name:"cursor", desc:"cursor 속성은 마우스 오버시 마우스 포인터를 정의합니다."},
+            //d
+            {name:"direction", desc:"direction 속성은 문장의 방향을 설정합니다."},
+            {name:"display", desc:"display 해당 요소를 어떻게 보여줄지를 지정할수있습니다."},
+            //e
+            {name:"empty-cells", desc:"empty-cells 속성은 테이블의 빈요소의 속성을 설정합니다."},
+            //f
+            {name:"filter", desc:"filter 속성은 그래픽 효과를 설정합니다."},
+            {name:"flex", desc:"flex 속성은 콘텐츠의 성질을 flex로 정의합니다."},
+            {name:"flex-basis", desc:"flex-basis 속성은 요소의 기본 단위를 정의합니다."},
+            {name:"flex-direction", desc:"flex-direction 속성은 요소의 정렬 방향을 정의합니다."},
+            {name:"flex-flow", desc:"flex-flow 속성은 요소의 정렬 방향 flex-direction와 줄 속성 flex-wrap을 같이 설정합니다."},
+            {name:"flex-grow", desc:"flex-grow 속성은 요소의 크기를 숫자를 통해 정의합니다."},
+            {name:"flex-shrink", desc:"flex-shrink 속성은 요소의 크기를 숫자를 통해 줄여줍니다."},
+            {name:"flex-wrap", desc:"flex-wrap 속성은 요소의 줄 속성을 설정합니다."},
+            {name:"float", desc:"flex-grow 속성은 블록요소의 정렬 상태를 설정합니다."},
+            {name:"font", desc:"font 속성은 폰트에 관한 설정을 정의합니다."},
+            {name:"font-family", desc:"font-family 속성은 폰트 종류를 설정합니다."},
+            {name:"font-size", desc:"font-size 속성은 폰트의 크기를 조절할수 있습니다."},
+            {name:"font-size-adjust", desc:"font-size-adjust 속성은 소문자를 기준으로 폰트 크기를 설정합니다."},
+            {name:"font-stretch", desc:"font-stretch 속성은 폰트의 굵기를 정의합니다."},
+            {name:"font-style", desc:"font-style 속성은 폰트의 스타일을 정의합니다."},
+            {name:"font-variant", desc:"font-variant 속성은 글꼴의 변형을 정의합니다."},
+            {name:"font-weight", desc:"font-weight 속성은 폰트의 가중치나 굵기를 명시할수있다."},
+            //g
+            {name:"grid", desc:"grid 속성은 flex와 달리 가로세로(2방향)설정이 가능한 2차원 레이아웃 시스템입니다."},
+            {name:"grid-area", desc:"grid-area 속성은 영역(Area) 이름을 설정하거나, grid-row와 grid-column의 단축 속성"},
+            {name:"grid-auto-columns", desc:"grid-auto-columns 속성은 암시적인 열(Track)의 크기를 정의"},
+            {name:"grid-auto-flow", desc:"grid-auto-flow 속성은 자동 배치 알고리즘 방식을 정의"},
+            {name:"grid-auto-rows", desc:"grid-auto-rows 속성은 암시적인 행(Track)의 크기를 정의"},
+            {name:"grid-column", desc:"grid-column 속성은 grid-column-xxx의 단축 속성(열 시작/끝 위치)"},
+            {name:"grid-column-end", desc:"grid-column-end 속성은 그리드 아이템의 열 끝 위치 지정"},
+            {name:"grid-column-gap", desc:"grid-column-gap 속성은 열과 열 사이의 간격(Line)을 정의"},
+            {name:"grid-column-start", desc:"grid-column-start 속성은 그리드 아이템의 열 시작 위치 지정"},
+            {name:"grid-gap", desc:"grid-gap 속성은 행과 열 사이의 간격을 설정합니다."},
+            {name:"grid-row", desc:"grid-row 속성은 grid-row-xxx의 단축 속성(행 시작/끝 위치)"},
+            {name:"grid-row-end", desc:"grid-row-end 속성은 그리드 아이템의 행 끝 위치 지정"},
+            {name:"grid-row-gap", desc:"grid-row-gap 속성은 행과 행 사이의 간격(Line)을 정의"},
+            {name:"grid-row-start", desc:"grid-row-start 그리드 아이템(Item)의 행 시작 위치 지정"},
+            {name:"grid-template", desc:"grid-template 속성은 grid-template-xxx의 단축 속성"},
+            {name:"grid-template-areas", desc:"grid-template-areas 속성은 영역(Area) 이름을 참조해 템플릿 생성"},
+            {name:"grid-template-columns", desc:"grid-template-columns 명시적 열(Track)의 크기를 정의"},
+            {name:"grid-template-rows", desc:"grid-template-rows 명시적 행(Track)의 크기를 정의"},
+            //h
+            {name:"hanging-punctuation", desc:"hanging-punctuation 속성은 글씨의 시작 및 끝의 위치 정의합니다."},
+            {name:"height", desc:"height 속성은 콘텐츠 요소의 세로값을 설정합니다."},
+            {name:"hyphens", desc:"hyphens 속성은 텍스트의 하이픈 영역을 설정합니다."},
+            //i
+            {name:"isolation", desc:"isolation 속성은 stacking context을 설정합니다."},
+            //l
+            {name:"left", desc:"left 속성은 위치 요소의 왼쪽 속성을 설정합니다."},
+            {name:"letter-spacing", desc:"letter-spacing 속성은 글자 사이의 간격을 설정합니다."},
+            {name:"line-height", desc:"line-height 속성은 문장과 문장 사이의 간격을 설정합니다."},
+            {name:"list-style", desc:"list-style 속성은 목록 스타일 속성을 설정합니다."},
+            {name:"list-style-image", desc:"list-style-image 속성은 목록 마커의 이미지를 설정합니다."},
+            {name:"list-style-position", desc:"list-style-position 속성은 목록 마커의 위치 속성을 설정합니다."},
+            {name:"list-style-type", desc:"list-style-type 속성은 목록 마커의 유형을 설정합니다."},
+            //m
+            {name:"margin", desc:"margin 속성은 요소의 네 방향 바깥 여백 영역을 설정합니다."},
+            {name:"margin-bottom", desc:"margin-bottom 속성은 요소의 아래쪽에 바깥 여백 영역을 설정합니다."},
+            {name:"margin-left", desc:"margin-left 속성은 요소의 왼쪽에 바깥 여백 영역을 설정합니다."},
+            {name:"margin-right", desc:"margin-right 속성은 요소의 오른쪽에 바깥 여백 영역을 설정합니다."},
+            {name:"margin-top", desc:"margin-top 속성은 요소의 위쪽에 바깥 여백 영역을 설정합니다."},
+            {name:"mask", desc:"mask 속성은 아이템이 부분적으로만 보여지게 하거나 혹은 완전히 가려서 보여지지 않게 할 수 있는 기능을 가지고 있습니다. 이 속성은 마스킹 혹은 특정한 점을 기준으로 이미지를 잘라내는 기능을 함께 제공합니다."},
+            {name:"mask-border", desc:"mask-border 속성은 요소의 경계의 가장자리를 따라 마스크를 만들 수 있습니다."},
+            {name:"mask-border-mode", desc:"mask-border-mode 속성은 마스크 테두리에 사용되는 혼합(blending) 모드를 지정합니다."},
+            {name:"mask-border-outset", desc:"mask-border-outset 요소의 마스크 테두리가 테두리 상자에서 설정되는 거리를 지정합니다."},
+            {name:"mask-border-repeat", desc:"mask-border-repeat 속성은 소스 이미지의 가장자리 영역이 요소의 마스크 테두리 크기에 맞게 조정되는 방식을 설정합니다."},
+            {name:"mask-border-slice", desc:"mask-border-slice 속성은 mask-border-source로 설정된 이미지를 영역으로 나눕니다. 이 영역은 요소의 마스크 테두리 구성 요소를 형성하는 데 사용됩니다."},
+            {name:"mask-border-source", desc:"mask-border-source 속성은 요소의 마스크 테두리를 만드는 데 사용되는 소스 이미지를 설정합니다."},
+            {name:"mask-border-width", desc:"mask-border-width 속성은 요소의 마스크 테두리 너비를 설정합니다."},
+            {name:"mask-clip", desc:"mask-clip 속성은 마스크의 영향을 받는 영역을 결정합니다. 요소의 칠해진 콘텐츠는 이 영역으로 제한되어야 합니다."},
+            {name:"mask-composite", desc:"mask-composite 속성은 현재 마스크 레이어 아래에 마스크 레이어가 있는 합성 작업을 나타냅니다."},
+            {name:"mask-image", desc:"mask-image 속성은 요소를 url에 지정된 이미지 만큼만 보이게 처리합니다."},
+            {name:"mask-mode", desc:"mask-mode 속성은 mask-image에 의해 정의된 마스크 참조가 광도 또는 알파 마스크로 처리되는지 여부를 설정합니다."},
+            {name:"mask-origin", desc:"mask-origin 속성은 마스크의 원점을 설정합니다."},
+            {name:"mask-position", desc:"mask-position 속성은 background-position처럼 마스크에 보일 요소위치를 지정합니다."},
+            {name:"mask-repeat", desc:"mask-repeat 속성은 마스크 이미지가 반복되는 방식을 설정합니다. 마스크 이미지는 가로축, 세로축, 양축을 따라 반복하거나, 반복하지 않을 수 있습니다."},
+            {name:"mask-size", desc:"mask-size 속성은 background-size처럼 보일 요소의 크기를 지정합니다."},
+            {name:"mask-type", desc:"mask-type 속성은 SVG mask 요소를 밝기 또는 알파 마스크로 사용할지 여부를 설정합니다. mask 요소 자체에 적용됩니다."},
+            {name:"max-height", desc:"max-height 속성은 요소의 최대 세로값을 설정합니다."},
+            {name:"max-width", desc:"max-width 속성은 요소의 최대 가로 값을 설정합니다."},
+            {name:"min-height", desc:"min-height 속성은 요소의 최소 세로 값을 설정합니다."},
+            {name:"min-width", desc:"min-width 속성은 요소의 최소 가로 값을 설정합니다."},
+            {name:"mix-blend-mode", desc:"mix-blend-mode 속성은 배경의 혼합 상태를 정의합니다."},
+            //o
+            {name:"object-fit", desc:"대체되는 요소의 내용(&lt;img&gt;, &lt;video&gt;, &lt;object&gt;, &lt;svg&gt; 등과 같은)이 지정된 너비와 높이에 맞게 장착되는 방식을 지정한다."},
+            {name:"object-position", desc:"기본적으로 요소의 가운데로 화상을 이동시킨다. 이 위치를 원하는 값으로 변경한다."},
+            {name:"opacity", desc:"요소의 투명도를 제어하는데 사용됩니다."},
+            {name:"orphans", desc:"페이지, 영역 또는 열의 맨 아래에 표시되어야 하는 블록 컨테이너의 최소 줄 수를 설정합니다."},
+            {name:"outline", desc:"요소 주위에 윤곽선을 그리는 데 사용됩니다."},
+            {name:"outline-color", desc:"요소의 윤곽선 색상을 설정하는 데 사용됩니다."},
+            {name:"outline-offset", desc:"요소 윤곽선의 가장자리 또는 테두리 사이의 간격을 설정합니다."},
+            {name:"outline-style", desc:"요소의 윤곽선 스타일을 설정하는 데 사용됩니다."},
+            {name:"outline-width", desc:"요소의 윤곽선 너비를 설정하는 데 사용됩니다."},
+            {name:"overflow", desc:"요소의 경계를 넘은 콘텐츠를 표시할지 여부를 지정합니다."},
+            {name:"overflow-x", desc:"요소의 콘텐츠를 표시할지, 잘릴지(숨겨야 하는지) 또는 콘텐츠가 요소의 왼쪽 및 오른쪽 가장자리를 넘을 때 수평 스크롤 막대를 추가할지 여부를 지정하는 데 사용됩니다."},
+            {name:"overflow-y", desc:"요소의 콘텐츠를 표시할지, 잘릴지(숨겨야 하는지) 또는 콘텐츠가 요소의 위쪽 및 아래쪽 가장자리를 넘을 때 세로 스크롤 막대를 추가할지 여부를 지정하는 데 사용됩니다."},    
+            //p
+            {name:"padding", desc:"한 번에 요소의 네 면에 패딩 영역(내용(content)과 테두리(border) 사이의 간격)을 설정합니다."},
+            {name:"padding-bottom", desc:"요소의 아래쪽 패딩 영역(내용(content)과 테두리(border) 사이의 간격)을 설정"},
+            {name:"padding-left", desc:"요소의 왼쪽 패딩 영역(내용(content)과 테두리(border) 사이의 간격)을 설정"},
+            {name:"padding-right", desc:"요소의 오른쪽 패딩 영역(내용(content)과 테두리(border) 사이의 간격)을 설정"},
+            {name:"padding-top", desc:"요소의 위쪽 패딩 영역(내용(content)과 테두리(border) 사이의 간격)을 설정"},
+            {name:"page-break-after", desc:"페이지 인쇄시 적용된 요소 뒤부터 페이지 분리에 관한 설정을 정의합니다."},
+            {name:"page-break-before", desc:"페이지 인쇄시 적용된 요소 앞부터 페이지 분리에 관한 설정을 정의합니다."},
+            {name:"page-break-inside", desc:"요소 내부에서 페이지 넘김을 지정합니다"},
+            {name:"perspective", desc:"perspective 속성은 3차원 공간을 활성화하여 해당 요소의 자식이 해당 공간에 배치될 수 있도록 하는 데 사용됩니다."},
+            {name:"perspective-origin", desc:"perspective-origin 속성은 뷰어가 3차원 공간을 바라보는 위치를 선택하는 데 사용됩니다."},
+            {name:"pointer-events", desc:"pointer-events 속성은 특정 그래픽 요소가 포인터 이벤트의 대상이 될 수 있는 조건을 제어하는 ​​데 사용됩니다 ."},
+            {name:"position", desc:"position 속성은 페이지에서 요소의 위치를 ​​설정하는 데 사용됩니다 ."},
+            //q
+            {name:"quotes", desc: "quotes 속성은 속성을 사용하여 삽입할 때 사용할 따옴표를 지정하는 데 사용됩니다"},
+            //r
+            {name:"resize", desc: "resize 속성은 사용자가 요소의 크기를 조정할 수 있는지 여부와 가능한 경우 방향을 지정할 수 있습니다."},
+            {name:"right", desc: "right 속성은 위치 지정 요소의 오른쪽 오프셋을 지정하는 데 사용되는 오프셋 속성입니다 ."},
+            //s
+            {name:"shape-image-threshold", desc: "shape-image-threshold 속성은 css모양 외부에 이미지를 사용할 때 모양을 추출하는 데 사용되는 알파 채널의 임계값을 설정하는 데 사용됩니다."},
+            {name:"shape-margin", desc: "shape-margin 속성은 css모양에 여백을 추가하는 데 사용됩니다."},
+            {name:"shape-outside", desc: "shape-outside 속성은 float된 요소의 경계를 감싸는 방식을 제어하는 데 사용됩니다."},
+            //t
+            {name:"tab-size", desc: "tab-size 속성은 속성은 페이지에 표시되는 탭 문자의 너비를 결정하는 데 사용됩니다."},
+            {name:"table-layout", desc: "table-layout 속성은 테이블 열, 행 및 셀의 레이아웃을 지정합니다."},
+            {name:"text-align", desc: "text-align 속성은 블록 요소 내부의 인라인 요소가 정렬되는 방식을 제어하는 데 사용됩니다."},
+            {name:"text-align-last", desc: "text-align-last 속성은 강제 줄 바꿈 직전의 블록이나 줄의 마지막 줄을 정렬하는 방법을 설정하는 데 사용됩니다."},
+            {name:"text-decoration", desc: "text-decoration 속성은 텍스트 위, 텍스트 아래 또는 텍스트 위에 선 형태로 장식을 추가하거나 기존 장식을 제거하는 데 사용됩니다."},
+            {name:"text-decoration-color", desc: "text-decoration-color 속성은 요소에 설정된 텍스트 장식(밑줄, 윗줄 및 선 통과)의 색상을 지정합니다"},
+            {name:"text-decoration-line", desc: "text-decoration-line 속성은 글자 라인 스타일을 설정합니다."},
+            {name:"text-decoration-style", desc: "text-decoration-style 속성은 text-decoration-line이 있는 요소에 설정된 선(밑줄, 윗줄 및 선 통과)의 스타일을 설정합니다."},
+            {name:"text-indent", desc: "text-indent 속성은 텍스트를 담고있는 블록 컨테이너에 적용되며 문단의 첫줄을 들여쓰기 할 때 사용합니다."},
+            {name:"text-justify", desc: "text-justify 속성은 텍스트의 간격을 정의합니다."},
+            {name:"text-orientation", desc: "text-orientation 속성은 콘텐츠 줄 내에서 문자의 방향을 설정합니다."},
+            {name:"text-overflow", desc: "text-overflow 속성은 박스 안에 내용이 넘칠 때 텍스트를 어떻게 처리할지 지정하는 속성입니다."},
+            {name:"text-rendering", desc: "text-rendering 속성은 텍스트를 렌더링할 때 최적화할 항목을 선택할 수 있는 속성입니다."},
+            {name:"text-shadow", desc:"text-shadow 속성은 텍스트에 그림자를 추가할 때 설정합니다."},
+            {name:"text-transform", desc:"text-transform 속성은 대문자로 또는 소문자로 바꾸는 속성입니다."},
+            {name:"top", desc:"top 속성은 각 옵션 속성들의 부모 태그를 기준으로 수직으로 위치를 설정합니다."},
+            {name:"touch-action", desc:"touch-action 속성은 어떤 요소 내에서 브라우저가 처리할 터치 액션의 목록을 설정합니다."},
+            {name:"transform", desc:"transform 속성은 요소에 회전, 크기 조절, 기울이기, 이동 효과를 설정합니다."},
+            {name:"transform-origin", desc:"transform-origin 속성은 transform 속성과 함께 사용되는 속성으로, 회전 중심(원점·기준점)을 설정합니다."},
+            {name:"transform-style", desc:"transform-style 속성은 자식 요소를 3D 공간에 배치하거나 2D 평면에 평평하게 배치 할지 설정합니다."},
+            {name:"transition", desc:"transition 속성은 특정 조건 하에서 변화하는 과정을 애니메이션으로 보여주고자 할 때 설정합니다."},
+            {name:"transition-delay", desc:"transition-delay 속성은 프로퍼티가 변화한 시점과 트랜지션이 실제로 시작하는 사이에 대기하는 시간을 초 단위(s) 또는 밀리 초 단위(ms)로 설정합니다."},
+            {name:"transition-duration", desc:"transition-duration 속성은 애니메이션 소요 시간을 설정합니다."},
+            {name:"transition-property", desc:"transition-property 속성은 transition의 적용 여부를 정의합니다."},
+            {name:"transition-timing-function", desc:"transition-timing-function 속성은 요소의 움직임 기능을 정의합니다."},
+            //u
+            {name:"unicode-bidi", desc:"unicode-bidi 속성은 글자의 방향 속성을 설정합니다."},
+            //v
+            {name:"vertical-align", desc:"vertical-align 속성은 텍스트의 상하 정렬 방식을 설정합니다."},
+            {name:"visibility", desc:"visibility 속성은 요소를 보이지 않게 정의합니다."},
+            //w
+            {name:"white-space", desc:"white-space 속성은 줄바꿈, 공백, 줄 속성을 설정합니다."},
+            {name:"widows", desc:"widows CSS 속성은 페이지, 영역 또는 열의 맨 위에 표시되어야 하는 블록 컨테이너의 최소 줄 수를 설정합니다."},
+            {name:"width", desc: "width 속성은 요소의 가로 값을 정의합니다."},
+            {name:"will-change", desc:"will-change속승은 값이 변경될 속성에 대한 힌트를 미리 지정합니다."},
+            {name:"word-break", desc:" word-break 속성은 줄바꿈 속성을 설정합니다."},
+            {name:"word-spacing", desc:"word-spacing 속성은 단어 사이의 간격을 정의합니다."},
+            {name:"word-wrap", desc:"word-wrap 속성은 줄바꿈을 설정합니다."},
+            {name:"writing-mode", desc:"텍스트의 방향(가로/세로)를 설정합니다."},
+            //z
+            {name:"z-index", desc:"z-index 속성은 요소의 위치가 겹칠 경우 순서를 정의합니다."}
+        ];
+        const searcBox = document.querySelector("#search-box"); //검색 영역
+        const cssCount = document.querySelector(".count");      //전체 목록 갯수
+        const cssDesc = document.querySelector(".desc");        //CSS 설명 영역
+        const cssList = document.querySelector(".list");        //CSS 속성 리스트 
+       
+
+        //CSS 속성 값/전체 갯수 출력하기
+        cssProperty.map((element, index) => {      //map으로 배열안에 객체(요소)와 인덱스를 불러옴
+            cssCount.innerText = "전체 목록 갯수 : "+ (index+1) +"개"; //출력: "전체 목록 갯수: (속성 목록의 인덱스) 개" /+1은 배열이0부터 시작해서
+            cssList.innerHTML += "<span>"+ element.name +"</span>";   //출력: ex) <span>(속성목록명)</span> /+= 해주지 않으면 목록 하나만 출력 = 데이터가 변경만 되고 추가되지는 않아서
+        });
+
+        //사용자가 검색한 값(searchWord)
+        searcBox.addEventListener("keyup", () => { //검색 영역에 사용자가 값을 넣으면
+            const searchWord = searcBox.value;     //사용자가 검색한 값 = searcBox의 값으로 저장 = 검색창에 입력한 값 저장
+            //console.log(searchWord)
+            findProp(searchWord);                  //findProp 함수 호출하고 매개변수로 searchWord(input입력값) 전달.
+        }); 
+
+         
+       document.querySelectorAll(".list span").forEach(span => {  //선택: list span(다중)을 선택
+            span.addEventListener("click", () => {  // span(CSS 속성 리스트)을 클릭 했을 때
+                //클릭한 데이터 값(CSS 속성 리스트)을 가져오기
+                const listProp = span.innerText;    //listPorp에 CSS속성 리스트을 저장.
+                findProp(listProp);                 //findProp 함수 호출하고 매개변수로 searchWord(클릭한 CSS속성명) 전달.
+            })
+        })
+        
+        function findProp(searchProp){ //매개변수(searchWord): 위쪽 함수에서 쓴 값이 이쪽으로 넘어옴
+            const targetData = cssProperty.find((data) => data.name === searchProp) //name이 searchWord(사용자가 입력한 값)과 동일한지 맞으면 변수에 저장
+            
+            //찾는 데이터가 없을 때
+            if(targetData == null) {
+                cssDesc.textContent = "해당 속성은 존재하지 않습니다. 다시 검색해 주세요!";
+                return; //리턴??
+            }
+            cssDesc.innerHTML = targetData.desc; //
+        }
+        
+
+    </script>
+</body>
+</html>

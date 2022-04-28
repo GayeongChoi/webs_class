@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .contair {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        #header {
+           height: 100px;
+           background: #000;
+        }
+        #benner {
+            height: 300px;
+            background: #111;
+        }
+        #main ul {
+            height: 400px;
+            display: grid;
+            grid-template-areas: 
+            "m01 m02 m03 m04 m05"
+            "m06 m07 m08 m09 m10"
+            ;
+            grid-template-columns: 20% 20% 20% 20% 20%;
+            grid-template-rows: 50% 50%;
+            background: #222;
+            align-items: center;
+            justify-items: center;
+            overflow: hidden;
+        }
+        #main li {
+            background: #555;
+            width: 100px;
+            height: 100px;
+            overflow: hidden;
+        }
+        .m01 {
+            grid-area: m01;
+        }
+        .m02 {
+            grid-area: m02;
+        }
+        .m03 {
+            grid-area: m03;
+        }
+        .m04 {
+            grid-area: m04;
+        }
+        .m05 {
+            grid-area: m05;
+        }
+        .m06 {
+            grid-area: m06;
+        }
+        .m07 {
+            grid-area: m07;
+        }
+        .m08 {
+            grid-area: m08;
+        }
+        .m09 {
+            grid-area: m09;
+        }
+        .m10 {
+            grid-area: m10;
+        }
+        #footer {
+            height: 100px;
+            background: #444;
+        }
+        @media (max-width: 1200px) {
+            #wrap {
+                 width: 100%;
+            }
+            #main ul {
+                grid-template-areas: 
+                "m01 m02 m03 m04"
+                "m06 m07 m08 m09"
+                ;
+                grid-template-columns: 25% 25% 25% 25%;
+            }
+        }
+        @media (max-width: 868px) {
+            #main ul {
+                height: 600px;
+                grid-template-areas: 
+                    "m01 m02 m03"
+                    "m04 m05 m06"
+                    "m07 m08 m09"
+                ;
+                grid-template-columns: 33% 33% 33%;
+                grid-template-rows:   33% 33% 34%;
+            }
+        }
+        @media (max-width: 480px) {
+            #main ul {
+                height: 800px;
+                grid-template-areas: 
+                    "m01 m06 "
+                    "m02 m07"
+                    "m03 m08"
+                    "m04 m09"
+                    "m05 m10"
+                ;
+                grid-template-columns: 150px 150px;
+                grid-template-rows:   20% 20% 20% 20% 20%;
+                justify-content: center;
+                padding: 100px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="contair">
+            <header id="header"></header>
+            <section id="benner"></section>
+            <main id="main">
+                <ul>
+                    <li class="m01"></li>
+                    <li class="m02"></li>
+                    <li class="m03"></li>
+                    <li class="m04"></li>
+                    <li class="m05"></li>   
+                    <li class="m06"></li>
+                    <li class="m07"></li>
+                    <li class="m08"></li>
+                    <li class="m09"></li>
+                    <li class="m010"></li>
+                </ul>
+            </main>
+            <footer id="footer"></footer>
+        </div>
+    </div>
+</body>
+</html>

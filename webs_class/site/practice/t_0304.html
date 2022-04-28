@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="assets/css/font.css">
+
+    <style>
+        * {
+            margin: 0;
+            font-family: "GmarketSans";
+        }
+        #wrap {
+            width: 100%;
+        }
+        .container {
+            width: 1200px;
+            margin: 0 auto;
+            padding: 120px 380px;
+        }
+        #imgText01 {
+            height: 831px;
+        }
+        #imgText01 .container{
+            display: flex;
+        }
+        #imgText01 .text .type_title{
+            font-size: 16px;
+            font-weight: 500;
+            color: #777;
+            margin: 40px 0px 20px 2px;
+            border-bottom: 1px solid #777;
+            width: 160px;
+        }
+        #imgText01 .text .text_title {
+            font-size: 50px;
+            font-weight: 300;
+            color: #111;
+        }
+        #imgText01 .text .desc {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 1.5;
+            color: #777;
+            margin: 35px 0px;
+        }
+        #imgText01 .text .more a {
+            font-size: 18px;
+            font-weight: 300;
+            color: #fff;
+            text-decoration : none;
+        }
+        #imgText01 .text .more a:hover {
+            text-decoration : underline;
+        }
+        #imgText01 .text .more a span {
+            padding: 10px 25px 9px 24px;
+            background: #000;
+        }
+
+        #imgText01 .img {
+            display: flex;
+        }
+        #imgText01 .img > div {
+            width: 374px;
+            height: 512px;
+            position: relative;
+        }
+        #imgText01 .img .img01 {
+            background: url(assets/img/site01.png) center no-repeat;
+            margin: 79px 20px 0 61px;
+        }
+        #imgText01 .img .img02 {
+            background: url(assets/img/site02.png)  center no-repeat;
+            border:3px solid #41ABF4;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+        #imgText01 .img a {
+            font-weight: 300;
+            color: #fff;
+            opacity:0.7;
+            text-decoration : none;
+        }
+        #imgText01 .img .img01 a {
+            font-size: 18px;
+            position:absolute;
+            bottom:20px;
+            left:20px;
+        }
+        #imgText01 .img .img02 a {
+            font-size: 25px;
+            position:absolute;
+            bottom:240px;
+            left:120px;
+        }
+        #imgText01 .img a:hover {
+            opacity:1;
+            text-decoration : underline;
+        }
+        #imgText01 .img .img01 a span {
+            padding: 8px 24px;
+            border-radius: 50px;
+            background: #000;
+            display: none;
+        }
+        #imgText01 .img .img02 a span {
+            padding: 50px 30px;
+            border-radius: 100%;
+            background: #000;
+        }
+        @media (max-width:480px){
+            .container {
+                padding: 0;
+                width: 100%;
+            }
+            #imgText01 .container{
+                display: block;
+            }
+            #imgText01 .text {
+                display: inline-block;
+                margin-left: 10%;
+            }
+            #imgText01 .img {
+               display: block;
+            }
+            #imgText01 .img > div {
+                margin: 0 auto;
+            }
+            #imgText01 .img .img01 {
+                margin: 79px auto 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <section id="imgText01">
+            <div class="container">
+                <div class="text">
+                    <h2 class="type_title">이미지 텍스트 유형01</h2>
+                    <h3 class="text_title">웹스트리보이<br>사이트</h3>
+                    <p class="desc">
+                        웹디자이너, 웹 퍼블리셔, 프론트앤드 개발자를 강의 사이트 입니다. <br>
+                        Gmarket Sans Light 22px, 150% #67778A
+                    </p>
+                    <div class="more">
+                        <a href="#">
+                            <span>더 많은 유형 살펴보기</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="img">
+                    <div class="img01">
+                        <a href="#">
+                            <span>레퍼런스 사이트</span>
+                        </a>
+                    </div>
+                    <div class="img02">
+                        <a href="#">
+                            <!-- <span>튜토리얼 사이트</span> -->
+                            <span class="view">VIEW</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
