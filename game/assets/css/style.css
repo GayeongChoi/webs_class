@@ -1,9 +1,9 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing:content-box;
-  font-family: 'DungGeunMo';
-  text-decoration-line : none;
+  box-sizing: content-box;
+  font-family: "DungGeunMo";
+  text-decoration-line: none;
 }
 
 body {
@@ -13,7 +13,7 @@ body {
   /* cursor: none; */
 }
 
-.show{
+.show {
   display: block;
 }
 
@@ -32,13 +32,13 @@ body {
   display: flex;
   justify-content: space-between;
   height: 40px;
-  background: #E4DBEE;
+  background: #e4dbee;
   padding: 0 1%;
 }
 #header span {
   font-size: 1.3em;
   line-height: 2;
-  font-family: 'LABDigital';
+  font-family: "LABDigital";
 }
 main {
   padding: 20px;
@@ -57,7 +57,11 @@ main {
 .icon {
   width: 50px;
   height: 50px;
-  background: linear-gradient(to top, #a8edea 0%, rgba(254,214,227,0.5) 100%);
+  background: linear-gradient(
+    to top,
+    #a8edea 0%,
+    rgba(254, 214, 227, 0.5) 100%
+  );
   padding: 8%;
   border-radius: 50px;
   display: block;
@@ -70,14 +74,13 @@ main {
 .txt {
   /* width: 100px; */
   height: 20px;
-  background: #31F8CC;
+  background: #31f8cc;
   margin-top: 10px;
   text-align: center;
   font-size: 20px;
   text-transform: uppercase;
   padding: 2px 5px;
 }
-
 
 /* 뮤직 박스 */
 .musicBox {
@@ -101,15 +104,14 @@ main {
   right: 0;
   margin: auto;
   width: 600px;
-  height:700px;
+  height: 700px;
   border-radius: 10px;
   overflow: hidden;
   display: none;
 }
-.memoryBox.show{
+.memoryBox.show {
   display: block;
 }
-
 
 /* 팝업 */
 .popup {
@@ -127,10 +129,10 @@ main {
   flex-direction: column;
   align-items: center;
   background-color: #c7c7c7;
-  border-left: 2px solid #FCFCFC;
-  border-top: 2px solid #FCFCFC;
-  border-right: 2px solid #2A2A2A;
-  border-bottom: 2px solid #2A2A2A;
+  border-left: 2px solid #fcfcfc;
+  border-top: 2px solid #fcfcfc;
+  border-right: 2px solid #2a2a2a;
+  border-bottom: 2px solid #2a2a2a;
   padding: 4px;
   z-index: 2;
   display: none;
@@ -150,7 +152,6 @@ main {
   padding: 5px;
   box-sizing: border-box;
   margin-bottom: 10px;
-
 }
 .popup .bar .close {
   display: flex;
@@ -162,8 +163,8 @@ main {
   background: #000;
   float: right;
   background-color: #c7c7c7;
-  border-left: 2px solid #FCFCFC;
-  border-top: 2px solid #FCFCFC;
+  border-left: 2px solid #fcfcfc;
+  border-top: 2px solid #fcfcfc;
   position: relative;
 }
 .close > .symbol {
@@ -184,14 +185,11 @@ main {
 }
 .close:hover {
   background-color: #bababa;
-  border-left: 2px solid #2A2A2A;
-  border-top: 2px solid #2A2A2A;
-  border-right: 2px solid #FCFCFC;
-  border-bottom: 2px solid #FCFCFC;
+  border-left: 2px solid #2a2a2a;
+  border-top: 2px solid #2a2a2a;
+  border-right: 2px solid #fcfcfc;
+  border-bottom: 2px solid #fcfcfc;
 }
-
-
-
 
 /* 게임 */
 iframe {
@@ -200,8 +198,3 @@ iframe {
   overflow: hidden;
   /* border-radius: 3%; */
 }
-
-
-
-
-
