@@ -109,8 +109,8 @@
       }
       .content__item__num {
         position: absolute;
-        right: 0;
-        top: 0;
+        right: 30px;
+        bottom: 0;
         font-size: 20vw;
         font-family: "Lato";
         font-weight: 100;
@@ -132,15 +132,34 @@
       #section4 {
         background-color: #666;
         z-index: 4000;
-        height: 500vh;
+        height: 400vh;
       }
       #section4 .sec4 {
         position: fixed;
         left: 0;
         top: 0;
-        width: 400vh;
+        width: 300vh;
         height: 100%;
         background-color: red;
+        display: flex;
+      }
+      #section4 .sec4 .item {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        font-size: 10vw;
+      }
+      #section4 .sec4 .item:nth-child(1) {
+        background-color: rgb(207, 117, 15);
+      }
+      #section4 .sec4 .item:nth-child(2) {
+        background-color: rgb(231, 221, 26);
+      }
+      #section4 .sec4 .item:nth-child(3) {
+        background-color: rgb(44, 200, 38);
+      }
+      #section4 .sec4 .item:nth-child(4) {
+        background-color: rgb(52, 41, 170);
       }
       #section5 {
         background-color: #555;
@@ -197,7 +216,11 @@
       <!-- //section3 -->
       <section id="section4" class="content__item">
         <div class="sec4">
-          <span class="content__item__num">04</span>
+          04
+          <span class="item">04-1</span>
+          <span class="item">04-2</span>
+          <span class="item">04-3</span>
+          <span class="item">04-4</span>
         </div>
       </section>
       <!-- //section4 -->
@@ -210,7 +233,14 @@
       </section>
       <!-- //section6 -->
       <section id="section7" class="content__item">
-        <span class="content__item__num">07</span>
+        <span class="content__item__num">
+          <div class="sec4">
+            <span class="item">07-1</span>
+            <span class="item">07-2</span>
+            <span class="item">07-3</span>
+            <span class="item">07-4</span>
+          </div>
+        </span>
       </section>
       <!-- //section7 -->
     </main>
@@ -225,13 +255,24 @@
     <script>
       //section4번 색션에 왔을 때 red를 blue로 변경
       const parallaxCont = document.getElementById("parallax__cont");
+
       function scroll() {
         let scrollTop =
           window.pageYOffset ||
           document.documentElement.scrollTop ||
           window.scrollY;
 
+        //스크롤값
         document.querySelector(".scrollTop span").innerText = scrollTop;
+
+        //기본 크기 세팅 : 함수 안에 넣으면 크기가 달라지면 값에 따라 반응
+        const parallaxWidth = parallaxCont.offsetWidth; //패럴럭스 박스 전체 가로 값
+        document.body.style.height = parallaxWidth + "px"; //body에 높이값에 --> 패럴럭스 박스 전체 가로 값
+
+        //섹션 박스
+        let viewWidth = parallaxWidth - window.innerWidth;
+        let viewHight = parallaxWidth - window.innerHeight;
+        let goLeft = scrollTop * (viewWidth / viewHight);
 
         //4번째 색션에 왔을때 스크롤탑을 0으로 초기화해서 시작
         let offset =
@@ -241,13 +282,17 @@
         if (scrollTop >= parallaxCont.querySelector("#section4").offsetTop) {
           // parallaxCont.querySelector("#section4 .sec4").style.backgroundColor = "blue"; //section4번 색션에 왔을 때 red를 blue로 변경
           gsap.to(".sec4", { left: -offset, ease: "linear" });
-        } else {
-          parallaxCont.querySelector("#section4 .sec4").style.backgroundColor =
-            "blue"; //scrollTop값이 작을 때
         }
+        // } else {
+        //   parallaxCont.querySelector("#section4 .sec4").style.backgroundColor =
+        //     "blue"; //scrollTop값이 작을 때
+        // }
+
         requestAnimationFrame(scroll);
       }
       scroll();
+
+      window.addEventListener("resize", scroll);
     </script>
   </body>
 </html>

@@ -210,10 +210,7 @@
     <script src="js/gsap.min.js"></script>
     <script>
       const parallaxCont = document.getElementById("parallax__cont");
-      const parallaxWidth = parallaxCont.offsetWidth; //패럴럭스 박스 전체 가로 값
-
-      //body에 높이값에 --> 패럴럭스 박스 전체 가로 값
-      document.body.style.height = parallaxWidth + "px";
+      const contentItem = document.getElementById("content__item");
 
       //스크롤 했을 때 left:scrollTop
       function scroll() {
@@ -222,13 +219,24 @@
           document.documentElement.scrollTop ||
           window.scrollY;
 
+        //스크롤값
         document.querySelector(".scrollTop span").innerText = scrollTop;
 
-        gsap.to(parallaxCont, { left: -scrollTop });
+        //기본 크기 세팅 : 함수 안에 넣으면 크기가 달라지면 값에 따라 반응
+        const parallaxWidth = parallaxCont.offsetWidth; //패럴럭스 박스 전체 가로 값
+        document.body.style.height = parallaxWidth + "px"; //body에 높이값에 --> 패럴럭스 박스 전체 가로 값
 
+        //섹션 박스
+        let viewWidth = parallaxWidth - window.innerWidth;
+        let viewHight = parallaxWidth - window.innerHeight;
+        let goLeft = scrollTop * (viewWidth / viewHight);
+
+        gsap.to(parallaxCont, { left: -scrollTop });
         requestAnimationFrame(scroll);
       }
       scroll();
+
+      window.addEventListener("resize", scroll);
     </script>
   </body>
 </html>
