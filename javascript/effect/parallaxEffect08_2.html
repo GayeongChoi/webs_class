@@ -81,10 +81,8 @@
         color: #fff;
         padding: 10px 30px;
         border-radius: 50px;
-
-        z-index: 10000;
       }
-      /* .scrollInfo {
+      .scrollInfo {
         position: fixed;
         left: 20px;
         bottom: 70px;
@@ -97,134 +95,60 @@
       .scrollInfo li {
         list-style: none;
         line-height: 1.6;
-      } */
-
-
+      }
       /* option */
-      /* #parallax__cont {
+      #parallax__cont {
+        position: fixed;
         left: 0;
         top: 0;
-      } */
+        display: flex;
+      }
+      #section1 {
+        background-color: #999;
+      }
+      #section2 {
+        background-color: #888;
+      }
+      #section3 {
+        background-color: #777;
+      }
+      #section4 {
+        background-color: #666;
+      }
+      #section5 {
+        background-color: #555;
+      }
+      #section6 {
+        background-color: #444;
+      }
+      #section7 {
+        background-color: #333;
+      }
+      #section8 {
+        background-color: #222;
+      }
+      #section9 {
+        background-color: #111;
+      }
       .content__item {
-        width: 100%;
+        width: 80vw;
         height: 100vh;
         position: relative;
       }
       .content__item__num {
         position: absolute;
-        right: 30px;
+        right: 0;
         top: 0;
         font-size: 20vw;
         font-family: "Lato";
         font-weight: 100;
-        line-height: 1;
-      }
-      .item {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        font-size: 10vw;
-        font-family: "Lato";
-        font-weight: 700;
-        line-height: 1;
-      }
-
-      #section1 {
-        background-color: #999;
-        z-index: 7000;
-      }
-      #section2 {
-        background-color: #888;
-        z-index: 6000;
-      }
-      #section3 {
-        background-color: #777;
-        z-index: 5000;
-      }
-      #section4 {
-        background-color: #666;
-        z-index: 4000;
-        height: 400vh;
-      }
-      #section4 .sec4 {
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 300vh;
-        height: 100%;
-        background-color: red;
-        display: flex;
-      }
-      #section4 .sec4 .item {
-        width: 100vw;
-        height: 100vh;
-        position: relative;
-      }
-      #section4 .sec4 .item:nth-child(1) {
-        background-color: rgb(207, 117, 15);
-      }
-      #section4 .sec4 .item:nth-child(2) {
-        background-color: rgb(231, 221, 26);
-      }
-      #section4 .sec4 .item:nth-child(3) {
-        background-color: rgb(44, 200, 38);
-      }
-      #section4 .sec4 .item:nth-child(4) {
-        background-color: rgb(52, 41, 170);
-      }
-      #section5 {
-        background-color: #555;
-        z-index: 5000;
-      }
-      #section6 {
-        background-color: #444;
-        z-index: 6000;
-      }
-      #section7 {
-        background-color: #333;
-        z-index: 3900;
-        height: 400vh;
-      }
-      #section7 .sec7 {
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 300vh;
-        height: 100%;
-        background-color: red;
-        display: flex;
-      }
-      #section7 .sec7 .item {
-        width: 100vw;
-        height: 100vh;
-        position: relative;
-      }
-      #section7 .sec7 .item:nth-child(1) {
-        background-color: rgb(141, 194, 255);
-      }
-      #section7 .sec7 .item:nth-child(2) {
-        background-color: rgb(141, 255, 221);
-      }
-      #section7 .sec7 .item:nth-child(3) {
-        background-color: rgb(247, 255, 141);
-      }
-      #section7 .sec7 .item:nth-child(4) {
-        background-color: rgb(255, 183, 141);
-      }
-      #section8 {
-        background-color: #222;
-        z-index: 8000;
-      }
-      #section9 {
-        background-color: #111;
-        z-index: 9000;
       }
     </style>
   </head>
   <body>
     <header id="parallax__title">
-      <h1><a href="parallaxEffect.html">Javascript Parallax Effect09</a></h1>
-      <p>패럴랙스 스크롤링 효과 - 가로,세로 모드</p>
+      <h1><a href="parallaxEffect.html">JavaScript Parallax Effect08</a></h1>
+      <p>패럴랙스 스크롤링 효과 - 가로모드</p>
       <ul>
         <li><a href="parallaxEffect01.html">1</a></li>
         <li><a href="parallaxEffect02.html">2</a></li>
@@ -233,13 +157,12 @@
         <li><a href="parallaxEffect05.html">5</a></li>
         <li><a href="parallaxEffect06.html">6</a></li>
         <li><a href="parallaxEffect07.html">7</a></li>
-        <li><a href="parallaxEffect08.html">8</a></li>
-        <li class="active"><a href="parallaxEffect09.html">9</a></li>
+        <li class="active"><a href="parallaxEffect08.html">8</a></li>
+        <li><a href="parallaxEffect09.html">9</a></li>
       </ul>
     </header>
-    <!-- //parallax__title -->
+    <!-- //parallax__title  -->
 
-    <!-- main -->
     <main id="parallax__cont">
       <section id="section1" class="content__item">
         <span class="content__item__num">01</span>
@@ -254,12 +177,7 @@
       </section>
       <!-- //section3 -->
       <section id="section4" class="content__item">
-        <div class="sec4">
-          <div class="item">04-1</div>
-          <div class="item">04-2</div>
-          <div class="item">04-3</div>
-          <div class="item">04-4</div>
-        </div>
+        <span class="content__item__num">04</span>
       </section>
       <!-- //section4 -->
       <section id="section5" class="content__item">
@@ -271,12 +189,7 @@
       </section>
       <!-- //section6 -->
       <section id="section7" class="content__item">
-        <div class="sec7">
-          <div class="item">07-1</div>
-          <div class="item">07-2</div>
-          <div class="item">07-3</div>
-          <div class="item">07-4</div>
-        </div>
+        <span class="content__item__num">07</span>
       </section>
       <!-- //section7 -->
       <section id="section8" class="content__item">
@@ -297,33 +210,34 @@
     <!-- script -->
     <script src="js/gsap.min.js"></script>
     <script>
-        //section4에 왔을 때 red를 blue로 변경
-        const section4 = document.querySelector("#section4");
-      const section4Top = section4.offsetTop;
-      const section7 = document.querySelector("#section7");
-      const section7Top = section7.offsetTop;
+      const parallaxCont = document.getElementById("parallax__cont");
+      const contentItem = document.getElementById("content__item");
+
+      //스크롤 했을 때 left:scrollTop
       function scroll() {
         let scrollTop =
           window.pageYOffset ||
           document.documentElement.scrollTop ||
           window.scrollY;
-          document.querySelector(".scrollTop span").innerText = Math.trunc(scrollTop);
 
-        //4번째 섹션에 왔을 때 스크롤탑을 0으로 초기화
-        let offset4 = scrollTop - document.querySelector("#section4").offsetTop;
-        let offset7 = scrollTop - document.querySelector("#section7").offsetTop;
+        //스크롤값
+        document.querySelector(".scrollTop span").innerText = scrollTop;
 
-        if (scrollTop >= section4Top) {
-          //section4.querySelector(".sec4").style.backgroundColor = "blue";
-          gsap.to(".sec4", { left: -offset4, ease: "linear" });
-        }
-        if (scrollTop >= section7Top) {
-          //section4.querySelector(".sec4").style.backgroundColor = "blue";
-          gsap.to(".sec7", { left: -offset7, ease: "linear" });
-        }
+        //기본 크기 세팅 : 함수 안에 넣으면 크기가 달라지면 값에 따라 반응
+        const parallaxWidth = parallaxCont.offsetWidth; //패럴럭스 박스 전체 가로 값
+        document.body.style.height = parallaxWidth + "px"; //body에 높이값에 --> 패럴럭스 박스 전체 가로 값
+
+        //섹션 박스
+        let viewWidth = parallaxWidth - window.innerWidth;
+        let viewHight = parallaxWidth - window.innerHeight;
+        let goLeft = scrollTop * (viewWidth / viewHight);
+
+        gsap.to(parallaxCont, { left: -scrollTop });
         requestAnimationFrame(scroll);
       }
       scroll();
+
+      window.addEventListener("resize", scroll);
     </script>
   </body>
 </html>
