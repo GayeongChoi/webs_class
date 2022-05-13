@@ -158,3 +158,18 @@ iframe {
 .typingGame.show {
   display: block;
 }
+
+/* 테트리스 */
+.tetris {
+  position: absolute;
+  width: 50vw;
+  height: 690px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.tetris.show {
+  display: block;
+}
