@@ -1,0 +1,21 @@
+<svg
+    width="44"
+    height="44"
+    viewBox="0 0 18 14"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    class="workCardArrow__arrow"
+    >
+    <path
+    d="M0 7.2124H15.6"
+    stroke="#8DFFA2"
+    stroke-width="1.5"
+    stroke-miterlimit="10"
+    ></path>
+    <path
+    d="M9.8999 1L16.0999 7.21289L9.8999 13.4258"
+    stroke="#8DFFA2"
+    stroke-width="1.5"
+    stroke-miterlimit="10"
+    ></path>
+</svg>

@@ -1,0 +1,1829 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>최가영 포폴</title>
+
+    <link rel="stylesheet" href="./asstes/css/font.css" />
+    <link rel="stylesheet" href="./asstes/css/common.css" />
+    <link rel="stylesheet" href="./asstes/css/reset.css" />
+    <link rel="stylesheet" href="./asstes/css/style.css" />
+
+    <style>
+      #webgl-canvas {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+      }
+      .scrollTop {
+        position: fixed;
+        left: 20px;
+        top: 20px;
+        background: rgba(0, 0, 0, 0.4);
+        color: #fff;
+        width: 60px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        z-index: 10000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="scrollTop">0</div>
+
+    <section id="home">
+      <div class="sec1_text">
+        <div>Welcome</div>
+        <div>DEV frontEND</div>
+      </div>
+      <canvas id="webgl-canvas"></canvas>
+    </section>
+
+    <section id="about">
+      <div class="about__inner">
+        <div class="container">
+          <article class="me">
+            <div class="text">
+              <span class="title">
+                <h1>
+                  I AM <br />
+                  DEVELOPER
+                </h1>
+              </span>
+              <!-- //title -->
+              <span class="int">
+                <p>
+                  안녕하세요, 개발의 매력은 상상하는 것을 실현하는 것이라고
+                  생각합니다. 자기가 상상한것을 실현시키기 위해서는 많은 노력과
+                  실력이 밑바탕이 되어야 한다고 생각합니다. 그런 부분에서, 저는
+                  아직 많이 배워야하고, 훨씬 더 많은 노력을 해야한다는 것을 알고
+                  있습니다. <br />
+                  앞으로 항상 배우고 발전하는 개발자가 되겠습니다.
+
+                  <a href="#" class="mt30"
+                    >Git Hub
+                    <svg
+                      style="margin-left: 5px"
+                      width="40px"
+                      height="10px"
+                      viewBox="0 0 52 8"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M51.3536 4.35355C51.5488 4.15829 51.5488 3.84171 51.3536 3.64645L48.1716 0.464466C47.9763 0.269204 47.6597 0.269204 47.4645 0.464466C47.2692 0.659728 47.2692 0.976311 47.4645 1.17157L50.2929 4L47.4645 6.82843C47.2692 7.02369 47.2692 7.34027 47.4645 7.53553C47.6597 7.7308 47.9763 7.7308 48.1716 7.53553L51.3536 4.35355ZM0 4.5H51V3.5H0V4.5Z"
+                        fill="var(--white)"
+                      ></path>
+                    </svg>
+                  </a>
+                  <a href="#"
+                    >Tistory
+                    <svg
+                      style="margin-left: 10px"
+                      width="40px"
+                      height="10px"
+                      viewBox="0 0 52 8"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M51.3536 4.35355C51.5488 4.15829 51.5488 3.84171 51.3536 3.64645L48.1716 0.464466C47.9763 0.269204 47.6597 0.269204 47.4645 0.464466C47.2692 0.659728 47.2692 0.976311 47.4645 1.17157L50.2929 4L47.4645 6.82843C47.2692 7.02369 47.2692 7.34027 47.4645 7.53553C47.6597 7.7308 47.9763 7.7308 48.1716 7.53553L51.3536 4.35355ZM0 4.5H51V3.5H0V4.5Z"
+                        fill="var(--white)"
+                      ></path>
+                    </svg>
+                  </a>
+                </p>
+              </span>
+            </div>
+            <!-- //text -->
+
+            <div class="image">
+              <div class="img01">
+                <svg
+                  class="earth mr100"
+                  width="115"
+                  height="115"
+                  viewBox="0 0 98 98"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M94.3099 49.07C94.3099 58.0849 91.6368 66.8973 86.6284 74.3929C81.62 81.8885 74.5013 87.7306 66.1727 91.1804C57.844 94.6303 48.6794 95.5329 39.8378 93.7742C30.9961 92.0155 22.8745 87.6744 16.5001 81.2999C10.1256 74.9255 5.78448 66.8039 4.02576 57.9622C2.26705 49.1206 3.16967 39.9559 6.61951 31.6273C10.0694 23.2986 15.9115 16.18 23.4071 11.1716C30.9027 6.16324 39.7151 3.49 48.73 3.49C54.7156 3.49 60.6427 4.66893 66.1727 6.95954C71.7027 9.25015 76.7274 12.6076 80.9599 16.8401C85.1924 21.0726 88.5498 26.0972 90.8404 31.6273C93.131 37.1573 94.3099 43.0844 94.3099 49.07V49.07Z"
+                    stroke="#88FFA4"
+                    stroke-width="5.82"
+                    stroke-miterlimit="10"
+                    fill="black"
+                    alt="맨뒤 테두리, 배경색o"
+                  ></path>
+                  <path
+                    d="M3.14999 49.07H94.3"
+                    stroke="#88FFA4"
+                    stroke-width="5.82"
+                    stroke-miterlimit="10"
+                    fill="black"
+                    z-in
+                  ></path>
+                  <path
+                    d="M70.6 49.07C70.6 74.24 60.81 94.64 48.73 94.64C36.65 94.64 26.87 74.24 26.87 49.07C26.87 23.9 36.66 3.49 48.73 3.49C60.8 3.49 70.6 23.9 70.6 49.07Z"
+                    stroke="#88FFA4"
+                    stroke-width="5.82"
+                    stroke-miterlimit="10"
+                  ></path>
+                  <path
+                    d="M48.73 3.49V94.64"
+                    stroke="#88FFA4"
+                    stroke-width="5.82"
+                    stroke-miterlimit="10"
+                  ></path>
+                  <path
+                    d="M94.31 49.07C94.31 60.59 73.9 69.94 48.73 69.94C23.56 69.94 3.16 60.59 3.16 49.07C3.16 37.55 23.56 28.19 48.73 28.19C73.9 28.19 94.31 37.54 94.31 49.07Z"
+                    stroke="#88FFA4"
+                    stroke-width="5.82"
+                    stroke-miterlimit="10"
+                  ></path>
+                </svg>
+                <!-- //svg:earth -->
+                <div>
+                  <div class="arrow">
+                    <svg
+                      width="90"
+                      height="90"
+                      viewBox="0 0 90 90"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect
+                        x="2"
+                        y="2.09796"
+                        width="85.8227"
+                        height="85.8227"
+                        fill="black"
+                        stroke="#8cffa7"
+                        stroke-width="4"
+                      />
+                      <path
+                        d="M20.5989 70.7445L69.35 21.9934"
+                        stroke="var(--lime)"
+                        stroke-width="4"
+                        stroke-miterlimit="10"
+                      />
+                      <path
+                        d="M33.1054 21.3754L70.9137 20.4328L69.9711 58.2411"
+                        stroke="var(--lime)"
+                        stroke-width="4"
+                        stroke-miterlimit="10"
+                      />
+                    </svg>
+                  </div>
+                  <img src="./asstes/img/me_face.png" alt="얼굴샷" />
+                </div>
+              </div>
+
+              <div class="img02 clearfix">
+                <div>
+                  <div class="arrow">
+                    <svg
+                      width="90"
+                      height="90"
+                      viewBox="0 0 90 90"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect
+                        x="2"
+                        y="2.09796"
+                        width="85.8227"
+                        height="85.8227"
+                        fill="black"
+                        stroke="#8cffa7"
+                        stroke-width="4"
+                      />
+                      <path
+                        d="M20.5989 70.7445L69.35 21.9934"
+                        stroke="var(--lime)"
+                        stroke-width="4"
+                        stroke-miterlimit="10"
+                      />
+                      <path
+                        d="M33.1054 21.3754L70.9137 20.4328L69.9711 58.2411"
+                        stroke="var(--lime)"
+                        stroke-width="4"
+                        stroke-miterlimit="10"
+                      />
+                    </svg>
+                  </div>
+                  <img src="assets/img/me_body.png" alt="전신샷" />
+                </div>
+                <div class="svg heart">
+                  <svg
+                    viewBox="0 0 99 93"
+                    fill="var(--black)"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill="var(--black)"
+                      d="M49.3 27.75C49.25 -0.810013 3.39999 -7.93001 3.44999 28.75C3.49999 65.43 48.4 89.87 48.4 89.87H50.4C50.4 89.87 95.21 65.33 95.16 28.61C95.11 -8.11003 49.25 -0.810013 49.3 27.75Z"
+                      stroke="#88FFA4"
+                      stroke-width="5.82"
+                      stroke-miterlimit="10"
+                    ></path>
+                  </svg>
+                </div>
+                <!-- //heart -->
+              </div>
+            </div>
+            <!-- //image -->
+          </article>
+          <!-- //me -->
+
+          <article class="skill">
+            <div class="skill__inner">
+              <div class="chart chart1">
+                <span class="chart_cen">html</span>
+              </div>
+              <div class="chart chart2"><span class="chart_cen">CSS</span></div>
+              <div class="chart chart3"><span class="chart_cen">vue</span></div>
+              <div class="chart chart4">
+                <span class="chart_cen">react</span>
+              </div>
+              <div class="chart chart5"><span class="chart_cen">js</span></div>
+              <div class="chart chart6"><span class="chart_cen">php</span></div>
+            </div>
+          </article>
+          <!-- //skill -->
+        </div>
+      </div>
+      <!-- //about__inner -->
+    </section>
+
+    <section id="work">
+      <div class="work__inner">
+        <header class="header">I MADE SITE</header>
+        <!-- //header -->
+        <div class="container">
+          <div class="workType01 w_grid">
+            <div class="work__img">
+              <div class="bar">WESTENDARD SITE</div>
+              <img
+                src="./assets/img/work_westensard.png"
+                alt="웹표준site이미지"
+              />
+            </div>
+            <!-- //workType01 work__img -->
+
+            <p class="work__text">
+              웹 표준 지침서를 준수하고 크로스브라우징 작업을 한 사이트입 니다.
+              모든 사용자가 이용에 불편이 없도록 대체 텍스트로 웹 접 근성 또한
+              고려하였습니다. 슬라이드, 탭, 메뉴, 팝업, 동영상 기 능을
+              작업하였으며, 동적인 부분을 더하기 위해 slick.js 등과 같 은
+              플러그인을 이용하여 배너와 갤러리에 효과를 주었습니다. 크 로스
+              브라우징은 익스플로러 8버전부터 지원합니다
+            </p>
+
+            <svg
+              class="svg earth"
+              width="100"
+              height="100"
+              viewBox="0 0 100 100"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M97 50C97 59.2957 94.2436 68.3827 89.0792 76.1118C83.9148 83.8409 76.5743 89.865 67.9862 93.4223C59.398 96.9797 49.9479 97.9104 40.8309 96.0969C31.7137 94.2834 23.3391 89.8071 16.7661 83.234C10.193 76.661 5.71663 68.2864 3.90311 59.1692C2.08961 50.0522 3.02035 40.6019 6.57767 32.0139C10.135 23.4257 16.1591 16.0853 23.8883 10.9209C31.6174 5.75652 40.7043 3 50.0001 3C56.1722 3 62.2839 4.21566 67.9862 6.57763C73.6885 8.9396 78.8697 12.4016 83.2341 16.766C87.5985 21.1304 91.0604 26.3115 93.4224 32.0139C95.7844 37.7162 97 43.8279 97 50Z"
+                fill="black"
+                stroke="#FFFF31"
+                stroke-width="5"
+                stroke-miterlimit="10"
+              />
+              <path
+                d="M72.5511 50C72.5511 75.9542 62.4561 96.9897 49.9998 96.9897C37.5434 96.9897 27.4587 75.9542 27.4587 50C27.4587 24.0459 37.5537 3 49.9998 3C62.4458 3 72.5511 24.0459 72.5511 50Z"
+                stroke="#FFFF31"
+                stroke-width="5"
+                stroke-miterlimit="10"
+              />
+              <path
+                d="M97 50.0001C97 61.8789 75.9541 71.5202 50 71.5202C24.0458 71.5202 3.01025 61.8789 3.01025 50.0001C3.01025 38.1212 24.0458 28.4696 50 28.4696C75.9541 28.4696 97 38.1109 97 50.0001Z"
+                stroke="#FFFF31"
+                stroke-width="5"
+                stroke-miterlimit="10"
+              />
+              <path
+                d="M50 3V96.9897"
+                stroke="#FFFF31"
+                stroke-width="5"
+                stroke-miterlimit="10"
+              />
+              <path
+                d="M3 50.0002H96.9897"
+                stroke="#FFFF31"
+                stroke-width="5"
+                stroke-miterlimit="10"
+              />
+            </svg>
+            <!-- //workType01 earth -->
+
+            <div class="code view">
+              <a
+                href="https://github.com/GayeongChoi/webs_class/blob/main/webstandard/index.html"
+              >
+                <span class="code txt"> code view </span>
+                <svg
+                  class="arrow"
+                  width="90"
+                  height="90"
+                  viewBox="0 0 90 90"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    x="3"
+                    y="3.09546"
+                    width="83.6776"
+                    height="83.6776"
+                    fill="black"
+                    stroke="#FFFF31"
+                    stroke-width="5"
+                  />
+                  <path
+                    d="M21.1335 70.0262L68.6661 22.4937"
+                    stroke="#FFFF31"
+                    stroke-width="5"
+                    stroke-miterlimit="10"
+                  />
+                  <path
+                    d="M33.3276 21.8912L70.1909 20.9722L69.2719 57.8355"
+                    stroke="#FFFF31"
+                    stroke-width="5"
+                    stroke-miterlimit="10"
+                  />
+                </svg>
+                <!-- //workType01 arrow code-->
+              </a>
+            </div>
+            <!-- //workType01 code view -->
+
+            <div class="site view">
+              <a
+                href="https://gayeongchoi.github.io/webs_class/webstandard/index.html"
+              >
+                <span class="site txt">site view </span>
+                <svg
+                  class="arrow"
+                  width="90"
+                  height="90"
+                  viewBox="0 0 90 90"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    x="3"
+                    y="3.09546"
+                    width="83.6776"
+                    height="83.6776"
+                    fill="black"
+                    stroke="#FFFF31"
+                    stroke-width="5"
+                  />
+                  <path
+                    d="M21.1335 70.0262L68.6661 22.4937"
+                    stroke="#FFFF31"
+                    stroke-width="5"
+                    stroke-miterlimit="10"
+                  />
+                  <path
+                    d="M33.3276 21.8912L70.1909 20.9722L69.2719 57.8355"
+                    stroke="#FFFF31"
+                    stroke-width="5"
+                    stroke-miterlimit="10"
+                  />
+                </svg>
+                <!-- //workType01 arrow site-->
+              </a>
+            </div>
+            <!-- //workType01 site view -->
+          </div>
+          <!-- //workType01 -->
+
+          <div class="workType02 w_grid">
+            <div class="work__img">
+              <div class="bar">PHP SITE</div>
+              <img src="./assets/img/work_PHP.png" alt="PHP site이미지" />
+            </div>
+            <!-- //work__img -->
+
+            <p class="work__text">
+              PHP 만든 포트폴리오 사이트입니다. PHP로 페이지의 정보를 입력하면
+              데이터베이스에 입력한 정보를 저장하여 불러서 로그인, 회원가입,
+              댓글 기능, 블로그 기능, 퀴즈 게임 등이 각 페이지에 구현하고 메인은
+              슬라이스 기능을 넣고 댓글, 블로그, 퀴즈 페이지의 기능을 가져와서
+              페이지의 글이 추가되면 추가된 항목이 메인 페이지에도 반영이 될 수
+              있도록 작업하였습니다.
+            </p>
+
+            <svg
+              class="svg heart"
+              viewBox="0 0 100 100"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M49.9949 29.2819C49.9436 -1.85186 2.94879 -9.6135 3.00004 30.372C3.05129 70.3575 49.0724 97 49.0724 97H51.1223C51.1223 97 97.0512 70.2485 97 30.2194C96.9487 -9.80974 49.9436 -1.85186 49.9949 29.2819Z"
+                fill="black"
+                stroke="#88FFA4"
+                stroke-width="5"
+                stroke-miterlimit="10"
+              />
+            </svg>
+            <!-- //workType02 heart -->
+
+            <div class="code view">
+              <a href="https://github.com/GayeongChoi/phpgit">
+                <svg
+                  class="arrow"
+                  width="90"
+                  height="90"
+                  viewBox="0 0 90 90"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    x="3.177"
+                    y="87.0815"
+                    width="83.6776"
+                    height="83.6776"
+                    transform="rotate(-90 3.177 87.0815)"
+                    fill="black"
+                    stroke="#8DFFA8"
+                    stroke-width="5"
+                  />
+                  <path
+                    d="M70.1077 68.9479L22.5751 21.4153"
+                    stroke="#8DFFA8"
+                    stroke-width="5"
+                    stroke-miterlimit="10"
+                  />
+                  <path
+                    d="M21.9727 56.754L21.0536 19.8907L57.9169 20.8097"
+                    stroke="#8DFFA8"
+                    stroke-width="5"
+                    stroke-miterlimit="10"
+                  />
+                </svg>
+
+                <!-- //workType02 arrow code-->
+                <span class="code txt">code view</span>
+              </a>
+            </div>
+            <!-- //workType02 code view -->
+            <div class="site view">
+              <a href="http://wwuu12366.dothome.co.kr/php/pages/main.php">
+                <svg
+                  class="arrow"
+                  width="90"
+                  height="90"
+                  viewBox="0 0 90 90"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    x="3.177"
+                    y="87.0815"
+                    width="83.6776"
+                    height="83.6776"
+                    transform="rotate(-90 3.177 87.0815)"
+                    fill="black"
+                    stroke="#8DFFA8"
+                    stroke-width="5"
+                  />
+                  <path
+                    d="M70.1077 68.9479L22.5751 21.4153"
+                    stroke="#8DFFA8"
+                    stroke-width="5"
+                    stroke-miterlimit="10"
+                  />
+                  <path
+                    d="M21.9727 56.754L21.0536 19.8907L57.9169 20.8097"
+                    stroke="#8DFFA8"
+                    stroke-width="5"
+                    stroke-miterlimit="10"
+                  />
+                </svg>
+                <!-- //workType02 arrow site-->
+                <span class="site txt">site view</span>
+              </a>
+            </div>
+            <!-- //workType02 site view -->
+          </div>
+          <!-- //workType02 -->
+
+          <div class="workType01 w_grid">
+            <div class="work__img">
+              <div class="bar">react SITE</div>
+              <img src="./assets/img/work_react.png" alt="리액트 site이미지" />
+            </div>
+            <!-- //workType01 work__img -->
+
+            <p class="work__text">
+              리액트로 만든 포트폴리오 사이트입니다. 컴포넌트를 활용하여
+              사이트를 완성하였고, SCSS를 사용하여 스타일을 지정했습니다.
+              포트폴리오와 레퍼런스 페이지는 작성한 json 파일의 정보를
+              get방식가져오고 유튜브와 무비 페이지는 api를 활용하여 각 사이트의
+              정보를 포토폴리오 사이트에서도 볼 수 있도록 작업하였습니더.
+              검색기능도 실제 사이트에서 검색한 것처럼 사이트의 검색정보도 볼 수
+              있도록 기능을 구현해놓았습니다.
+            </p>
+
+            <svg
+              class="svg earth"
+              width="100"
+              height="100"
+              viewBox="0 0 100 100"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M97 50C97 59.2957 94.2436 68.3827 89.0792 76.1118C83.9148 83.8409 76.5743 89.865 67.9862 93.4223C59.398 96.9797 49.9479 97.9104 40.8309 96.0969C31.7137 94.2834 23.3391 89.8071 16.7661 83.234C10.193 76.661 5.71663 68.2864 3.90311 59.1692C2.08961 50.0522 3.02035 40.6019 6.57767 32.0139C10.135 23.4257 16.1591 16.0853 23.8883 10.9209C31.6174 5.75652 40.7043 3 50.0001 3C56.1722 3 62.2839 4.21566 67.9862 6.57763C73.6885 8.9396 78.8697 12.4016 83.2341 16.766C87.5985 21.1304 91.0604 26.3115 93.4224 32.0139C95.7844 37.7162 97 43.8279 97 50Z"
+                fill="black"
+                stroke="#FFFF31"
+                stroke-width="5"
+                stroke-miterlimit="10"
+              />
+              <path
+                d="M72.5511 50C72.5511 75.9542 62.4561 96.9897 49.9998 96.9897C37.5434 96.9897 27.4587 75.9542 27.4587 50C27.4587 24.0459 37.5537 3 49.9998 3C62.4458 3 72.5511 24.0459 72.5511 50Z"
+                stroke="#FFFF31"
+                stroke-width="5"
+                stroke-miterlimit="10"
+              />
+              <path
+                d="M97 50.0001C97 61.8789 75.9541 71.5202 50 71.5202C24.0458 71.5202 3.01025 61.8789 3.01025 50.0001C3.01025 38.1212 24.0458 28.4696 50 28.4696C75.9541 28.4696 97 38.1109 97 50.0001Z"
+                stroke="#FFFF31"
+                stroke-width="5"
+                stroke-miterlimit="10"
+              />
+              <path
+                d="M50 3V96.9897"
+                stroke="#FFFF31"
+                stroke-width="5"
+                stroke-miterlimit="10"
+              />
+              <path
+                d="M3 50.0002H96.9897"
+                stroke="#FFFF31"
+                stroke-width="5"
+                stroke-miterlimit="10"
+              />
+            </svg>
+            <!-- //workType01 earth -->
+
+            <div class="code view">
+              <a
+                href="https://github.com/GayeongChoi/webs_class/blob/main/webstandard/index.html"
+              >
+                <span class="code txt"> code view </span>
+                <svg
+                  class="arrow"
+                  width="90"
+                  height="90"
+                  viewBox="0 0 90 90"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    x="3"
+                    y="3.09546"
+                    width="83.6776"
+                    height="83.6776"
+                    fill="black"
+                    stroke="#FFFF31"
+                    stroke-width="5"
+                  />
+                  <path
+                    d="M21.1335 70.0262L68.6661 22.4937"
+                    stroke="#FFFF31"
+                    stroke-width="5"
+                    stroke-miterlimit="10"
+                  />
+                  <path
+                    d="M33.3276 21.8912L70.1909 20.9722L69.2719 57.8355"
+                    stroke="#FFFF31"
+                    stroke-width="5"
+                    stroke-miterlimit="10"
+                  />
+                </svg>
+                <!-- //workType01 arrow code-->
+              </a>
+            </div>
+            <!-- //workType01 code view -->
+
+            <div class="site view">
+              <a
+                href="https://gayeongchoi.github.io/webs_class/webstandard/index.html"
+              >
+                <span class="site txt">site view </span>
+                <svg
+                  class="arrow"
+                  width="90"
+                  height="90"
+                  viewBox="0 0 90 90"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    x="3"
+                    y="3.09546"
+                    width="83.6776"
+                    height="83.6776"
+                    fill="black"
+                    stroke="#FFFF31"
+                    stroke-width="5"
+                  />
+                  <path
+                    d="M21.1335 70.0262L68.6661 22.4937"
+                    stroke="#FFFF31"
+                    stroke-width="5"
+                    stroke-miterlimit="10"
+                  />
+                  <path
+                    d="M33.3276 21.8912L70.1909 20.9722L69.2719 57.8355"
+                    stroke="#FFFF31"
+                    stroke-width="5"
+                    stroke-miterlimit="10"
+                  />
+                </svg>
+                <!-- //workType01 arrow site-->
+              </a>
+            </div>
+            <!-- //workType01 site view -->
+          </div>
+          <!-- //workType01 react-->
+
+          <div class="workType02 w_grid">
+            <div class="work__img">
+              <div class="bar">project SITE</div>
+              <img src="assets/img/work_project.png" alt="project site이미지" />
+            </div>
+            <!-- //work__img -->
+
+            <p class="work__text">
+              프로젝트 사이트는 기획, 디자인, 컨셉트 등을 홀로 제작한 사이트
+              입니다. 사이트는 위의 소개한 PHP 사이트를 기반으로 코딩을 공부할
+              때 퀴즈 등의 게임으로 배우게 되면 재밌게 익하나갈 수 있을 것이라
+              생각하여 코딩 기초 퀴즈 사이트를 제작하게 되었습니다. 태그나
+              메서드, css속성 등의 가볍게 참고용으로 알아갈 수 있는 간단한
+              퀴즈들로 구성 되어 있습니다.
+            </p>
+
+            <svg
+              class="svg heart"
+              width="100"
+              height="100"
+              viewBox="0 0 100 100"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M49.9949 29.2819C49.9436 -1.85186 2.94879 -9.6135 3.00004 30.372C3.05129 70.3575 49.0724 97 49.0724 97H51.1223C51.1223 97 97.0512 70.2485 97 30.2194C96.9487 -9.80974 49.9436 -1.85186 49.9949 29.2819Z"
+                fill="black"
+                stroke="#88FFA4"
+                stroke-width="5"
+                stroke-miterlimit="10"
+              />
+            </svg>
+            <!-- //workType02 heart -->
+
+            <div class="code view">
+              <a href="https://github.com/GayeongChoi/phpgit">
+                <svg
+                  class="arrow"
+                  width="90"
+                  height="90"
+                  viewBox="0 0 90 90"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    x="3.177"
+                    y="87.0815"
+                    width="83.6776"
+                    height="83.6776"
+                    transform="rotate(-90 3.177 87.0815)"
+                    fill="black"
+                    stroke="#8DFFA8"
+                    stroke-width="5"
+                  />
+                  <path
+                    d="M70.1077 68.9479L22.5751 21.4153"
+                    stroke="#8DFFA8"
+                    stroke-width="5"
+                    stroke-miterlimit="10"
+                  />
+                  <path
+                    d="M21.9727 56.754L21.0536 19.8907L57.9169 20.8097"
+                    stroke="#8DFFA8"
+                    stroke-width="5"
+                    stroke-miterlimit="10"
+                  />
+                </svg>
+
+                <!-- //workType02 arrow code-->
+                <span class="code txt">code view</span>
+              </a>
+            </div>
+            <!-- //workType02 code view -->
+            <div class="site view">
+              <a href="http://wwuu12366.dothome.co.kr/php/pages/main.php">
+                <svg
+                  class="arrow"
+                  width="90"
+                  height="90"
+                  viewBox="0 0 90 90"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    x="3.177"
+                    y="87.0815"
+                    width="83.6776"
+                    height="83.6776"
+                    transform="rotate(-90 3.177 87.0815)"
+                    fill="black"
+                    stroke="#8DFFA8"
+                    stroke-width="5"
+                  />
+                  <path
+                    d="M70.1077 68.9479L22.5751 21.4153"
+                    stroke="#8DFFA8"
+                    stroke-width="5"
+                    stroke-miterlimit="10"
+                  />
+                  <path
+                    d="M21.9727 56.754L21.0536 19.8907L57.9169 20.8097"
+                    stroke="#8DFFA8"
+                    stroke-width="5"
+                    stroke-miterlimit="10"
+                  />
+                </svg>
+                <!-- //workType02 arrow site-->
+                <span class="site txt">site view</span>
+              </a>
+            </div>
+            <!-- //workType02 site view -->
+          </div>
+          <!-- //workType02 project-->
+        </div>
+        <!-- //container -->
+      </div>
+      <!-- //work__inner -->
+    </section>
+
+    <section id="scrip">
+      <header class="header">look at script</header>
+      <!-- //header -->
+
+      <div class="scrip__inner">
+        <div class="scripType music">
+          <div class="scrip__img">
+            <img class="img" src="assets/img/script_music.png" alt="" />
+          </div>
+          <div class="container">
+            <a
+              href="https://gayeongchoi.github.io/webs_class/javascript/effect/musicPlayer/index.html"
+              class="siteView"
+            >
+              <p>site View</p>
+              <svg
+                class="svg arrow"
+                width="90"
+                height="90"
+                viewBox="0 0 90 90"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="3"
+                  y="3.09546"
+                  width="83.6776"
+                  height="83.6776"
+                  fill="black"
+                  stroke="#8DFFA8"
+                  stroke-width="5"
+                />
+                <path
+                  d="M21.1335 70.0262L68.6661 22.4937"
+                  stroke="#8DFFA8"
+                  stroke-width="5"
+                  stroke-miterlimit="10"
+                />
+                <path
+                  d="M33.3276 21.8912L70.1909 20.9722L69.2719 57.8355"
+                  stroke="#8DFFA8"
+                  stroke-width="5"
+                  stroke-miterlimit="10"
+                />
+              </svg>
+            </a>
+
+            <div class="scrip__title">
+              music <br />
+              javascript
+            </div>
+            <div class="scrip__text">
+              음악 플레이어를 구현하였습니다. <br />
+              음악 재생하기, 이전곡, 다음 곡 재생과 반복 듣기, 한번 반복, 그에
+              따라 아이콘 변경하기 곡이 끝나면 다음 곡 재생하기와 뮤직 리스트
+              펼치기 , <br />
+              리스트를 클릭하면 해당 곡 재생하기와 재생곡 시간에 따라 움직이는
+              바와 재생 시간 표기, 재생바를 누르면 해당 지점 음악이
+              재생되도록하고 곡을 재생하면 <br />
+              변경되는 이미지나 오디오명도 변경되어 출력되도록 하였습니다.
+            </div>
+          </div>
+          <!-- //container -->
+        </div>
+        <!-- //scripType music -->
+
+        <div class="scripType card">
+          <div class="scrip__img">
+            <img class="img" src="assets/img/script_card.png" alt="" />
+          </div>
+          <!-- //scrip__img : script_card -->
+          <div class="container">
+            <a
+              href="https://gayeongchoi.github.io/webs_class/game/index2.html"
+              class="siteView"
+            >
+              <p>site View</p>
+              <svg
+                class="svg arrow"
+                width="90"
+                height="90"
+                viewBox="0 0 90 90"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="3"
+                  y="3.09546"
+                  width="83.6776"
+                  height="83.6776"
+                  fill="black"
+                  stroke="#8DFFA8"
+                  stroke-width="5"
+                />
+                <path
+                  d="M21.1335 70.0262L68.6661 22.4937"
+                  stroke="#8DFFA8"
+                  stroke-width="5"
+                  stroke-miterlimit="10"
+                />
+                <path
+                  d="M33.3276 21.8912L70.1909 20.9722L69.2719 57.8355"
+                  stroke="#8DFFA8"
+                  stroke-width="5"
+                  stroke-miterlimit="10"
+                />
+              </svg>
+            </a>
+
+            <div class="scrip__title">
+              memory<br />
+              javascript
+            </div>
+            <div class="scrip__text">
+              카드 암기 게임을 만들었습니다. <br />
+              몇 초 동안 카드 안의 그림을 보여주고 다시 카드를 뒤집어서 뒤집힌
+              카드의 짝을 이루는 그림을 맞추는 게임입니다. <br />
+              스타트 버튼을 누르면 게임 규칙과 설명이 나옵니다. 게임을 플레이
+              하시고 나시면 합산 점수와 연속으로 맞춘 갯수 등이 스코어가
+              나타납니다. <br />
+              그 외 틀리면 이미지가 흔들리고 카드 뒤집는 도중에 다른 카드가
+              뒤집히지 않도록 또 맞춘 카드들은 뒤집히지 않게 하도록
+              구현하였습니다.
+            </div>
+          </div>
+          <!-- //container -->
+        </div>
+        <!-- //scripType card-->
+
+        <div class="scripType typing">
+          <div class="scrip__img">
+            <img class="img" src="assets/img/script_typing.png" alt="" />
+          </div>
+          <!-- //scrip__img : script_typing -->
+          <div class="container">
+            <a
+              href="https://gayeongchoi.github.io/webs_class/javascript/effect/typingGame/index.html"
+              class="siteView"
+            >
+              <p>site View</p>
+              <svg
+                class="svg arrow"
+                width="90"
+                height="90"
+                viewBox="0 0 90 90"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="3"
+                  y="3.09546"
+                  width="83.6776"
+                  height="83.6776"
+                  fill="black"
+                  stroke="#8DFFA8"
+                  stroke-width="5"
+                />
+                <path
+                  d="M21.1335 70.0262L68.6661 22.4937"
+                  stroke="#8DFFA8"
+                  stroke-width="5"
+                  stroke-miterlimit="10"
+                />
+                <path
+                  d="M33.3276 21.8912L70.1909 20.9722L69.2719 57.8355"
+                  stroke="#8DFFA8"
+                  stroke-width="5"
+                  stroke-miterlimit="10"
+                />
+              </svg>
+            </a>
+
+            <div class="scrip__title">
+              typing <br />
+              javascript
+            </div>
+            <div class="scrip__text">
+              영문 타이핑 연습을 할 수 있는 게임입니다. <br />
+              입력칸에 예제에 맞춰 타이핑하면 타이머가 움직이기 시작하면서
+              글자가 파란색으로 변합니다 틀리면 빨간색으로 표기 됩니다. <br />
+              1분동안한 타이핑 실수와 맞은 갯수등의 스코어가 하단에 표시 됩니다
+              1분 동안 얼마나 타이핑 할 수 있는 지 확인해보세요!
+            </div>
+          </div>
+          <!-- //container -->
+        </div>
+        <!-- //scripType typing-->
+
+        <div class="scripType tertris">
+          <div class="scrip__img">
+            <img class="img" src="assets/img/script_tetris.png" alt="" />
+          </div>
+          <!-- //scrip__img : script_tertris -->
+          <div class="container">
+            <a
+              href="https://gayeongchoi.github.io/webs_class/game/tetrisGame/index.html"
+              class="siteView"
+            >
+              <p>site View</p>
+              <svg
+                class="svg arrow"
+                width="90"
+                height="90"
+                viewBox="0 0 90 90"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="3"
+                  y="3.09546"
+                  width="83.6776"
+                  height="83.6776"
+                  fill="black"
+                  stroke="#8DFFA8"
+                  stroke-width="5"
+                />
+                <path
+                  d="M21.1335 70.0262L68.6661 22.4937"
+                  stroke="#8DFFA8"
+                  stroke-width="5"
+                  stroke-miterlimit="10"
+                />
+                <path
+                  d="M33.3276 21.8912L70.1909 20.9722L69.2719 57.8355"
+                  stroke="#8DFFA8"
+                  stroke-width="5"
+                  stroke-miterlimit="10"
+                />
+              </svg>
+            </a>
+
+            <div class="scrip__title">
+              tetris <br />
+              javascript
+            </div>
+            <div class="scrip__text">
+              테트리스 게임입니다. 특정 모양의 블록을 쌓아올리는 게임입니다.
+              <br />
+              특정 모양의 블록을 쌓아올려서 한줄을 완성하면 사라지고 블록을
+              천장까지 닿지 않게 하고 최대한 점수를 내야합니다. <br />블록은
+              css로 구현하고 블록 교체와 내려오는 애니메이션, 블록을 쌓아올릴 수
+              있도록 바닥에 닿으면 블록이 사라지않고 쌓인 블록 위에 <br />
+              블록을 쌓을 수 있고 천장까지 닿으면 더 이상 블록이 내려오면
+              게임오버 되도록 하였습니다.
+            </div>
+          </div>
+          <!-- //container -->
+        </div>
+        <!-- //scripType tertris-->
+      </div>
+      <!-- //scrip__inner -->
+    </section>
+
+    <section id="effect">
+      <header class="header">LET’s see the effect</header>
+      <!-- //header -->
+      <div class="container">
+        <div class="effType seach">
+          <a
+            href="https://gayeongchoi.github.io/webs_class/javascript/effect/searchEffect01.html"
+          >
+            <svg
+              class="svg arrow"
+              width="90"
+              height="90"
+              viewBox="0 0 90 90"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="3"
+                y="3.09546"
+                width="83.6776"
+                height="83.6776"
+                fill="black"
+                stroke="#8DFFA8"
+                stroke-width="3"
+              />
+              <path
+                d="M21.1335 70.0262L68.6661 22.4937"
+                stroke="#8DFFA8"
+                stroke-width="5"
+                stroke-miterlimit="10"
+              />
+              <path
+                d="M33.3276 21.8912L70.1909 20.9722L69.2719 57.8355"
+                stroke="#8DFFA8"
+                stroke-width="5"
+                stroke-miterlimit="10"
+              />
+            </svg>
+            <div class="bar">seach</div>
+            <img src="./assets/img/effect_search.PNG" alt="" />
+          </a>
+        </div>
+        <!-- //effType seach -->
+
+        <div class="effType yellow quiz">
+          <a
+            href="https://gayeongchoi.github.io/webs_class/javascript/effect/quizEffect01.html"
+          >
+            <svg
+              class="svg arrow"
+              width="90"
+              height="90"
+              viewBox="0 0 90 90"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="3"
+                y="3.09546"
+                width="83.6776"
+                height="83.6776"
+                fill="black"
+                stroke="#8DFFA8"
+                stroke-width="3"
+              />
+              <path
+                d="M21.1335 70.0262L68.6661 22.4937"
+                stroke="#8DFFA8"
+                stroke-width="5"
+                stroke-miterlimit="10"
+              />
+              <path
+                d="M33.3276 21.8912L70.1909 20.9722L69.2719 57.8355"
+                stroke="#8DFFA8"
+                stroke-width="5"
+                stroke-miterlimit="10"
+              />
+            </svg>
+            <div class="bar">quiz</div>
+            <img src="./assets/img/effect_quiz.PNG" alt="" />
+          </a>
+        </div>
+        <!-- //effType quiz -->
+
+        <div class="effType yellow slider">
+          <a
+            href="https://gayeongchoi.github.io/webs_class/javascript/effect/sliderEffect01.html"
+          >
+            <svg
+              class="svg arrow"
+              width="90"
+              height="90"
+              viewBox="0 0 90 90"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="3"
+                y="3.09546"
+                width="83.6776"
+                height="83.6776"
+                fill="black"
+                stroke="#8DFFA8"
+                stroke-width="3"
+              />
+              <path
+                d="M21.1335 70.0262L68.6661 22.4937"
+                stroke="#8DFFA8"
+                stroke-width="5"
+                stroke-miterlimit="10"
+              />
+              <path
+                d="M33.3276 21.8912L70.1909 20.9722L69.2719 57.8355"
+                stroke="#8DFFA8"
+                stroke-width="5"
+                stroke-miterlimit="10"
+              />
+            </svg>
+            <div class="bar">Slider</div>
+            <img src="./assets/img/effect_slider.PNG" alt="" />
+          </a>
+        </div>
+        <!-- //effType slider -->
+
+        <div class="effType mouse">
+          <a
+            href="https://gayeongchoi.github.io/webs_class/javascript/effect/mouseEffect01.html"
+          >
+            <svg
+              class="svg arrow"
+              width="90"
+              height="90"
+              viewBox="0 0 90 90"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="3"
+                y="3.09546"
+                width="83.6776"
+                height="83.6776"
+                fill="black"
+                stroke="#8DFFA8"
+                stroke-width="3"
+              />
+              <path
+                d="M21.1335 70.0262L68.6661 22.4937"
+                stroke="#8DFFA8"
+                stroke-width="5"
+                stroke-miterlimit="10"
+              />
+              <path
+                d="M33.3276 21.8912L70.1909 20.9722L69.2719 57.8355"
+                stroke="#8DFFA8"
+                stroke-width="5"
+                stroke-miterlimit="10"
+              />
+            </svg>
+            <div class="bar">mouse</div>
+            <img src="./assets/img/effect_mouse.PNG" alt="" />
+          </a>
+        </div>
+        <!-- //effType mouse -->
+
+        <div class="effType parallax">
+          <a
+            href="https://gayeongchoi.github.io/webs_class/javascript/effect/parallaxEffect01.html"
+          >
+            <svg
+              class="svg arrow"
+              width="90"
+              height="90"
+              viewBox="0 0 90 90"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="3"
+                y="3.09546"
+                width="83.6776"
+                height="83.6776"
+                fill="black"
+                stroke="#8DFFA8"
+                stroke-width="3"
+              />
+              <path
+                d="M21.1335 70.0262L68.6661 22.4937"
+                stroke="#8DFFA8"
+                stroke-width="5"
+                stroke-miterlimit="10"
+              />
+              <path
+                d="M33.3276 21.8912L70.1909 20.9722L69.2719 57.8355"
+                stroke="#8DFFA8"
+                stroke-width="5"
+                stroke-miterlimit="10"
+              />
+            </svg>
+            <div class="bar">Parallax</div>
+            <img src="./assets/img/effect_parallax.PNG" alt="" />
+          </a>
+        </div>
+        <!-- //effType parallax -->
+
+        <div class="effType yellow gsap">
+          <a
+            href="https://gayeongchoi.github.io/webs_class/javascript/effect/parallaxGSAP01.html"
+          >
+            <svg
+              class="svg arrow"
+              width="90"
+              height="90"
+              viewBox="0 0 90 90"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="3"
+                y="3.09546"
+                width="83.6776"
+                height="83.6776"
+                fill="black"
+                stroke="#8DFFA8"
+                stroke-width="3"
+              />
+              <path
+                d="M21.1335 70.0262L68.6661 22.4937"
+                stroke="#8DFFA8"
+                stroke-width="5"
+                stroke-miterlimit="10"
+              />
+              <path
+                d="M33.3276 21.8912L70.1909 20.9722L69.2719 57.8355"
+                stroke="#8DFFA8"
+                stroke-width="5"
+                stroke-miterlimit="10"
+              />
+            </svg>
+            <div class="bar">gasp animationn</div>
+            <img src="./assets/img/effect_gsap.PNG" alt="" />
+          </a>
+        </div>
+        <!-- //effType gsap -->
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="title">
+          <p class="title__txt">Do You Have A Brief?</p>
+          <h2>
+            TELL <br />
+            ME <br />
+            EVERY- <br />
+            THING*
+          </h2>
+        </div>
+        <input
+          class="box emailBox"
+          type="text"
+          name="email"
+          placeholder="email"
+          required=""
+          pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+          data-v-1c7a87bc=""
+        />
+        <input
+          class="box nameBox"
+          type="text"
+          name="name"
+          placeholder="name"
+          required=""
+          data-v-1c7a87bc=""
+        />
+        <textarea
+          class="box textBox"
+          name="message"
+          placeholder="your message"
+          required=""
+          data-v-1c7a87bc=""
+        ></textarea>
+        <button class="box btn" type="submit" data-v-1c7a87bc="">Send!</button>
+      </div>
+
+      <hr />
+
+      <div class="container">
+        <svg
+          class="footer logo"
+          class="footer__logo"
+          viewBox="0 0 196 196"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M88.8625 63.9322C75.0596 12.7562 -5.64216 20.6999 12.0611 86.4324C29.7644 152.165 117.184 175.699 117.184 175.699L120.556 174.796C120.556 174.796 184.297 110.566 166.574 44.7618C148.852 -21.0424 75.0596 12.7562 88.8625 63.9322Z"
+            fill="black"
+            stroke="#88FFA4"
+            stroke-width="5"
+            stroke-miterlimit="10"
+          />
+          <path
+            d="M48.9643 71.7449L43.3861 73.2395L54.7883 115.793L83.742 108.035L82.3896 102.988L59.0142 109.252L48.9643 71.7449Z"
+            fill="#8DFFA8"
+          />
+          <path
+            d="M138.793 83.7343C151.702 80.2752 158.692 68.3238 155.247 55.4673C151.802 42.6109 139.72 35.7699 126.811 39.229C113.901 42.6881 106.911 54.6395 110.356 67.4959C113.801 80.3524 125.883 87.1934 138.793 83.7343ZM137.426 78.6342C127.704 81.2392 118.61 75.9889 115.934 66.0013C113.244 55.9605 118.455 46.9341 128.177 44.3291C137.899 41.7241 146.979 46.9212 149.669 56.962C152.345 66.9497 147.095 76.0434 137.426 78.6342Z"
+            fill="#8DFFA8"
+          />
+          <path
+            d="M105.323 100.707L99.9255 140.702L75.2537 108.764L69.1443 110.401L98.5562 148.129L104.613 146.506L111.22 99.1268L105.323 100.707Z"
+            fill="#8DFFA8"
+          />
+          <path
+            d="M114.248 87.7405L125.65 130.294L156.357 122.067L155.033 117.126L129.905 123.859L126.061 109.515L148.852 103.408L147.528 98.4674L124.737 104.574L121.15 91.1865L145.801 84.5815L144.477 79.6408L114.248 87.7405Z"
+            fill="#8DFFA8"
+          />
+        </svg>
+        <div class="footer myEmail">
+          <h4>my email</h4>
+          <p title="wwuu123@naver.com">wwuu123@naver.com</p>
+        </div>
+        <div class="footer follow">
+          <h4>follow us</h4>
+          <div class="icons">
+            <a href="https://github.com/GayeongChoi">
+              <svg
+                class="icon github"
+                width="40"
+                height="40"
+                viewBox="0 0 40 40"
+                fill="rgba(0,0,0,0)"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M20.5458 8.09372C13.6431 8.09372 8.04566 13.7855 8.04566 20.8072C8.04566 26.4245 11.6273 31.1901 16.594 32.8712C17.2187 32.9889 17.4481 32.5954 17.4481 32.2596C17.4481 31.9565 17.4365 30.955 17.4311 29.8926C13.9535 30.6617 13.2197 28.3926 13.2197 28.3926C12.6511 26.923 11.8318 26.5323 11.8318 26.5323C10.6977 25.7432 11.9173 25.7594 11.9173 25.7594C13.1726 25.8489 13.8335 27.0696 13.8335 27.0696C14.9484 29.0132 16.7577 28.4513 17.471 28.1264C17.5832 27.3049 17.9072 26.7437 18.2647 26.4264C15.4882 26.1049 12.5696 25.0147 12.5696 20.1432C12.5696 18.7552 13.0579 17.621 13.8575 16.7307C13.7277 16.4102 13.2999 15.1173 13.9786 13.3661C13.9786 13.3661 15.0283 13.0244 17.417 14.6693C18.4141 14.3876 19.4835 14.2464 20.5458 14.2415C21.6081 14.2464 22.6782 14.3876 23.6772 14.6693C26.063 13.0244 27.1113 13.3661 27.1113 13.3661C27.7917 15.1173 27.3636 16.4102 27.2338 16.7307C28.0353 17.621 28.5203 18.7552 28.5203 20.1432C28.5203 25.0263 25.5961 26.1015 22.8126 26.4163C23.2609 26.8108 23.6604 27.5845 23.6604 28.7707C23.6604 30.4716 23.646 31.8407 23.646 32.2596C23.646 32.598 23.871 32.9944 24.5046 32.8696C29.4686 31.1866 33.0457 26.4226 33.0457 20.8072C33.0457 13.7855 27.4491 8.09372 20.5458 8.09372"
+                  fill="white"
+                />
+                <path
+                  d="M12.7801 26.3476C12.7526 26.411 12.6549 26.4297 12.5658 26.3864C12.4752 26.3449 12.4243 26.2588 12.4537 26.1954C12.4806 26.1304 12.5785 26.1125 12.6689 26.1556C12.7598 26.1973 12.8115 26.2843 12.7801 26.3476"
+                  fill="white"
+                />
+                <path
+                  d="M13.2864 26.922C13.2268 26.9782 13.1102 26.9521 13.0312 26.8632C12.9494 26.7746 12.9341 26.6561 12.9945 26.599C13.056 26.5428 13.169 26.5691 13.251 26.6578C13.3328 26.7475 13.3487 26.8651 13.2864 26.922"
+                  fill="white"
+                />
+                <path
+                  d="M13.7793 27.6542C13.7027 27.7083 13.5774 27.6576 13.5 27.5445C13.4234 27.4315 13.4234 27.2959 13.5017 27.2416C13.5793 27.1872 13.7027 27.2361 13.7811 27.3483C13.8575 27.463 13.8575 27.5988 13.7793 27.6542"
+                  fill="white"
+                />
+                <path
+                  d="M14.4545 28.3616C14.386 28.4384 14.24 28.4178 14.1332 28.313C14.0239 28.2104 13.9935 28.065 14.0622 27.9881C14.1316 27.9111 14.2783 27.9327 14.386 28.0367C14.4944 28.1391 14.5275 28.2856 14.4545 28.3616"
+                  fill="white"
+                />
+                <path
+                  d="M15.386 28.7723C15.3557 28.8719 15.2152 28.9172 15.0736 28.8749C14.9322 28.8313 14.8397 28.7147 14.8683 28.614C14.8977 28.5138 15.0388 28.4666 15.1815 28.5119C15.3226 28.5553 15.4154 28.6711 15.386 28.7723"
+                  fill="white"
+                />
+                <path
+                  d="M16.4089 28.8486C16.4125 28.9534 16.2924 29.0404 16.1438 29.0421C15.9943 29.0456 15.8734 28.9608 15.8718 28.8576C15.8718 28.7517 15.9891 28.6656 16.1386 28.6631C16.2872 28.6602 16.4089 28.7444 16.4089 28.8486"
+                  fill="white"
+                />
+                <path
+                  d="M17.3609 28.6837C17.3787 28.786 17.2754 28.8911 17.1278 28.9189C16.9827 28.9461 16.8484 28.8829 16.83 28.7814C16.812 28.6766 16.9171 28.5715 17.062 28.5444C17.2098 28.5182 17.3421 28.5797 17.3609 28.6837"
+                  fill="white"
+                />
+                <rect
+                  x="0.5"
+                  y="0.5"
+                  width="39"
+                  height="39"
+                  rx="19.5"
+                  stroke="white"
+                />
+              </svg>
+            </a>
+            <!-- //icon github -->
+
+            <a href="https://webs-blog.tistory.com/">
+              <svg
+                class="icon tistory"
+                width="40"
+                height="40"
+                viewBox="0 0 40 40"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12.8492 16.6983C14.4227 16.6983 15.6983 15.4227 15.6983 13.8492C15.6983 12.2756 14.4227 11 12.8492 11C11.2756 11 10 12.2756 10 13.8492C10 15.4227 11.2756 16.6983 12.8492 16.6983Z"
+                  fill="white"
+                />
+                <path
+                  d="M20 16.6983C21.5736 16.6983 22.8492 15.4227 22.8492 13.8492C22.8492 12.2756 21.5736 11 20 11C18.4264 11 17.1508 12.2756 17.1508 13.8492C17.1508 15.4227 18.4264 16.6983 20 16.6983Z"
+                  fill="white"
+                />
+                <path
+                  d="M20 23.8492C21.5736 23.8492 22.8492 22.5735 22.8492 21C22.8492 19.4264 21.5736 18.1508 20 18.1508C18.4264 18.1508 17.1508 19.4264 17.1508 21C17.1508 22.5735 18.4264 23.8492 20 23.8492Z"
+                  fill="white"
+                />
+                <path
+                  d="M20 31C21.5736 31 22.8492 29.7244 22.8492 28.1509C22.8492 26.5773 21.5736 25.3017 20 25.3017C18.4264 25.3017 17.1508 26.5773 17.1508 28.1509C17.1508 29.7244 18.4264 31 20 31Z"
+                  fill="white"
+                />
+                <path
+                  d="M27.1508 16.6983C28.7244 16.6983 30 15.4227 30 13.8492C30 12.2756 28.7244 11 27.1508 11C25.5773 11 24.3017 12.2756 24.3017 13.8492C24.3017 15.4227 25.5773 16.6983 27.1508 16.6983Z"
+                  fill="white"
+                />
+                <rect
+                  x="0.5"
+                  y="0.5"
+                  width="39"
+                  height="39"
+                  rx="19.5"
+                  stroke="white"
+                />
+              </svg>
+            </a>
+            <!-- //icon tistory -->
+
+            <a title="사용자명:최가영#2084 /이메일:wwuu12366@gmail.com">
+              <svg
+                class="icon discord"
+                width="40"
+                height="40"
+                viewBox="0 0 40 40"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M29.1636 12.3287C27.5701 11.5976 25.8614 11.059 24.0749 10.7504C24.0424 10.7445 24.0099 10.7594 23.9931 10.7891C23.7733 11.18 23.5299 11.6899 23.3595 12.0906C21.4379 11.803 19.5262 11.803 17.6441 12.0906C17.4736 11.681 17.2213 11.18 17.0006 10.7891C16.9838 10.7604 16.9513 10.7455 16.9188 10.7504C15.1332 11.058 13.4245 11.5966 11.8301 12.3287C11.8163 12.3347 11.8045 12.3446 11.7967 12.3575C8.55562 17.1996 7.66776 21.9226 8.10331 26.5871C8.10528 26.6099 8.11809 26.6317 8.13583 26.6456C10.2742 28.2159 12.3455 29.1693 14.3784 29.8012C14.411 29.8111 14.4454 29.7992 14.4661 29.7724C14.947 29.1157 15.3757 28.4233 15.7432 27.6951C15.7649 27.6525 15.7442 27.6019 15.6999 27.585C15.0199 27.3271 14.3725 27.0126 13.7497 26.6555C13.7005 26.6267 13.6965 26.5563 13.7418 26.5225C13.8729 26.4243 14.004 26.3222 14.1291 26.219C14.1518 26.2002 14.1833 26.1962 14.2099 26.2081C18.3013 28.0761 22.7308 28.0761 26.7739 26.2081C26.8005 26.1952 26.8321 26.1992 26.8557 26.218C26.9809 26.3212 27.1119 26.4243 27.244 26.5225C27.2893 26.5563 27.2863 26.6267 27.2371 26.6555C26.6143 27.0196 25.9669 27.3271 25.286 27.584C25.2416 27.6009 25.2219 27.6525 25.2436 27.6951C25.619 28.4223 26.0477 29.1147 26.5197 29.7714C26.5394 29.7992 26.5749 29.8111 26.6074 29.8012C28.6501 29.1693 30.7215 28.2159 32.8598 26.6456C32.8786 26.6317 32.8904 26.6109 32.8924 26.588C33.4136 21.1954 32.0193 16.5111 29.1961 12.3585C29.1892 12.3446 29.1774 12.3347 29.1636 12.3287ZM16.3542 23.7469C15.1224 23.7469 14.1074 22.616 14.1074 21.2272C14.1074 19.8383 15.1027 18.7074 16.3542 18.7074C17.6155 18.7074 18.6206 19.8483 18.6009 21.2272C18.6009 22.616 17.6056 23.7469 16.3542 23.7469ZM24.6612 23.7469C23.4294 23.7469 22.4145 22.616 22.4145 21.2272C22.4145 19.8383 23.4097 18.7074 24.6612 18.7074C25.9225 18.7074 26.9276 19.8483 26.908 21.2272C26.908 22.616 25.9225 23.7469 24.6612 23.7469Z"
+                  fill="white"
+                />
+                <rect
+                  x="0.5"
+                  y="0.5"
+                  width="39"
+                  height="39"
+                  rx="19.5"
+                  stroke="white"
+                />
+              </svg>
+            </a>
+            <!-- //icon discord -->
+          </div>
+        </div>
+        <!-- <div class="footer more">
+          <h4>more</h4>
+          <a href="https://gayeongchoi.github.io/webs_class/"
+            >https://gayeongchoi.github.io/webs_class/</a
+          >
+        </div> -->
+        <!-- <div class="copyright">©2022 GAYEONGCHOI. All rights reserved.</div> -->
+      </div>
+    </section>
+
+    <!-- script -->
+    <script src="./asstes/JS/skrollr.min.js"></script>
+    <script>
+      var s = skrollr.init();
+      function scroll() {
+        let scrollTop =
+          window.pageYOffset ||
+          document.documentElement.scrollTop ||
+          window.scrollY;
+        document.querySelector(".scrollTop").innerText = Math.round(scrollTop);
+
+        // document.querySelector(".section1__bg img").style.width = scrollTop + "px";
+        requestAnimationFrame(scroll);
+      }
+      scroll();
+    </script>
+
+    <!-- HOME -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script id="js-vertex-shader" type="x-shader/x-vertex">
+      uniform float time;
+      varying vec3 vPosition;
+      varying vec3 vNormal;
+      varying float vNoise;
+      varying vec2 vUv;
+      float PI = 3.141592653589793238;
+
+      float hash1(float p) {
+          vec2 p2 = fract(p * vec2(5.3983, 5.4427));
+          p2 += dot(p2.yx, p2.xy + vec2(21.5351, 14.3137));
+          return fract(p2.x * p2.y * 95.4337);
+      }
+
+      vec4 noised( in vec3 x ) {
+          vec3 p = floor(x);
+          vec3 w = fract(x);
+
+          vec3 u = w * w * w * (w * (w * 6.0 - 15.0) + 10.0);
+          vec3 du = 30.0 * w * w * (w * (w - 2.0) + 1.0);
+
+          float n = p.x + 317.0 * p.y + 157.0 * p.z;
+          float a = hash1(n + 0.0);
+          float b = hash1(n + 1.0);
+          float c = hash1(n + 317.0);
+          float d = hash1(n + 318.0);
+          float e = hash1(n + 157.0);
+          float f = hash1(n + 158.0);
+          float g = hash1(n + 474.0);
+          float h = hash1(n + 475.0);
+
+          float k0 = a;
+          float k1 = b - a;
+          float k2 = c - a;
+          float k3 = e - a;
+          float k4 = a - b - c + d;
+          float k5 = a - c - e + g;
+          float k6 = a - b - e + f;
+          float k7 = - a + b + c - d + e - f - g + h;
+
+          return vec4( - 1.0 + 2.0 * (k0 + k1 * u.x + k2 * u.y + k3 * u.z + k4 * u.x * u.y + k5 * u.y * u.z + k6 * u.z * u.x + k7 * u.x * u.y * u.z), 2.0 * du * vec3(k1 + k4 * u.y + k6 * u.z + k7 * u.y * u.z, k2 + k5 * u.z + k4 * u.x + k7 * u.z * u.x, k3 + k6 * u.x + k5 * u.y + k7 * u.x * u.y ));
+      }
+
+      void main() {
+          vUv = uv;
+          vNormal = normal;
+          vec3 p = position;
+          float noise = noised(10.0 * vec3(p.x, p.y + 0.2 * cos(2.0 * PI * time), p.z + 0.2 * sin(2.0 * PI * time))).x;
+          noise = noise * (2.0 - noise);
+
+          vNoise = noise;
+          vec3 newposition = position + 0.2 * noise * normalize(position);
+          vec4 mvPosition = modelViewMatrix * vec4(newposition, 1.0);
+          vPosition = mvPosition.xyz;
+
+          gl_PointSize = 15.0 * (1.0 / - mvPosition.z);
+          gl_Position = projectionMatrix * mvPosition;
+      }
+    </script>
+    <!-- fragmentShader -->
+    <script id="js-fragment-shader" type="x-shader/x-fragment">
+      precision highp float;
+
+      varying vec3 vPosition;
+      varying vec3 vNormal;
+
+      void main()	{
+          vec3 X = dFdx(vPosition);
+          vec3 Y = dFdy(vPosition);
+          vec3 n = normalize(cross(X, Y));
+
+          float diff = dot(n, normalize(vec3(1.0)));
+          diff *= diff * diff;
+
+          gl_FragColor = vec4(n * diff, 1.0);
+          gl_FragColor = vec4(n, 1.0);
+      }
+    </script>
+    <script id="js-fragment-line" type="x-shader/x-fragment">
+      precision highp float;
+
+      void main()	{
+          float dist = length(gl_PointCoord - vec2(0.5));
+          float disc = smoothstep(2.5, 0.45, dist);
+          if(disc == 0.0) discard;
+
+          gl_FragColor = vec4(2.0, 2.0, 2.0, disc);
+      }
+    </script>
+    <script>
+      class Stage {
+        constructor() {
+          this.renderParam = {
+            clearColor: 0xffffff,
+            width: window.innerWidth,
+            height: window.innerHeight,
+          };
+
+          this.cameraParam = {
+            fov: 50,
+            near: 0.01,
+            far: 1000,
+            lookAt: new THREE.Vector3(0, 0, 0),
+            x: 0,
+            y: 0,
+            z: 7,
+          };
+
+          this.scene = null;
+          this.camera = null;
+          this.renderer = null;
+          this.isInitialized = false;
+        }
+
+        init() {
+          this._setScene();
+          this._setRender();
+          this._setCamera();
+          this.isInitialized = true;
+        }
+
+        _setScene() {
+          this.scene = new THREE.Scene();
+        }
+
+        _setRender() {
+          this.renderer = new THREE.WebGLRenderer({
+            canvas: document.getElementById("webgl-canvas"),
+            antialias: true,
+            alpha: true,
+          });
+          this.renderer.setPixelRatio(window.devicePixelRatio);
+          this.renderer.setSize(
+            this.renderParam.width,
+            this.renderParam.height
+          );
+        }
+
+        _setCamera() {
+          const windowWidth = window.innerWidth;
+          const windowHeight = window.innerHeight;
+
+          if (!this.isInitialized) {
+            this.camera = new THREE.PerspectiveCamera(
+              this.cameraParam.fov,
+              this.renderParam.width / this.renderParam.height,
+              this.cameraParam.near,
+              this.cameraParam.far
+            );
+
+            this.camera.position.set(
+              this.cameraParam.x,
+              this.cameraParam.y,
+              this.cameraParam.z
+            );
+            this.camera.lookAt(this.cameraParam.lookAt);
+          }
+
+          this.camera.aspect = windowWidth / windowHeight;
+          this.camera.updateProjectionMatrix();
+          this.renderer.setPixelRatio(window.devicePixelRatio);
+          this.renderer.setSize(windowWidth, windowHeight);
+        }
+
+        _render() {
+          this.renderer.render(this.scene, this.camera);
+        }
+
+        onResize() {
+          this._setCamera();
+        }
+
+        onRaf() {
+          this._render();
+        }
+      }
+
+      class Mesh {
+        constructor(stage) {
+          this.geometryParam = {
+            width: 1,
+            height: 7,
+          };
+
+          this.uniforms = {
+            time: {
+              type: "f",
+              value: 0.0,
+            },
+          };
+
+          this.stage = stage;
+        }
+
+        init() {
+          this._setMesh();
+        }
+
+        _setMesh() {
+          const geometry = new THREE.IcosahedronBufferGeometry(
+            this.geometryParam.width,
+            this.geometryParam.height
+          );
+
+          const material = new THREE.ShaderMaterial({
+            vertexShader:
+              document.getElementById("js-vertex-shader").textContent,
+            fragmentShader:
+              document.getElementById("js-fragment-shader").textContent,
+            uniforms: this.uniforms,
+            side: THREE.DoubleSide,
+          });
+
+          const material1 = new THREE.ShaderMaterial({
+            vertexShader:
+              document.getElementById("js-vertex-shader").textContent,
+            fragmentShader:
+              document.getElementById("js-fragment-line").textContent,
+            uniforms: this.uniforms,
+            side: THREE.DoubleSide,
+          });
+
+          this.mesh = new THREE.Mesh(geometry, material);
+          this.meshPoints = new THREE.Points(geometry, material1);
+
+          this.stage.scene.add(this.mesh);
+          this.stage.scene.add(this.meshPoints);
+          this.stage.scene.add(this.meshSphere);
+
+          this.meshPoints.scale.set(1.5 + 0.1, 1.5 + 0.1, 1.5 + 0.1);
+        }
+
+        _render() {
+          this.uniforms.time.value += 0.001;
+          this.stage.scene.rotation.x += 0.1 * Math.sin(0.001 * 4 * Math.PI);
+          this.stage.scene.rotation.y += 0.2 * Math.sin(0.001 * 2 * Math.PI);
+          this.stage.scene.rotation.z += 0.3 * Math.sin(0.001 * 2 * Math.PI);
+        }
+
+        onRaf() {
+          this._render();
+        }
+      }
+
+      (() => {
+        const stage = new Stage();
+        const mesh = new Mesh(stage);
+
+        stage.init();
+        mesh.init();
+
+        window.addEventListener("resize", () => {
+          stage.onResize();
+        });
+
+        const _raf = () => {
+          window.requestAnimationFrame(() => {
+            stage.onRaf();
+            mesh.onRaf();
+
+            _raf();
+          });
+        };
+
+        _raf();
+      })();
+    </script>
+    <!-- //home -->
+
+    <!-- about -->
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+      window.addEventListener("scroll", () => {
+        let scrollTop =
+          window.pageYOffset ||
+          document.documentElement.scrollTop ||
+          window.scrollY;
+
+        //info
+        document.querySelector(".scrollTop span").innerText =
+          Math.round(scrollTop);
+      });
+
+      $(window).ready(function () {
+        draw(90, ".chart1", "#8cffa7");
+        draw(85, ".chart2", "#8cffa7");
+        draw(72, ".chart3", "#8cffa7");
+        draw(69, ".chart4", "#8cffa7");
+        draw(80, ".chart5", "#8cffa7");
+        draw(73, ".chart6", "#8cffa7");
+      });
+
+      function draw(max, classname, colorname) {
+        var i = 1;
+        var func1 = setInterval(function () {
+          if (i < max) {
+            color1(i, classname, colorname);
+            i++;
+          } else {
+            clearInterval(func1);
+          }
+        }, 10);
+      }
+      function color1(i, classname, colorname) {
+        $(classname).css({
+          background:
+            "conic-gradient(" +
+            colorname +
+            " 0% " +
+            i +
+            "%, #000 " +
+            i +
+            "% 100%)",
+        });
+      }
+    </script>
+    <!-- //about -->
+  </body>
+</html>

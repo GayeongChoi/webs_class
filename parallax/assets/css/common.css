@@ -1,0 +1,104 @@
+@charset "UTF-8";
+
+:root {
+  --font-color: #fff;
+  --white: #ffffff;
+  --lime: #8cffa7;
+  --yellow: #ffff31;
+  --black: #000;
+  --green: #e1ff31;
+  --subFont: "ChosunNm";
+}
+
+a:hover {
+  color: #8cffa7;
+}
+hr {
+  /* border: 1px solid var(--white); */
+}
+textarea::placeholder,
+input::placeholder {
+  color: var(--white);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* 바디 색상(배경색)*/
+body {
+  padding: 10%;
+  background: var(--black);
+  overflow-x: hidden;
+}
+
+/* 그리드 */
+.w_grid {
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: repeat(6, minmax(100px, auto));
+  grid-gap: 10px;
+}
+
+/* 컨테이너 - 기타는 밑에*/
+.container {
+  max-width: 1350px;
+  margin: 30vh auto;
+  padding: 0;
+  width: 100vw;
+}
+
+/* main 헤더 */
+.header {
+  width: 100vw;
+  height: 20vw;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(116, 214, 139, 0.7),
+    var(--green) 100%
+  );
+
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 20vw;
+  font-size: 6vw;
+  font-weight: 700;
+}
+
+/* svg 크기 */
+.arrow {
+  width: 60px;
+  height: 60px;
+}
+
+.contents {
+  padding: 20vw 2vw;
+}
+#contents {
+  min-height: 70vh;
+}
+.section {
+  padding: 120px 0;
+}
+.section__title {
+  font-size: 50px;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+.section__desc {
+  font-size: 22px;
+  line-height: 1.5;
+  font-weight: 300;
+  color: #777;
+  margin-bottom: 80px;
+}
+.center {
+  text-align: center;
+}
+@media (max-width: 1220px) {
+  .section__title {
+    font-size: 24px;
+  }
+  .section__desc {
+    font-size: 18px;
+  }
+}

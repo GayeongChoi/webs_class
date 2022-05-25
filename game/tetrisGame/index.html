@@ -13,7 +13,16 @@
       body {
         height: 100vh;
         overflow: hidden;
-        background: #000;
+        background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+        background-image: linear-gradient(
+          to right,
+          #b8cbb8 0%,
+          #b8cbb8 0%,
+          #b465da 0%,
+          #cf6cc9 33%,
+          #ee609c 66%,
+          #ee609c 100%
+        );
       }
       li {
         list-style: none;
@@ -41,7 +50,7 @@
       .tetris__inner > ul > li > ul > li {
         width: 25px;
         height: 25px;
-        border: 1px solid #ccc;
+        /* border: 1px solid #cf6cc9; */
         box-sizing: border-box;
       }
       .Tmino {
